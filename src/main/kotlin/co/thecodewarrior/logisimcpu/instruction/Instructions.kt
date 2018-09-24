@@ -23,9 +23,35 @@ object Instructions {
             memsel(this)
             amend(STORE_B)
         }
-        (0b0100_0000 to 0b0100_1111) - "DISPLAY" % {
+        (0b0011_0000 to 0b0011_1111) - "DISPLAY" % {
             memsel(this)
             amend(STORE_DISPLAY)
+        }
+        (0b0100_0000 to 0b0100_1111) - "ALU_COMMIT" % {
+            step(COMMIT_ALU)
+            val opcodeI = opcode.toUInt() and 0b1111u
+            if(opcodeI and 0b0001u != 0u) amend(ALU_OP_1s)
+            if(opcodeI and 0b0010u != 0u) amend(ALU_OP_2s)
+            if(opcodeI and 0b0100u != 0u) amend(ALU_OP_4s)
+            if(opcodeI and 0b1000u != 0u) amend(ALU_OP_8s)
+            qualifier = listOf(
+                "ADD",
+                "SUB",
+                "MUL",
+                "DIV",
+                "NEG",
+                "SHL",
+                "SHR",
+                "CNT",
+                "CMPEQ",
+                "CMPNEQ",
+                "CMPLT",
+                "CMPGT",
+                "NOT",
+                "AND",
+                "OR",
+                "XOR"
+            ).getOrNull(opcodeI.toInt())
         }
     }
 
@@ -50,8 +76,7 @@ object Instructions {
             }
             else -> {
                 insn.qualifier = "!!ERR!!"
-                insn.step(INSN_END)
-                insn.step() // the caller will amend this, which will never be reached
+                insn.step(FAULT, HALT)
             }
         }
     }
@@ -59,7 +84,7 @@ object Instructions {
     fun controlUnitROM(): HexFile {
         val file = HexFile()
         instructions.forEach { (opcode, insn) ->
-            val offset = opcode.toLong() shl 8
+            val offset = opcode.toULong().toLong() shl 8
             insn.toROM().forEachIndexed { i, step ->
                 file[offset + i] = step
             }
@@ -88,9 +113,7 @@ object Instructions {
     }
 
     fun find(name: String, qualifier: String?): Instruction? {
-        return instructions.values
-            .find { it.name == name && it.qualifier == qualifier } ?: instructions.values
-            .find { it.name == name && it.qualifier == null }
+        return instructions.values.find { it.name == name && it.qualifier == qualifier }
     }
 
     private class PartialInstruction(val name: String, val conf: Instruction.() -> Unit)

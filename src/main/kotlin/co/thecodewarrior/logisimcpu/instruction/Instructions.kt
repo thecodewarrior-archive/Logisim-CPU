@@ -3,6 +3,7 @@ package co.thecodewarrior.logisimcpu.instruction
 import co.thecodewarrior.logisimcpu.HexFile
 import co.thecodewarrior.logisimcpu.instruction.ControlUnitWire.*
 import co.thecodewarrior.logisimcpu.instruction.Instructions.Opcode.*
+import co.thecodewarrior.logisimcpu.instruction.Instructions.ALUType.*
 
 object Instructions {
     val instructions: MutableList<Instruction> = mutableListOf()
@@ -63,7 +64,7 @@ object Instructions {
 
     private fun memDest(
         opcode: Opcode,
-        conf: Instruction.(dest: DataDestination) -> Unit
+        conf: Instruction.(dest: DataDest) -> Unit
     ): List<Instruction> {
         return mem(opcode) { _, dest ->
             conf(dest!!)
@@ -72,7 +73,7 @@ object Instructions {
 
     private fun memSourceDest(
         opcode: Opcode,
-        conf: Instruction.(source: DataSource, dest: DataDestination) -> Unit
+        conf: Instruction.(source: DataSource, dest: DataDest) -> Unit
     ): List<Instruction> {
         return mem(opcode) { source, dest ->
             conf(source!!, dest!!)
@@ -90,12 +91,12 @@ object Instructions {
      */
     private fun mem(
         opcode: Opcode,
-        conf: Instruction.(source: DataSource?, dest: DataDestination?) -> Unit
+        conf: Instruction.(source: DataSource?, dest: DataDest?) -> Unit
     ): List<Instruction> {
         val templateBits = opcode.opcode
 
         val sources: List<DataSource?> = if(templateBits.contains("ssss")) listOf(*DataSource.values()) else listOf(null)
-        val destinations: List<DataDestination?> = if(templateBits.contains("dddd")) listOf(*DataDestination.values()) else listOf(null)
+        val destinations: List<DataDest?> = if(templateBits.contains("dddd")) listOf(*DataDest.values()) else listOf(null)
 
         val list = mutableListOf<Instruction>()
         sources.map { source ->
@@ -132,23 +133,36 @@ object Instructions {
         return file
     }
 
-    enum class ALUOp {
-        ADD,
-        SUB,
-        MUL,
-        DIV,
-        NEG,
-        SHL,
-        SHR,
-        CNT,
-        CMPEQ,
-        CMPNEQ,
-        CMPLT,
-        CMPGT,
-        NOT,
-        AND,
-        OR,
-        XOR
+    enum class ALUType {
+        INT,
+        BOOL,
+    }
+    enum class ALUOp(vararg val outputs: ALUType) {
+        // arithmetic
+        ADD(INT), // A + B
+        SUB(INT), // A - B
+        MUL(INT), // A * B
+        DIV(INT), // A / B
+        NEG(INT), // -A
+
+        // bitwise
+        SHL(INT), // A << B
+        SHR(INT), // A >> B
+        CNT(INT), // count 1s in A
+        NOT(INT, BOOL), // ~A
+        AND(INT, BOOL), // A & B
+        OR(INT, BOOL), // A | B
+        XOR(INT, BOOL), // A ^ B
+
+        // comparison
+        CMPEQ(BOOL), // A == B
+        CMPNEQ(BOOL), // A != B
+        CMPLT(BOOL), // A < B
+        CMPGT(BOOL), // A > B
+        CMPEQZ(BOOL), // A == 0
+        CMPNEQZ(BOOL), // A != 0
+        CMPLTZ(BOOL), // A < 0
+        CMPGTZ(BOOL), // A > 0
     }
 
     enum class DataSource {
@@ -164,7 +178,10 @@ object Instructions {
         },
         ALU {
             override fun invoke(insn: Instruction) {
-                insn.payload(ALUOp.values().associate { it.name to ushortArrayOf(it.ordinal.toUShort()) })
+                insn.payload(ALUOp.values()
+                    .filter { INT in it.outputs }
+                    .associate { it.name to ushortArrayOf(it.ordinal.toUShort()) }
+                )
                 insn.step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
                 insn.step(LOAD_ALU)
             }
@@ -173,6 +190,16 @@ object Instructions {
             override fun invoke(insn: Instruction) {
                 insn.arg()
                 insn.step(LOAD_PROG, PROG_NEXT)
+            }
+        },
+        FLAG_REG_A {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_FLAG_A, B2I)
+            }
+        },
+        FLAG_REG_B {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_FLAG_B, B2I)
             }
         };
 
@@ -183,7 +210,7 @@ object Instructions {
         abstract operator fun invoke(insn: Instruction)
     }
 
-    enum class DataDestination {
+    enum class DataDest {
         REG_A {
             override fun invoke(insn: Instruction) {
                 insn.amend(STORE_A)
@@ -192,6 +219,70 @@ object Instructions {
         REG_B {
             override fun invoke(insn: Instruction) {
                 insn.amend(STORE_B)
+            }
+        };
+
+        /**
+         * Amends the last step so the value on the bus is written to the destination. This method may or may not add
+         * additional steps.
+         */
+        abstract operator fun invoke(insn: Instruction)
+    }
+
+    enum class BoolDataSource {
+        REG_A {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_FLAG_A)
+            }
+        },
+        REG_B {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_FLAG_B)
+            }
+        },
+        ALU {
+            override fun invoke(insn: Instruction) {
+                insn.payload(ALUOp.values()
+                    .filter { BOOL in it.outputs }
+                    .associate { it.name to ushortArrayOf(it.ordinal.toUShort()) }
+                )
+                insn.step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
+                insn.step(LOAD_ALU)
+            }
+        },
+        CONST {
+            override fun invoke(insn: Instruction) {
+                insn.arg()
+                insn.step(LOAD_PROG, I2B, PROG_NEXT)
+            }
+        },
+        INT_REG_A {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_A, I2B)
+            }
+        },
+        INT_REG_B {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_B, I2B)
+            }
+        };
+
+        /**
+         * Adds one or more steps to the passed instruction such that the value in the source has been loaded
+         * onto the bus in the last step.
+         */
+        abstract operator fun invoke(insn: Instruction)
+    }
+
+    enum class BoolDataDest {
+        REG_A {
+            override fun invoke(insn: Instruction) {
+                insn.amend(STORE_FLAG_A)
+            }
+        },
+        REG_B {
+            override fun invoke(insn: Instruction) {
+                insn.amend(STORE_FLAG_B)
             }
         };
 

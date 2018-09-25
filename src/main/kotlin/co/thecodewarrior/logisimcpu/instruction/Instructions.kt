@@ -143,7 +143,10 @@ object Instructions {
         SUB(INT), // A - B
         MUL(INT), // A * B
         DIV(INT), // A / B
+        REM(INT), // remainder of A / B
         NEG(INT), // -A
+        INC(INT), // A + 1
+        DEC(INT), // A - 1
 
         // bitwise
         SHL(INT), // A << B

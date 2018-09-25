@@ -2,119 +2,203 @@ package co.thecodewarrior.logisimcpu.instruction
 
 import co.thecodewarrior.logisimcpu.HexFile
 import co.thecodewarrior.logisimcpu.instruction.ControlUnitWire.*
+import co.thecodewarrior.logisimcpu.instruction.Instructions.Opcode.*
 
 object Instructions {
-    val instructions: MutableMap<UByte, Instruction> = mutableMapOf()
+    val instructions: MutableList<Instruction> = mutableListOf()
+
+    /**
+     * @property opcode A binary string with optional specialty placeholders
+     * @param opcode A binary string with optional specialty placeholders. Spaces in this string will be removed to
+     * allow separation into block, and periods (`.`) will be replaced with `0`s so leading zeros don't create visual
+     * noise which disrupts important information.
+     */
+    enum class Opcode(opcode: String) {
+        OP_HALT         (".... .... .... ...."),
+        OP_NOP          (".... .... .... ...1"),
+        OP_DISPLAY      (".... .... ..10 ssss"),
+        OP_STORE        (".... ...1 ssss dddd"),
+        OP_BOOTSTRAP    ("1111 1111 1111 1111");
+
+        val opcode = opcode.replace(" ", "").replace(".", "0")
+        val opname: String
+            get() = name.removePrefix("OP_")
+    }
 
     init {
-        (0b0000_0000 - "!!BOOTSTRAP!!" % {}).apply {
+        insn(OP_BOOTSTRAP) {}.apply {
             steps.clear()
-            steps.add(InstructionStep(INSN_END, LOAD_PROG, STORE_INSN))
+            steps.add(InstructionStep(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END))
         }
-        0b0000_0001 - "NOP" % {}
-        0b0000_0010 - "HALT" % {
+
+        insn(OP_HALT) {
             step(HALT)
         }
-        (0b0001_0000 to 0b0001_1111) - "STORE_A" % {
-            memsel(this)
-            amend(STORE_A)
+
+        insn(OP_NOP) {
         }
-        (0b0010_0000 to 0b0010_1111) - "STORE_B" % {
-            memsel(this)
-            amend(STORE_B)
-        }
-        (0b0011_0000 to 0b0011_1111) - "DISPLAY" % {
-            memsel(this)
+
+        memSource(OP_DISPLAY) { source  ->
+            word(source.name)
+            source(this)
             amend(STORE_DISPLAY)
         }
-        (0b0100_0000 to 0b0100_1111) - "ALU_COMMIT" % {
-            step(COMMIT_ALU)
-            val opcodeI = opcode.toUInt() and 0b1111u
-            if(opcodeI and 0b0001u != 0u) amend(ALU_OP_1s)
-            if(opcodeI and 0b0010u != 0u) amend(ALU_OP_2s)
-            if(opcodeI and 0b0100u != 0u) amend(ALU_OP_4s)
-            if(opcodeI and 0b1000u != 0u) amend(ALU_OP_8s)
-            qualifier = listOf(
-                "ADD",
-                "SUB",
-                "MUL",
-                "DIV",
-                "NEG",
-                "SHL",
-                "SHR",
-                "CNT",
-                "CMPEQ",
-                "CMPNEQ",
-                "CMPLT",
-                "CMPGT",
-                "NOT",
-                "AND",
-                "OR",
-                "XOR"
-            ).getOrNull(opcodeI.toInt())
+
+        memSourceDest(OP_STORE) { source, dest ->
+            word(source.name)
+            source(this)
+            word(dest.name)
+            dest(this)
         }
     }
 
-    private fun memsel(insn: Instruction) {
-        when(insn.opcode.toUInt() and 0b0000_1111u) {
-            0b0000u -> {
-                insn.qualifier = "REG_A"
-                insn.step(LOAD_A)
-            }
-            0b0001u -> {
-                insn.qualifier = "REG_B"
-                insn.step(LOAD_B)
-            }
-            0b0010u -> {
-                insn.qualifier = "ALU"
-                insn.step(LOAD_ALU)
-            }
-            0b0011u -> {
-                insn.qualifier = "PROG"
-                insn.step(PROG_NEXT)
-                insn.step(LOAD_PROG)
-            }
-            else -> {
-                insn.qualifier = "!!ERR!!"
-                insn.step(FAULT, HALT)
+    private fun memSource(
+        opcode: Opcode,
+        conf: Instruction.(source: DataSource) -> Unit
+    ): List<Instruction> {
+        return mem(opcode) { source, _ ->
+            conf(source!!)
+        }
+    }
+
+    private fun memDest(
+        opcode: Opcode,
+        conf: Instruction.(dest: DataDestination) -> Unit
+    ): List<Instruction> {
+        return mem(opcode) { _, dest ->
+            conf(dest!!)
+        }
+    }
+
+    private fun memSourceDest(
+        opcode: Opcode,
+        conf: Instruction.(source: DataSource, dest: DataDestination) -> Unit
+    ): List<Instruction> {
+        return mem(opcode) { source, dest ->
+            conf(source!!, dest!!)
+        }
+    }
+
+    /**
+     * Automatically creates a set of instructions for all data sources and destinations. If only input or output bits
+     * are specified in the template string then the one that isn't specified will be passed as null into the config
+     * function.
+     *
+     * The `ssss` and `dddd` placeholders in the template will be replaced with the bits that represent the source and
+     * destination passed
+     *
+     */
+    private fun mem(
+        opcode: Opcode,
+        conf: Instruction.(source: DataSource?, dest: DataDestination?) -> Unit
+    ): List<Instruction> {
+        val templateBits = opcode.opcode
+
+        val sources: List<DataSource?> = if(templateBits.contains("ssss")) listOf(*DataSource.values()) else listOf(null)
+        val destinations: List<DataDestination?> = if(templateBits.contains("dddd")) listOf(*DataDestination.values()) else listOf(null)
+
+        val list = mutableListOf<Instruction>()
+        sources.map { source ->
+            destinations.map { destination ->
+                var bits = templateBits
+                if(source != null) bits = bits.replace("ssss", source.ordinal.toString(2).padStart(4, '0'))
+                if(destination != null) bits = bits.replace("dddd", destination.ordinal.toString(2).padStart(4, '0'))
+
+                val insn = Instruction(opcode.opname, bits.toUShort(2)) {
+                    conf(source, destination)
+                }
+                list.add(insn)
+                insn
             }
         }
+        instructions.addAll(list)
+        return list
+    }
+
+    private fun insn(opcode: Opcode, conf: Instruction.() -> Unit): Instruction {
+        val insn = Instruction(opcode.opname, opcode.opcode.replace("_", "").toUShort(2), conf)
+        instructions.add(insn)
+        return insn
     }
 
     fun controlUnitROM(): HexFile {
         val file = HexFile()
-        instructions.forEach { (opcode, insn) ->
-            val offset = opcode.toULong().toLong() shl 8
+        instructions.forEach { insn ->
+            val offset = insn.opcode.toUInt().toLong() shl 8
             insn.toROM().forEachIndexed { i, step ->
-                file[offset + i] = step
+                file[offset + i] = step.toLong()
             }
         }
         return file
     }
 
-    private operator fun Int.minus(other: PartialInstruction): Instruction {
-        val instruction = Instruction(other.name, this.toUByte(), other.conf)
-        instructions[instruction.opcode] = instruction
-        return instruction
+    enum class ALUOp {
+        ADD,
+        SUB,
+        MUL,
+        DIV,
+        NEG,
+        SHL,
+        SHR,
+        CNT,
+        CMPEQ,
+        CMPNEQ,
+        CMPLT,
+        CMPGT,
+        NOT,
+        AND,
+        OR,
+        XOR
     }
 
-    private operator fun Pair<Int, Int>.minus(other: PartialInstruction): Map<UByte, Instruction> {
-        val map = mutableMapOf<UByte, Instruction>()
-        for(opcode in this.first .. this.second) {
-            val instruction = Instruction(other.name, opcode.toUByte(), other.conf)
-            map[instruction.opcode] = instruction
-        }
-        instructions.putAll(map)
-        return map
+    enum class DataSource {
+        REG_A {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_A)
+            }
+        },
+        REG_B {
+            override fun invoke(insn: Instruction) {
+                insn.step(LOAD_B)
+            }
+        },
+        ALU {
+            override fun invoke(insn: Instruction) {
+                insn.payload(ALUOp.values().associate { it.name to ushortArrayOf(it.ordinal.toUShort()) })
+                insn.step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
+                insn.step(LOAD_ALU)
+            }
+        },
+        CONST {
+            override fun invoke(insn: Instruction) {
+                insn.arg()
+                insn.step(LOAD_PROG, PROG_NEXT)
+            }
+        };
+
+        /**
+         * Adds one or more steps to the passed instruction such that the value in the source has been loaded
+         * onto the bus in the last step.
+         */
+        abstract operator fun invoke(insn: Instruction)
     }
 
-    private operator fun String.rem(other: Instruction.() -> Unit): PartialInstruction {
-        return PartialInstruction(this, other)
-    }
+    enum class DataDestination {
+        REG_A {
+            override fun invoke(insn: Instruction) {
+                insn.amend(STORE_A)
+            }
+        },
+        REG_B {
+            override fun invoke(insn: Instruction) {
+                insn.amend(STORE_B)
+            }
+        };
 
-    fun find(name: String, qualifier: String?): Instruction? {
-        return instructions.values.find { it.name == name && it.qualifier == qualifier }
+        /**
+         * Amends the last step so the value on the bus is written to the destination. This method may or may not add
+         * additional steps.
+         */
+        abstract operator fun invoke(insn: Instruction)
     }
-
-    private class PartialInstruction(val name: String, val conf: Instruction.() -> Unit)
 }

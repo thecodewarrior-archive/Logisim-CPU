@@ -7,9 +7,15 @@ class Assembler(val assembly: String) {
     var hexFile = HexFile()
     var addr = 0L
 
-    private fun push(value: UByte) {
-        hexFile[addr] = value.toLong() and 0xff
+    private fun push(value: UShort) {
+        hexFile[addr] = value.toLong()
         addr++
+    }
+
+    private fun push(value: Iterable<UShort>) {
+        value.forEach {
+            push(it)
+        }
     }
 
     fun assemble(): HexFile {
@@ -36,29 +42,20 @@ class Assembler(val assembly: String) {
     }
 
     fun parseInsn(line: LinkedList<String>) {
-        val name = line.peek()?.let { if(it[0] in "0123456789") null else line.poll() }
-        val qualifier = line.peek()?.let { if(it[0] in "0123456789") null else line.poll() }
-        val insn = name?.let { Instructions.find(name, qualifier) }
+//        if(line.peek()?.endsWith(":") == true)
+//            pushLabel(line.poll().removeSuffix(":"))
+        val insn = Instructions.instructions.first { it.matches(line) }
 
-        if(insn != null) {
-            push(insn.opcode)
-        } else if(name != null) {
-            if (qualifier != null) {
-                throw AssemblyParseException("Unable to find instruction named $name with qualifier $qualifier")
-            } else {
-                throw AssemblyParseException("Unable to find instruction named $name")
-            }
-        }
-
-        generateSequence { line.poll() }.map {
+        push(insn.opcode)
+        line.zip(insn.words).forEach { (lineWord, insnWord) ->
+            line.poll()
             when {
-                it.startsWith("0x") -> it.removePrefix("0x").replace("_", "").toInt(16)
-                it.startsWith("0o") -> it.removePrefix("0o").replace("_", "").toInt(8)
-                it.startsWith("0b") -> it.removePrefix("0b").replace("_", "").toInt(2)
-                else -> it.replace("_", "").toInt()
+                lineWord.startsWith("0x") -> push(lineWord.removePrefix("0x").replace("_", "").toUShort(16))
+                lineWord.startsWith("0o") -> push(lineWord.removePrefix("0o").replace("_", "").toUShort(8))
+                lineWord.startsWith("0b") -> push(lineWord.removePrefix("0b").replace("_", "").toUShort(2))
+                lineWord[0].isDigit() -> push(lineWord.replace("_", "").toUShort())
+                else -> push(insnWord[lineWord]!!)
             }
-        }.forEach {
-            push(it.toUByte())
         }
     }
 }

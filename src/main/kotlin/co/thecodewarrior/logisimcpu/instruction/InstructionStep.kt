@@ -15,14 +15,12 @@ enum class ControlUnitWire {
     LOAD_A,
     LOAD_B,
     LOAD_ALU,
+    LOAD_INTERNAL_A,
 
     STORE_A,
     STORE_B,
     STORE_INSN,
     STORE_DISPLAY,
-    COMMIT_ALU,
-    ALU_OP_1s,
-    ALU_OP_2s,
-    ALU_OP_4s,
-    ALU_OP_8s,
+    STORE_ALU_OP,
+    STORE_INTERNAL_A
 }

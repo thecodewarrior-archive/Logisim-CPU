@@ -2,15 +2,26 @@ package co.thecodewarrior.logisimcpu.instruction
 
 import co.thecodewarrior.logisimcpu.instruction.ControlUnitWire.*
 
-class Instruction(val name: String, val opcode: UByte, conf: Instruction.() -> Unit) {
-    var qualifier: String? = null
+class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit) {
+    val words = mutableListOf<Map<String, UShortArray>>()
 
     val steps: MutableList<InstructionStep> = mutableListOf()
 
+    fun matches(words: List<String>): Boolean {
+        if(words.size != this.words.size) return false
+        words.zip(this.words).forEach { (word, map) ->
+            if(word[0].isDigit())
+                map["<>"] ?: return false
+            else
+                map[word] ?: return false
+        }
+        return true
+    }
+
     init {
+        words.add(mapOf(name to ushortArrayOf()))
         this.conf()
-        step(PROG_NEXT)
-        step(LOAD_PROG, STORE_INSN, INSN_END)
+        step(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
     }
 
     fun step(vararg wires: ControlUnitWire) {
@@ -21,11 +32,23 @@ class Instruction(val name: String, val opcode: UByte, conf: Instruction.() -> U
         steps.last().wires.addAll(wires)
     }
 
-    fun toROM(): List<Long> {
+    fun word(word: String) {
+        this.words.add(mapOf(word to ushortArrayOf()))
+    }
+
+    fun arg() {
+        this.words.add(mapOf("<>" to ushortArrayOf()))
+    }
+
+    fun payload(payload: Map<String, UShortArray>) {
+        this.words.add(payload)
+    }
+
+    fun toROM(): List<UInt> {
         return steps.map { step ->
-            var v = 0L
+            var v = 0u
             step.wires.forEach {
-                v = v or (1L shl it.ordinal)
+                v = v or (1u shl it.ordinal)
             }
             v
         }

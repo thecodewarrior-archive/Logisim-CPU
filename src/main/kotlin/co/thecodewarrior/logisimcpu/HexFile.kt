@@ -1,43 +1,43 @@
 package co.thecodewarrior.logisimcpu
 
-import java.util.SortedMap
+import java.util.TreeMap
 
-class HexFile(private val data: SortedMap<Long, Long> = sortedMapOf()): SortedMap<Long, Long> by data {
+class HexFile: TreeMap<Long, Long>() {
     override fun toString(): String {
-        return HexStringBuilder().build()
+        return HexStringBuilder(this).build()
     }
 
-    private inner class HexStringBuilder {
+    private class HexStringBuilder(val file: HexFile) {
         var out = "v2.0 raw\n"
-        var lastAddress = -1L
-        var value = 0L
-        var count = 0L
+        var nextAddress = 0u
+        var value = 0u
+        var count = 0u
 
         fun build(): String {
-            data.forEach { (address, value) ->
-                add(address, value)
+            file.forEach { (address, value) ->
+                add(address.toUInt(), value.toUInt())
             }
             push()
             return out
         }
 
-        private fun add(address: Long, value: Long) {
-            if(address > lastAddress + 1) {
-                addValues(0L, (address-1) - lastAddress)
+        private fun add(address: UInt, value: UInt) {
+            if(address > nextAddress) {
+                addValues(0u, address - nextAddress)
             }
-            addValues(value, 1L)
-            lastAddress = address
+            addValues(value, 1u)
+            nextAddress = address + 1u
         }
 
-        private fun addValues(value: Long, count: Long) {
+        private fun addValues(value: UInt, count: UInt) {
             if(this.value != value) push()
             this.value = value
             this.count += count
         }
 
         private fun push() {
-            if(count == 0L) return
-            if(count != 1L) {
+            if(count == 0u) return
+            if(count != 1u) {
                 out += "$count*"
             }
 
@@ -45,8 +45,8 @@ class HexFile(private val data: SortedMap<Long, Long> = sortedMapOf()): SortedMa
 
             out += " "
 
-            value = 0L
-            count = 0L
+            value = 0u
+            count = 0u
         }
     }
 }

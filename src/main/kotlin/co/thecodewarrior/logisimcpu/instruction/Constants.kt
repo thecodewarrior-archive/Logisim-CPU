@@ -11,15 +11,77 @@ import co.thecodewarrior.logisimcpu.instruction.ControlUnitWire.*
  * noise which disrupts important information.
  */
 enum class Opcode(opcode: String) {
-    OP_HALT         (".... .... .... ...."),
+    /**
+     * Halts the computer (disables the clock)
+     *
+     * Syntax: **HALT**
+     */
+    OP_HALT         ("0000 0000 0000 0000"),
+    /**
+     * Jumps immediately to the next instruction
+     *
+     * Syntax: **NOP**
+     */
     OP_NOP          (".... .... .... ...1"),
+    /**
+     * Sleeps the computer (disables the clock) for the *S* clock cycles
+     *
+     * Syntax: **SLEEP <INT_SRC>**
+     * @see DataSource
+     */
     OP_SLEEP        (".... .... ...1 ssss"),
+    /**
+     * Moves the program counter to the address specified in *S* and continues execution from there
+     *
+     * Syntax: **JMP <INT_SRC>**
+     * @see DataSource
+     */
     OP_JMP          (".... .... ..10 ssss"),
+    /**
+     * If the A flags register contains a 1 this instruction moves the program counter to the address specified
+     * in *S* and continues execution from there, otherwise it is a noop.
+     *
+     * Syntax: **JMP_IF <INT_SRC>**
+     * @see DataSource
+     */
     OP_JMP_IF       (".... .... ..11 ssss"),
+    /**
+     * If the A flags register contains a 0 this instruction moves the program counter to the address specified
+     * in *S* and continues execution from there, otherwise it is a noop.
+     *
+     * Syntax: **JMP_IFN <INT_SRC>**
+     * @see DataSource
+     */
     OP_JMP_IFN      (".... .... .100 ssss"),
+    /**
+     * Loads the value from *S* into the display register
+     *
+     * Syntax: **DISPLAY <INT_SRC>**
+     * @see DataSource
+     */
     OP_DISPLAY      (".... .... .101 ssss"),
+    /**
+     * Reads the value from *S* and writes it into *D*
+     *
+     * Syntax: **STORE <INT_SRC> <INT_DEST>**
+     * @see DataSource
+     * @see DataDest
+     */
     OP_STORE        (".... ...1 ssss dddd"),
+    /**
+     * Reads the flag from *S* and writes it into *D*
+     *
+     * Syntax: **STORE FLAG <BOOL_SRC> <BOOL_DEST>**
+     * @see BoolDataSource
+     * @see BoolDataDest
+     */
     OP_STORE__FLAG  (".... ..10 ssss dddd"),
+    /**
+     * Identical to NOP. This is the first instruction run by the computer, and its purpose is to load the first
+     * program instruction from ROM so it can be executed.
+     *
+     * Syntax: N/A
+     */
     OP_BOOTSTRAP    ("1111 1111 1111 1111");
 
     val opcode = opcode.replace(" ", "").replace(".", "0")
@@ -106,16 +168,33 @@ enum class ALUOp(vararg val outputs: ALUType) {
 }
 
 enum class DataSource {
+    /**
+     * Reads the value from the A register.
+     *
+     * Syntax: **REG_A**
+     */
     REG_A {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_A)
         }
     },
+    /**
+     * Reads the value from the B register.
+     *
+     * Syntax: **REG_A**
+     */
     REG_B {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_B)
         }
     },
+    /**
+     * Selects an operation for the ALU and reads the result
+     *
+     * Syntax: **ALU <OP>**
+     *
+     * @see ALUOp
+     */
     ALU {
         override fun invoke(insn: Instruction) {
             insn.payload(ALUOp.values()
@@ -126,17 +205,34 @@ enum class DataSource {
             insn.step(LOAD_ALU)
         }
     },
+    /**
+     * Reads a value directly from the program ROM
+     *
+     * Syntax: **CONST <NUM>** (num supports the standard prefixes for binary, octal, hex, or decimal literals)
+     */
     CONST {
         override fun invoke(insn: Instruction) {
             insn.arg()
             insn.step(LOAD_PROG, PROG_NEXT)
         }
     },
+    /**
+     * Reads the value from the A flag register as a 0/1 value. The behavior of this source is undefined if the flags
+     * bus is used simultaneously.
+     *
+     * Syntax: **FLAG_REG_A**
+     */
     FLAG_REG_A {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_FLAG_A, B2I)
         }
     },
+    /**
+     * Reads the value from the B flag register as a 0/1 value. The behavior of this source is undefined if the flags
+     * bus is used simultaneously.
+     *
+     * Syntax: **FLAG_REG_B**
+     */
     FLAG_REG_B {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_FLAG_B, B2I)
@@ -151,11 +247,21 @@ enum class DataSource {
 }
 
 enum class DataDest {
+    /**
+     * Writes the value to the A register
+     *
+     * Syntax: **REG_A**
+     */
     REG_A {
         override fun invoke(insn: Instruction) {
             insn.amend(STORE_A)
         }
     },
+    /**
+     * Writes the value to the B register
+     *
+     * Syntax: **REG_B**
+     */
     REG_B {
         override fun invoke(insn: Instruction) {
             insn.amend(STORE_B)
@@ -170,16 +276,33 @@ enum class DataDest {
 }
 
 enum class BoolDataSource {
+    /**
+     * Reads the value in the A flag register
+     *
+     * Syntax: **REG_A**
+     */
     REG_A {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_FLAG_A)
         }
     },
+    /**
+     * Reads the value in the B flag register
+     *
+     * Syntax: **REG_B**
+     */
     REG_B {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_FLAG_B)
         }
     },
+    /**
+     * Selects an operation for the ALU and reads the result
+     *
+     * Syntax: **ALU <OP>**
+     *
+     * @see ALUOp
+     */
     ALU {
         override fun invoke(insn: Instruction) {
             insn.payload(ALUOp.values()
@@ -190,17 +313,37 @@ enum class BoolDataSource {
             insn.step(LOAD_ALU_FLAG)
         }
     },
+    /**
+     * Reads a value directly from the program ROM
+     *
+     * Syntax: **CONST <BOOL>** (BOOL should be either "true" or "false")
+     */
     CONST {
         override fun invoke(insn: Instruction) {
-            insn.arg()
+            insn.payload(mapOf(
+                "true" to ushortArrayOf(1u),
+                "false" to ushortArrayOf(0u)
+            ))
             insn.step(LOAD_PROG, I2B, PROG_NEXT)
         }
     },
+    /**
+     * Reads the value from the A register, interpreting non-zero as true. The behavior of this source is undefined
+     * if the int bus is used simultaneously.
+     *
+     * Syntax: **INT_REG_A**
+     */
     INT_REG_A {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_A, I2B)
         }
     },
+    /**
+     * Reads the value from the B register, interpreting non-zero as true. The behavior of this source is undefined
+     * if the int bus is used simultaneously.
+     *
+     * Syntax: **INT_REG_B**
+     */
     INT_REG_B {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_B, I2B)
@@ -215,11 +358,21 @@ enum class BoolDataSource {
 }
 
 enum class BoolDataDest {
+    /**
+     * Writes the value to the A flag register
+     *
+     * Syntax: **REG_A**
+     */
     REG_A {
         override fun invoke(insn: Instruction) {
             insn.amend(STORE_FLAG_A)
         }
     },
+    /**
+     * Writes the value to the B flag register
+     *
+     * Syntax: **REG_B**
+     */
     REG_B {
         override fun invoke(insn: Instruction) {
             insn.amend(STORE_FLAG_B)

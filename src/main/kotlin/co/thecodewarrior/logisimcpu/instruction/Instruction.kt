@@ -18,10 +18,20 @@ class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit
         return true
     }
 
+    private var skipEnd = false
+
     init {
-        words.add(mapOf(name to ushortArrayOf()))
+        words.addAll(name.split(" ").map { mapOf(it to ushortArrayOf()) })
         this.conf()
-        step(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
+        if(!skipEnd) step(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
+
+        words[0].let { map ->
+            val mutable = map.toMutableMap()
+            map.forEach { (key, value) ->
+                mutable[key] = ushortArrayOf(opcode, *value)
+            }
+            words[0] = mutable
+        }
     }
 
     fun step(vararg wires: ControlUnitWire) {
@@ -30,6 +40,14 @@ class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit
 
     fun amend(vararg wires: ControlUnitWire) {
         steps.last().wires.addAll(wires)
+    }
+
+    /**
+     * Set a custom ending instruction. If this is called the default end will not be added
+     */
+    fun end(vararg wires: ControlUnitWire) {
+        steps.add(InstructionStep(*wires))
+        skipEnd = true
     }
 
     fun word(word: String) {

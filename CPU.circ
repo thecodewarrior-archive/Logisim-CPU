@@ -14,7 +14,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
   </lib>
   <lib desc="#Gates" name="1">
     <tool name="NOT Gate">
-      <a name="facing" val="south"/>
       <a name="size" val="20"/>
     </tool>
     <tool name="AND Gate">
@@ -94,7 +93,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     </tool>
     <sep/>
     <tool lib="0" name="Pull Resistor">
-      <a name="facing" val="east"/>
+      <a name="facing" val="north"/>
     </tool>
     <tool lib="0" name="Tunnel">
       <a name="facing" val="east"/>
@@ -110,58 +109,77 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <a name="circuitnamedbox" val="false"/>
     <a name="circuitvhdlpath" val=""/>
     <wire from="(1400,2660)" to="(1570,2660)"/>
-    <wire from="(1350,980)" to="(1350,1060)"/>
+    <wire from="(1350,1220)" to="(1350,1300)"/>
     <wire from="(2040,2210)" to="(2080,2210)"/>
-    <wire from="(1210,840)" to="(1210,930)"/>
-    <wire from="(1330,1250)" to="(1330,1280)"/>
+    <wire from="(2000,480)" to="(2000,500)"/>
     <wire from="(1200,80)" to="(1200,110)"/>
     <wire from="(350,1950)" to="(350,1960)"/>
     <wire from="(240,1520)" to="(240,1530)"/>
     <wire from="(290,1970)" to="(290,1980)"/>
     <wire from="(1700,2180)" to="(1700,2190)"/>
+    <wire from="(1970,450)" to="(2020,450)"/>
     <wire from="(1550,2350)" to="(1550,2360)"/>
     <wire from="(1380,2700)" to="(1570,2700)"/>
     <wire from="(1490,2350)" to="(1490,2480)"/>
     <wire from="(2050,2330)" to="(2060,2330)"/>
     <wire from="(430,2190)" to="(430,2220)"/>
     <wire from="(240,2480)" to="(240,2510)"/>
-    <wire from="(1300,1620)" to="(1350,1620)"/>
+    <wire from="(250,2970)" to="(250,3000)"/>
     <wire from="(1520,2350)" to="(1520,2420)"/>
-    <wire from="(1330,1530)" to="(1340,1530)"/>
-    <wire from="(1330,1370)" to="(1340,1370)"/>
+    <wire from="(1260,1280)" to="(1340,1280)"/>
     <wire from="(1190,110)" to="(1200,110)"/>
-    <wire from="(1200,840)" to="(1210,840)"/>
-    <wire from="(1250,1530)" to="(1260,1530)"/>
+    <wire from="(1200,760)" to="(1210,760)"/>
+    <wire from="(1200,600)" to="(1210,600)"/>
+    <wire from="(1270,1390)" to="(1280,1390)"/>
     <wire from="(1120,280)" to="(1130,280)"/>
     <wire from="(1120,440)" to="(1130,440)"/>
     <wire from="(1120,600)" to="(1130,600)"/>
+    <wire from="(1120,760)" to="(1130,760)"/>
     <wire from="(220,2570)" to="(240,2570)"/>
+    <wire from="(2000,200)" to="(2010,200)"/>
+    <wire from="(2000,360)" to="(2010,360)"/>
     <wire from="(1440,2580)" to="(1570,2580)"/>
+    <wire from="(540,400)" to="(570,400)"/>
     <wire from="(460,1050)" to="(480,1050)"/>
+    <wire from="(1920,360)" to="(1930,360)"/>
+    <wire from="(1920,120)" to="(1930,120)"/>
     <wire from="(1290,2190)" to="(1700,2190)"/>
+    <wire from="(230,3070)" to="(240,3070)"/>
+    <wire from="(2030,220)" to="(2050,220)"/>
     <wire from="(220,160)" to="(300,160)"/>
     <wire from="(300,1940)" to="(310,1940)"/>
     <wire from="(190,70)" to="(200,70)"/>
     <wire from="(200,400)" to="(210,400)"/>
     <wire from="(200,640)" to="(210,640)"/>
-    <wire from="(1360,1390)" to="(1380,1390)"/>
+    <wire from="(1330,1190)" to="(1360,1190)"/>
+    <wire from="(1340,1200)" to="(1370,1200)"/>
+    <wire from="(1350,1220)" to="(1370,1220)"/>
     <wire from="(1220,660)" to="(1220,700)"/>
+    <wire from="(1220,820)" to="(1220,860)"/>
     <wire from="(1420,2620)" to="(1570,2620)"/>
-    <wire from="(1210,1000)" to="(1230,1000)"/>
-    <wire from="(520,400)" to="(530,400)"/>
+    <wire from="(1200,1150)" to="(1220,1150)"/>
     <wire from="(1460,2540)" to="(1570,2540)"/>
     <wire from="(1810,2260)" to="(1810,2280)"/>
     <wire from="(510,480)" to="(510,490)"/>
     <wire from="(1120,210)" to="(1220,210)"/>
     <wire from="(430,2240)" to="(430,2250)"/>
+    <wire from="(240,3090)" to="(240,3110)"/>
     <wire from="(340,2390)" to="(340,2410)"/>
-    <wire from="(460,1550)" to="(460,1570)"/>
-    <wire from="(1270,1080)" to="(1270,1090)"/>
-    <wire from="(1350,1400)" to="(1350,1410)"/>
-    <wire from="(1320,1250)" to="(1330,1250)"/>
+    <wire from="(2020,230)" to="(2020,240)"/>
+    <wire from="(1180,1070)" to="(1180,1080)"/>
+    <wire from="(2020,100)" to="(2020,170)"/>
+    <wire from="(570,380)" to="(570,400)"/>
     <wire from="(1230,600)" to="(1240,600)"/>
     <wire from="(1210,660)" to="(1220,660)"/>
+    <wire from="(450,3090)" to="(470,3090)"/>
+    <wire from="(1210,820)" to="(1220,820)"/>
+    <wire from="(1230,760)" to="(1240,760)"/>
+    <wire from="(1260,1430)" to="(1270,1430)"/>
     <wire from="(230,1510)" to="(250,1510)"/>
+    <wire from="(1990,80)" to="(2000,80)"/>
+    <wire from="(2010,100)" to="(2020,100)"/>
+    <wire from="(1880,130)" to="(1890,130)"/>
+    <wire from="(1880,530)" to="(1890,530)"/>
     <wire from="(440,1960)" to="(460,1960)"/>
     <wire from="(1500,2460)" to="(1570,2460)"/>
     <wire from="(200,1000)" to="(220,1000)"/>
@@ -173,108 +191,134 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(300,2230)" to="(310,2230)"/>
     <wire from="(280,1970)" to="(290,1970)"/>
     <wire from="(290,1980)" to="(300,1980)"/>
-    <wire from="(1340,1010)" to="(1370,1010)"/>
     <wire from="(1720,2190)" to="(2130,2190)"/>
-    <wire from="(1330,1510)" to="(1330,1530)"/>
+    <wire from="(460,3110)" to="(470,3110)"/>
+    <wire from="(1200,1200)" to="(1220,1200)"/>
     <wire from="(870,2250)" to="(920,2250)"/>
+    <wire from="(1270,2920)" to="(1570,2920)"/>
     <wire from="(1320,2350)" to="(1320,2820)"/>
+    <wire from="(1290,2350)" to="(1290,2880)"/>
+    <wire from="(1200,740)" to="(1200,760)"/>
+    <wire from="(1200,580)" to="(1200,600)"/>
     <wire from="(1380,2350)" to="(1380,2700)"/>
     <wire from="(1290,2190)" to="(1290,2220)"/>
+    <wire from="(2000,340)" to="(2000,360)"/>
     <wire from="(510,450)" to="(510,460)"/>
     <wire from="(1350,2350)" to="(1350,2760)"/>
+    <wire from="(240,3060)" to="(240,3070)"/>
     <wire from="(410,2270)" to="(410,2290)"/>
+    <wire from="(1970,310)" to="(2020,310)"/>
+    <wire from="(1250,2960)" to="(1570,2960)"/>
     <wire from="(1520,2420)" to="(1570,2420)"/>
-    <wire from="(1210,1060)" to="(1270,1060)"/>
-    <wire from="(1300,1480)" to="(1350,1480)"/>
+    <wire from="(1260,1280)" to="(1260,1290)"/>
+    <wire from="(1260,2350)" to="(1260,2940)"/>
+    <wire from="(490,360)" to="(530,360)"/>
     <wire from="(1220,120)" to="(1220,170)"/>
-    <wire from="(1310,1290)" to="(1320,1290)"/>
-    <wire from="(1330,1390)" to="(1340,1390)"/>
     <wire from="(870,2280)" to="(890,2280)"/>
     <wire from="(1280,2220)" to="(1290,2220)"/>
+    <wire from="(1290,1430)" to="(1300,1430)"/>
     <wire from="(540,990)" to="(560,990)"/>
-    <wire from="(1250,1390)" to="(1260,1390)"/>
-    <wire from="(1220,1200)" to="(1230,1200)"/>
     <wire from="(1120,300)" to="(1130,300)"/>
     <wire from="(1120,460)" to="(1130,460)"/>
     <wire from="(1120,620)" to="(1130,620)"/>
+    <wire from="(1120,780)" to="(1130,780)"/>
+    <wire from="(2000,220)" to="(2010,220)"/>
+    <wire from="(2000,60)" to="(2010,60)"/>
     <wire from="(290,2340)" to="(310,2340)"/>
     <wire from="(1310,2840)" to="(1570,2840)"/>
     <wire from="(1530,2350)" to="(1530,2400)"/>
     <wire from="(490,380)" to="(510,380)"/>
     <wire from="(500,470)" to="(520,470)"/>
+    <wire from="(1920,220)" to="(1930,220)"/>
+    <wire from="(1920,540)" to="(1930,540)"/>
     <wire from="(940,2260)" to="(970,2260)"/>
     <wire from="(1440,2350)" to="(1440,2580)"/>
     <wire from="(410,2230)" to="(420,2230)"/>
     <wire from="(430,2250)" to="(440,2250)"/>
-    <wire from="(450,1550)" to="(460,1550)"/>
-    <wire from="(230,1570)" to="(240,1570)"/>
+    <wire from="(2030,80)" to="(2050,80)"/>
     <wire from="(1410,2350)" to="(1410,2640)"/>
     <wire from="(200,500)" to="(210,500)"/>
     <wire from="(1220,2230)" to="(1220,2330)"/>
     <wire from="(1500,2350)" to="(1500,2460)"/>
+    <wire from="(1380,1190)" to="(1400,1190)"/>
     <wire from="(1540,2380)" to="(1570,2380)"/>
     <wire from="(1470,2350)" to="(1470,2520)"/>
+    <wire from="(1290,2880)" to="(1570,2880)"/>
     <wire from="(1190,440)" to="(1210,440)"/>
-    <wire from="(1190,600)" to="(1210,600)"/>
-    <wire from="(1210,1020)" to="(1230,1020)"/>
     <wire from="(1220,2230)" to="(1240,2230)"/>
     <wire from="(370,2190)" to="(430,2190)"/>
+    <wire from="(530,360)" to="(530,370)"/>
+    <wire from="(1340,1200)" to="(1340,1280)"/>
     <wire from="(1330,2800)" to="(1570,2800)"/>
+    <wire from="(1200,1060)" to="(1200,1150)"/>
+    <wire from="(1320,1470)" to="(1320,1500)"/>
     <wire from="(1200,230)" to="(1200,260)"/>
     <wire from="(290,1960)" to="(290,1970)"/>
     <wire from="(230,2540)" to="(230,2560)"/>
+    <wire from="(2020,90)" to="(2020,100)"/>
     <wire from="(250,220)" to="(420,220)"/>
     <wire from="(2060,2330)" to="(2070,2330)"/>
-    <wire from="(1340,1290)" to="(1350,1290)"/>
+    <wire from="(2020,520)" to="(2020,590)"/>
     <wire from="(1200,110)" to="(1210,110)"/>
     <wire from="(1190,260)" to="(1200,260)"/>
-    <wire from="(1260,1290)" to="(1270,1290)"/>
-    <wire from="(1210,1560)" to="(1220,1560)"/>
+    <wire from="(1190,1060)" to="(1200,1060)"/>
     <wire from="(1120,110)" to="(1130,110)"/>
     <wire from="(970,2260)" to="(1810,2260)"/>
+    <wire from="(230,3050)" to="(250,3050)"/>
+    <wire from="(1990,500)" to="(2000,500)"/>
+    <wire from="(2010,520)" to="(2020,520)"/>
+    <wire from="(1880,390)" to="(1890,390)"/>
+    <wire from="(1880,550)" to="(1890,550)"/>
     <wire from="(1370,2720)" to="(1570,2720)"/>
     <wire from="(350,1980)" to="(360,1980)"/>
     <wire from="(510,460)" to="(520,460)"/>
     <wire from="(500,450)" to="(510,450)"/>
     <wire from="(1350,2760)" to="(1570,2760)"/>
     <wire from="(400,1950)" to="(410,1950)"/>
-    <wire from="(240,1550)" to="(250,1550)"/>
     <wire from="(240,1470)" to="(250,1470)"/>
-    <wire from="(1390,1010)" to="(1410,1010)"/>
     <wire from="(1220,170)" to="(1220,210)"/>
     <wire from="(300,160)" to="(370,160)"/>
-    <wire from="(530,400)" to="(540,400)"/>
-    <wire from="(1330,1370)" to="(1330,1390)"/>
-    <wire from="(1290,1170)" to="(1290,1200)"/>
+    <wire from="(1200,1220)" to="(1220,1220)"/>
+    <wire from="(510,3100)" to="(520,3100)"/>
+    <wire from="(2000,200)" to="(2000,220)"/>
     <wire from="(1200,2210)" to="(1240,2210)"/>
     <wire from="(1120,360)" to="(1220,360)"/>
     <wire from="(420,140)" to="(420,160)"/>
+    <wire from="(1970,170)" to="(2020,170)"/>
     <wire from="(250,190)" to="(420,190)"/>
-    <wire from="(1210,1080)" to="(1270,1080)"/>
+    <wire from="(1260,1300)" to="(1260,1310)"/>
     <wire from="(1390,2680)" to="(1570,2680)"/>
     <wire from="(1430,2600)" to="(1570,2600)"/>
+    <wire from="(1310,1470)" to="(1320,1470)"/>
     <wire from="(1210,170)" to="(1220,170)"/>
     <wire from="(1200,80)" to="(1210,80)"/>
     <wire from="(1230,110)" to="(1240,110)"/>
     <wire from="(500,1050)" to="(520,1050)"/>
     <wire from="(1210,2330)" to="(1220,2330)"/>
-    <wire from="(1250,1570)" to="(1260,1570)"/>
+    <wire from="(1240,2350)" to="(1240,2980)"/>
     <wire from="(1120,480)" to="(1130,480)"/>
     <wire from="(1120,640)" to="(1130,640)"/>
-    <wire from="(1160,840)" to="(1170,840)"/>
+    <wire from="(1120,800)" to="(1130,800)"/>
+    <wire from="(2000,80)" to="(2010,80)"/>
+    <wire from="(2000,480)" to="(2010,480)"/>
     <wire from="(290,1960)" to="(310,1960)"/>
+    <wire from="(1300,2350)" to="(1300,2860)"/>
+    <wire from="(1920,80)" to="(1930,80)"/>
+    <wire from="(1920,400)" to="(1930,400)"/>
+    <wire from="(1270,2350)" to="(1270,2920)"/>
     <wire from="(240,1520)" to="(250,1520)"/>
+    <wire from="(2030,500)" to="(2050,500)"/>
     <wire from="(300,2380)" to="(310,2380)"/>
+    <wire from="(230,3110)" to="(240,3110)"/>
     <wire from="(200,440)" to="(210,440)"/>
     <wire from="(200,600)" to="(210,600)"/>
-    <wire from="(1270,1080)" to="(1360,1080)"/>
     <wire from="(1410,2640)" to="(1570,2640)"/>
+    <wire from="(1330,1230)" to="(1360,1230)"/>
     <wire from="(910,2270)" to="(920,2270)"/>
-    <wire from="(1210,960)" to="(1230,960)"/>
+    <wire from="(540,3100)" to="(550,3100)"/>
     <wire from="(1480,2350)" to="(1480,2500)"/>
     <wire from="(1510,2350)" to="(1510,2440)"/>
     <wire from="(1450,2350)" to="(1450,2560)"/>
-    <wire from="(1360,1000)" to="(1360,1080)"/>
     <wire from="(1540,2350)" to="(1540,2380)"/>
     <wire from="(1470,2520)" to="(1570,2520)"/>
     <wire from="(410,2260)" to="(410,2270)"/>
@@ -283,23 +327,28 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(400,1930)" to="(400,1950)"/>
     <wire from="(430,2280)" to="(430,2300)"/>
     <wire from="(1360,2350)" to="(1360,2740)"/>
-    <wire from="(1350,1550)" to="(1350,1620)"/>
+    <wire from="(2020,510)" to="(2020,520)"/>
+    <wire from="(1200,1280)" to="(1260,1280)"/>
     <wire from="(1330,2350)" to="(1330,2800)"/>
     <wire from="(1420,2350)" to="(1420,2620)"/>
+    <wire from="(2020,380)" to="(2020,450)"/>
     <wire from="(970,2260)" to="(970,2280)"/>
     <wire from="(1390,2350)" to="(1390,2680)"/>
-    <wire from="(530,380)" to="(530,400)"/>
     <wire from="(1450,2560)" to="(1570,2560)"/>
     <wire from="(1220,270)" to="(1220,320)"/>
-    <wire from="(1320,1530)" to="(1330,1530)"/>
-    <wire from="(1270,1060)" to="(1350,1060)"/>
-    <wire from="(1340,1550)" to="(1350,1550)"/>
-    <wire from="(1280,1170)" to="(1290,1170)"/>
+    <wire from="(1240,2980)" to="(1570,2980)"/>
+    <wire from="(1300,1510)" to="(1310,1510)"/>
+    <wire from="(1190,760)" to="(1200,760)"/>
+    <wire from="(1190,600)" to="(1200,600)"/>
     <wire from="(1210,1420)" to="(1220,1420)"/>
-    <wire from="(1210,1580)" to="(1220,1580)"/>
     <wire from="(1120,130)" to="(1130,130)"/>
     <wire from="(1490,2480)" to="(1570,2480)"/>
+    <wire from="(1990,360)" to="(2000,360)"/>
+    <wire from="(2010,380)" to="(2020,380)"/>
+    <wire from="(230,1550)" to="(250,1550)"/>
     <wire from="(250,100)" to="(400,100)"/>
+    <wire from="(1880,250)" to="(1890,250)"/>
+    <wire from="(1880,410)" to="(1890,410)"/>
     <wire from="(340,1990)" to="(350,1990)"/>
     <wire from="(510,480)" to="(520,480)"/>
     <wire from="(400,2290)" to="(410,2290)"/>
@@ -308,82 +357,99 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(230,2520)" to="(240,2520)"/>
     <wire from="(240,1490)" to="(250,1490)"/>
     <wire from="(300,2190)" to="(310,2190)"/>
-    <wire from="(1340,970)" to="(1370,970)"/>
-    <wire from="(1350,980)" to="(1380,980)"/>
-    <wire from="(1360,1000)" to="(1380,1000)"/>
-    <wire from="(1210,930)" to="(1230,930)"/>
+    <wire from="(240,3090)" to="(250,3090)"/>
+    <wire from="(240,3010)" to="(250,3010)"/>
+    <wire from="(1200,1240)" to="(1220,1240)"/>
     <wire from="(1530,2400)" to="(1570,2400)"/>
     <wire from="(2060,2230)" to="(2060,2330)"/>
+    <wire from="(1280,2900)" to="(1570,2900)"/>
+    <wire from="(2000,60)" to="(2000,80)"/>
     <wire from="(2060,2230)" to="(2080,2230)"/>
     <wire from="(1120,700)" to="(1220,700)"/>
     <wire from="(410,2230)" to="(410,2240)"/>
     <wire from="(430,2250)" to="(430,2260)"/>
     <wire from="(490,1030)" to="(490,1040)"/>
+    <wire from="(1120,860)" to="(1220,860)"/>
+    <wire from="(1970,590)" to="(2020,590)"/>
     <wire from="(1720,2180)" to="(1720,2190)"/>
     <wire from="(2120,2220)" to="(2130,2220)"/>
-    <wire from="(1190,850)" to="(1190,860)"/>
     <wire from="(250,1430)" to="(250,1460)"/>
     <wire from="(1510,2440)" to="(1570,2440)"/>
+    <wire from="(1260,2940)" to="(1570,2940)"/>
     <wire from="(1330,1510)" to="(1340,1510)"/>
     <wire from="(1200,260)" to="(1210,260)"/>
-    <wire from="(1250,1430)" to="(1260,1430)"/>
-    <wire from="(1270,1210)" to="(1280,1210)"/>
+    <wire from="(1200,740)" to="(1210,740)"/>
+    <wire from="(1200,580)" to="(1210,580)"/>
+    <wire from="(1250,1510)" to="(1260,1510)"/>
     <wire from="(1120,260)" to="(1130,260)"/>
+    <wire from="(1300,2860)" to="(1570,2860)"/>
+    <wire from="(2000,500)" to="(2010,500)"/>
+    <wire from="(2000,340)" to="(2010,340)"/>
     <wire from="(250,70)" to="(400,70)"/>
     <wire from="(370,2380)" to="(390,2380)"/>
     <wire from="(430,2600)" to="(450,2600)"/>
+    <wire from="(1920,260)" to="(1930,260)"/>
+    <wire from="(1920,500)" to="(1930,500)"/>
     <wire from="(390,1930)" to="(400,1930)"/>
     <wire from="(410,2270)" to="(420,2270)"/>
     <wire from="(230,1530)" to="(240,1530)"/>
+    <wire from="(2030,360)" to="(2050,360)"/>
     <wire from="(300,2000)" to="(310,2000)"/>
+    <wire from="(240,3060)" to="(250,3060)"/>
     <wire from="(1550,2360)" to="(1570,2360)"/>
     <wire from="(200,540)" to="(210,540)"/>
     <wire from="(220,290)" to="(360,290)"/>
-    <wire from="(1360,1530)" to="(1380,1530)"/>
+    <wire from="(1380,1230)" to="(1400,1230)"/>
     <wire from="(1220,320)" to="(1220,360)"/>
-    <wire from="(1210,980)" to="(1230,980)"/>
     <wire from="(2130,2190)" to="(2130,2220)"/>
+    <wire from="(1280,1390)" to="(1280,1420)"/>
     <wire from="(2200,320)" to="(2670,320)"/>
     <wire from="(370,160)" to="(420,160)"/>
     <wire from="(350,1980)" to="(350,1990)"/>
     <wire from="(510,380)" to="(510,390)"/>
     <wire from="(1340,2780)" to="(1570,2780)"/>
     <wire from="(1710,2140)" to="(1710,2150)"/>
-    <wire from="(240,1550)" to="(240,1570)"/>
-    <wire from="(1350,1410)" to="(1350,1480)"/>
     <wire from="(1320,2820)" to="(1570,2820)"/>
-    <wire from="(1270,1060)" to="(1270,1070)"/>
-    <wire from="(1350,1540)" to="(1350,1550)"/>
+    <wire from="(2020,370)" to="(2020,380)"/>
+    <wire from="(1200,1300)" to="(1260,1300)"/>
+    <wire from="(2020,240)" to="(2020,310)"/>
     <wire from="(1220,610)" to="(1220,660)"/>
     <wire from="(1400,2350)" to="(1400,2660)"/>
     <wire from="(560,990)" to="(560,1030)"/>
-    <wire from="(1320,1390)" to="(1330,1390)"/>
-    <wire from="(1340,1410)" to="(1350,1410)"/>
-    <wire from="(1300,1210)" to="(1310,1210)"/>
+    <wire from="(1220,770)" to="(1220,820)"/>
     <wire from="(1200,230)" to="(1210,230)"/>
     <wire from="(1230,260)" to="(1240,260)"/>
     <wire from="(1210,320)" to="(1220,320)"/>
     <wire from="(1220,2330)" to="(1230,2330)"/>
-    <wire from="(1210,1440)" to="(1220,1440)"/>
     <wire from="(1120,150)" to="(1130,150)"/>
     <wire from="(1370,2350)" to="(1370,2720)"/>
+    <wire from="(1150,1060)" to="(1160,1060)"/>
+    <wire from="(1990,220)" to="(2000,220)"/>
+    <wire from="(2010,240)" to="(2020,240)"/>
     <wire from="(1460,2350)" to="(1460,2540)"/>
     <wire from="(390,1970)" to="(410,1970)"/>
+    <wire from="(1880,110)" to="(1890,110)"/>
+    <wire from="(1880,270)" to="(1890,270)"/>
+    <wire from="(450,1550)" to="(470,1550)"/>
     <wire from="(1430,2350)" to="(1430,2600)"/>
     <wire from="(490,400)" to="(500,400)"/>
     <wire from="(500,490)" to="(510,490)"/>
-    <wire from="(460,1570)" to="(470,1570)"/>
     <wire from="(270,500)" to="(280,500)"/>
     <wire from="(230,2540)" to="(240,2540)"/>
+    <wire from="(1280,2350)" to="(1280,2900)"/>
     <wire from="(300,2210)" to="(310,2210)"/>
+    <wire from="(240,3030)" to="(250,3030)"/>
+    <wire from="(1260,1300)" to="(1350,1300)"/>
+    <wire from="(1250,2350)" to="(1250,2960)"/>
     <wire from="(220,260)" to="(360,260)"/>
     <wire from="(1360,2740)" to="(1570,2740)"/>
     <wire from="(910,2260)" to="(920,2260)"/>
-    <wire from="(1390,970)" to="(1410,970)"/>
     <wire from="(1340,2350)" to="(1340,2780)"/>
     <wire from="(490,1030)" to="(560,1030)"/>
     <wire from="(560,470)" to="(570,470)"/>
     <wire from="(1310,2350)" to="(1310,2840)"/>
+    <wire from="(570,400)" to="(580,400)"/>
+    <wire from="(1200,1180)" to="(1220,1180)"/>
     <comp lib="0" loc="(200,440)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="CLK"/>
@@ -508,10 +574,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(490,380)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="PWR"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(540,400)" name="Tunnel">
-      <a name="label" val="CLK"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
     <comp lib="0" loc="(570,470)" name="Tunnel">
@@ -715,62 +777,36 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="addrWidth" val="24"/>
       <a name="dataWidth" val="32"/>
       <a name="contents">addr/data: 24 32
-1 3c 254*0 3c 7935*0 400200 3c 254*0
-400400 3c 254*0 200018 404000 3c 253*0 400018
-3c 254*0 1401000 3c 254*0 1402000 3c 56062*0
-10200 3c 254*0 20200 3c 3838*0 10400 3c
-254*0 20400 3c 3838*0 200018 14000 3c 253*0
-200018 24000 3c 3837*0 10018 3c 254*0 20018
-3c 3838*0 1011000 3c 254*0 1021000 3c 3838*0
-1012000 3c 254*0 1022000 3c 16690686*0 3c
+1 78 254*0 78 3839*0 404 78 254*0
+804 78 254*0 10000030 40004 78 253*0 34
+78 254*0 80004004 78 254*0 80008004 78 2814*0
+480 78 254*0 880 78 254*0 10000030 40080
+78 253*0 b0 78 254*0 80004080 78 254*0
+80008080 78 2814*0 4600 78 254*0 4a00 78
+254*0 10000030 44200 78 253*0 4230 78 254*0
+80004200 78 254*0 8000c200 78 2814*0 4600 78
+254*0 4a00 78 254*0 10000030 44200 78 253*0
+4230 78 254*0 80004200 78 254*0 8000c200 78
+2814*0 20000400 78 254*0 20000800 78 254*0 10000030
+20040000 78 253*0 20000030 78 254*0 a0004000 78
+254*0 a0008000 78 43774*0 100400 78 254*0 200400
+78 3838*0 100800 78 254*0 200800 78 3838*0
+10000030 140000 78 253*0 10000030 240000 78 3837*0
+100030 78 254*0 200030 78 3838*0 80104000 78
+254*0 80204000 78 3838*0 80108000 78 254*0 80208000
+78 44798*0 1004000 78 254*0 2004000 78 3838*0
+1008000 78 254*0 2008000 78 3838*0 10000030 1080000
+78 253*0 10000030 2080000 78 3837*0 41000030 78
+254*0 42000030 78 3838*0 41000400 78 254*0 42000400
+78 3838*0 41000800 78 254*0 42000800 78 16625150*0
+78
 </a>
-      <a name="labelvisible" val="true"/>
     </comp>
     <comp lib="0" loc="(1230,2330)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="32"/>
       <a name="incoming" val="32"/>
     </comp>
-    <comp lib="0" loc="(1100,840)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1130,900)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="RESET"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1190,860)" name="Pull Resistor">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="4" loc="(1100,810)" name="Register">
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="6" loc="(1257,807)" name="Text">
-      <a name="text" val="ALU"/>
-    </comp>
-    <comp lib="2" loc="(1200,840)" name="BitSelector">
-      <a name="width" val="16"/>
-      <a name="group" val="6"/>
-    </comp>
-    <comp lib="0" loc="(1100,880)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="CLK"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1100,860)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="STORE_ALU_OP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1300,880)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="CLK"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(1300,880)" name="LED"/>
     <comp lib="0" loc="(230,2540)" name="Pull Resistor">
       <a name="facing" val="east"/>
       <a name="pull" val="1"/>
@@ -900,52 +936,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="text" val="DISPLAY"/>
       <a name="font" val="SansSerif bolditalic 16"/>
     </comp>
-    <comp loc="(1230,910)" name="ALU"/>
-    <comp lib="1" loc="(1390,970)" name="Controlled Buffer">
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="0" loc="(1410,970)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1410,1010)" name="Tunnel">
-      <a name="label" val="FLAG_BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(1390,1010)" name="Controlled Buffer">
-      <a name="control" val="left"/>
-    </comp>
-    <comp lib="0" loc="(1270,1070)" name="Pull Resistor">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(1210,1060)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="LOAD_ALU"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1210,980)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="REG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1210,960)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="REG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1210,1020)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="FLAG_REG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1210,1000)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="FLAG_REG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
     <comp lib="0" loc="(1570,2360)" name="Tunnel">
       <a name="label" val="HALT"/>
       <a name="labelfont" val="SansSerif bold 12"/>
@@ -953,34 +943,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(1570,2380)" name="Tunnel">
       <a name="label" val="FAULT"/>
       <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2460)" name="Tunnel">
-      <a name="label" val="STORE_INSN"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2440)" name="Tunnel">
-      <a name="label" val="LOAD_PROG"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2400)" name="Tunnel">
-      <a name="label" val="INSN_END"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2420)" name="Tunnel">
-      <a name="label" val="PROG_NEXT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2480)" name="Tunnel">
-      <a name="label" val="JMP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1210,1080)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="LOAD_ALU_FLAG"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1270,1090)" name="Pull Resistor">
-      <a name="facing" val="east"/>
     </comp>
     <comp lib="3" loc="(1280,2220)" name="Comparator">
       <a name="width" val="32"/>
@@ -992,121 +954,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
     <comp lib="5" loc="(1080,2200)" name="LED"/>
-    <comp lib="1" loc="(1340,1290)" name="Controlled Buffer">
-      <a name="width" val="16"/>
-      <a name="control" val="left"/>
-    </comp>
-    <comp lib="0" loc="(1330,1250)" name="Pull Resistor">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="0" loc="(1320,1250)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="B2I"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1280,1170)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="I2B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1260,1290)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="FLAG_BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1350,1290)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1310,1290)" name="Bit Extender">
-      <a name="in_width" val="1"/>
-    </comp>
-    <comp lib="0" loc="(1290,1170)" name="Pull Resistor">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="0" loc="(1210,1580)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="STORE_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(1360,1390)" name="Controlled Buffer"/>
-    <comp lib="0" loc="(1300,1480)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="LOAD_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1300,1620)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="LOAD_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1340,1410)" name="Pull Resistor">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(1380,1390)" name="Tunnel">
-      <a name="label" val="FLAG_BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1210,1420)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="CLK"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(1360,1530)" name="Controlled Buffer"/>
-    <comp lib="0" loc="(1340,1370)" name="Tunnel">
-      <a name="label" val="FLAG_REG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="4" loc="(1270,1520)" name="D Flip-Flop"/>
-    <comp lib="0" loc="(1380,1530)" name="Tunnel">
-      <a name="label" val="FLAG_BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(1250,1570)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(1340,1550)" name="Pull Resistor">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(1210,1560)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="CLK"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1250,1530)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="FLAG_BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="4" loc="(1270,1380)" name="D Flip-Flop"/>
-    <comp lib="0" loc="(1210,1440)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="STORE_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1290,1580)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="RESET"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1340,1510)" name="Tunnel">
-      <a name="label" val="FLAG_REG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(1250,1430)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(1250,1390)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="FLAG_BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1290,1440)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="RESET"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
     <comp lib="0" loc="(890,2280)" name="Splitter">
       <a name="incoming" val="16"/>
       <a name="bit1" val="0"/>
@@ -1200,27 +1047,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(1200,2210)" name="Pull Resistor">
       <a name="facing" val="east"/>
     </comp>
-    <comp lib="0" loc="(1220,1200)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="3" loc="(1270,1210)" name="Comparator">
-      <a name="width" val="16"/>
-      <a name="mode" val="unsigned"/>
-    </comp>
-    <comp lib="0" loc="(1230,1220)" name="Pull Resistor">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(1310,1210)" name="Tunnel">
-      <a name="label" val="FLAG_BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(1300,1210)" name="Controlled Inverter">
-      <a name="size" val="20"/>
-      <a name="control" val="left"/>
-    </comp>
     <comp lib="0" loc="(220,290)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="FLAG_BUS"/>
@@ -1229,81 +1055,9 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(360,290)" name="Probe">
       <a name="facing" val="west"/>
     </comp>
-    <comp lib="0" loc="(1570,2500)" name="Tunnel">
-      <a name="label" val="JMP_IF"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
     <comp lib="0" loc="(220,2570)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="CLK"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2700)" name="Tunnel">
-      <a name="label" val="STORE_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2780)" name="Tunnel">
-      <a name="label" val="STORE_ALU_OP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2800)" name="Tunnel">
-      <a name="label" val="STORE_DISPLAY"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2620)" name="Tunnel">
-      <a name="label" val="LOAD_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2820)" name="Tunnel">
-      <a name="label" val="I2B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2720)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2540)" name="Tunnel">
-      <a name="label" val="LOAD_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2660)" name="Tunnel">
-      <a name="label" val="LOAD_ALU_FLAG"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2680)" name="Tunnel">
-      <a name="label" val="STORE_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2640)" name="Tunnel">
-      <a name="label" val="LOAD_ALU"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2740)" name="Tunnel">
-      <a name="label" val="STORE_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2760)" name="Tunnel">
-      <a name="label" val="STORE_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2560)" name="Tunnel">
-      <a name="label" val="LOAD_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2840)" name="Tunnel">
-      <a name="label" val="B2I"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2580)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2600)" name="Tunnel">
-      <a name="label" val="LOAD_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1570,2520)" name="Tunnel">
-      <a name="label" val="JMP_IFN"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
     <comp lib="0" loc="(250,1430)" name="Tunnel">
@@ -1351,11 +1105,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="6" loc="(342,975)" name="Text">
       <a name="text" val="Program ROM"/>
     </comp>
-    <comp lib="0" loc="(470,1570)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="PROG_ADDR"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
     <comp lib="0" loc="(240,1490)" name="Pull Resistor">
       <a name="facing" val="east"/>
       <a name="pull" val="1"/>
@@ -1365,17 +1114,12 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="PROG_NEXT"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="0" loc="(230,1570)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="BUS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
     <comp lib="4" loc="(220,990)" name="ROM">
       <a name="addrWidth" val="16"/>
       <a name="dataWidth" val="16"/>
       <a name="contents">addr/data: 16 16
-130 6 131 7 22 2
+130 6 131 0 121 0 120 7
+220 16 33 4 51
 </a>
     </comp>
     <comp lib="6" loc="(354,1420)" name="Text">
@@ -1418,8 +1162,564 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="JMP"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="0" loc="(530,380)" name="Pull Resistor">
+    <comp lib="0" loc="(570,380)" name="Pull Resistor">
       <a name="facing" val="west"/>
+    </comp>
+    <comp lib="0" loc="(580,400)" name="Tunnel">
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(540,400)" name="Controlled Buffer">
+      <a name="control" val="left"/>
+    </comp>
+    <comp lib="1" loc="(530,390)" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(490,360)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="ASLEEP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(240,3030)" name="Pull Resistor">
+      <a name="facing" val="east"/>
+    </comp>
+    <comp lib="6" loc="(354,2960)" name="Text">
+      <a name="text" val="Program Counter"/>
+    </comp>
+    <comp lib="0" loc="(230,3110)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="4" loc="(250,2980)" name="Counter">
+      <a name="width" val="16"/>
+      <a name="max" val="0xffff"/>
+    </comp>
+    <comp lib="0" loc="(240,3010)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="SLEEP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(230,3070)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK_RAW"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(250,2970)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="RESET"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="3" loc="(510,3100)" name="Comparator">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(460,3110)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(540,3100)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(550,3100)" name="Tunnel">
+      <a name="label" val="ASLEEP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(230,3050)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="ASLEEP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2460)" name="Tunnel">
+      <a name="label" val="LOAD_PROG"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2520)" name="Tunnel">
+      <a name="label" val="JMP_IF"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2480)" name="Tunnel">
+      <a name="label" val="STORE_INSN"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2440)" name="Tunnel">
+      <a name="label" val="PROG_NEXT"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2560)" name="Tunnel">
+      <a name="label" val="LOAD_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2420)" name="Tunnel">
+      <a name="label" val="INSN_END"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2600)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2500)" name="Tunnel">
+      <a name="label" val="JMP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2580)" name="Tunnel">
+      <a name="label" val="LOAD_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2540)" name="Tunnel">
+      <a name="label" val="JMP_IFN"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2400)" name="Tunnel">
+      <a name="label" val="SLEEP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2640)" name="Tunnel">
+      <a name="label" val="LOAD_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2660)" name="Tunnel">
+      <a name="label" val="LOAD_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2620)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2780)" name="Tunnel">
+      <a name="label" val="STORE_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2800)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2720)" name="Tunnel">
+      <a name="label" val="LOAD_ALU"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2820)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2840)" name="Tunnel">
+      <a name="label" val="STORE_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2760)" name="Tunnel">
+      <a name="label" val="STORE_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2740)" name="Tunnel">
+      <a name="label" val="LOAD_ALU_FLAG"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2860)" name="Tunnel">
+      <a name="label" val="STORE_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2700)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2680)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2940)" name="Tunnel">
+      <a name="label" val="STORE_DISPLAY"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2980)" name="Tunnel">
+      <a name="label" val="B2I"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2920)" name="Tunnel">
+      <a name="label" val="STORE_ALU_OP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2960)" name="Tunnel">
+      <a name="label" val="I2B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2900)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1570,2880)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1200,1280)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="LOAD_ALU"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1200,1240)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="FLAG_REG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1200,1300)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="LOAD_ALU_FLAG"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1280,1390)" name="Pull Resistor">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="0" loc="(1220,1440)" name="Pull Resistor">
+      <a name="facing" val="east"/>
+    </comp>
+    <comp lib="0" loc="(1290,1100)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1090,1060)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp loc="(1220,1130)" name="ALU"/>
+    <comp lib="0" loc="(1200,1200)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="REG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="3" loc="(1260,1430)" name="Comparator">
+      <a name="width" val="16"/>
+      <a name="mode" val="unsigned"/>
+    </comp>
+    <comp lib="0" loc="(1340,1510)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1260,1290)" name="Pull Resistor">
+      <a name="facing" val="east"/>
+    </comp>
+    <comp lib="0" loc="(1300,1510)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+    </comp>
+    <comp lib="1" loc="(1380,1190)" name="Controlled Buffer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="1" loc="(1290,1430)" name="Controlled Inverter">
+      <a name="size" val="20"/>
+      <a name="control" val="left"/>
+    </comp>
+    <comp lib="0" loc="(1260,1310)" name="Pull Resistor">
+      <a name="facing" val="east"/>
+    </comp>
+    <comp lib="1" loc="(1330,1510)" name="Controlled Buffer">
+      <a name="width" val="16"/>
+      <a name="control" val="left"/>
+    </comp>
+    <comp lib="0" loc="(1320,1470)" name="Pull Resistor">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="2" loc="(1190,1060)" name="BitSelector">
+      <a name="width" val="16"/>
+      <a name="group" val="6"/>
+    </comp>
+    <comp lib="0" loc="(1200,1220)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="FLAG_REG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1250,1510)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1400,1190)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1210,1420)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1200,1180)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="REG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1090,1080)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="STORE_ALU_OP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(1380,1230)" name="Controlled Buffer">
+      <a name="control" val="left"/>
+    </comp>
+    <comp lib="0" loc="(1300,1430)" name="Tunnel">
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1120,1120)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="RESET"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1090,1100)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1400,1230)" name="Tunnel">
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1310,1470)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="B2I"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1180,1080)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1270,1390)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="I2B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="4" loc="(1090,1030)" name="Register">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="5" loc="(1290,1100)" name="LED"/>
+    <comp lib="6" loc="(1247,1027)" name="Text">
+      <a name="text" val="ALU"/>
+    </comp>
+    <comp lib="0" loc="(1880,110)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2050,220)" name="Tunnel">
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(2030,220)" name="Controlled Buffer"/>
+    <comp lib="0" loc="(1880,270)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="STORE_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2010,200)" name="Tunnel">
+      <a name="label" val="FLAG_REG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2010,480)" name="Tunnel">
+      <a name="label" val="INTERNAL_FLAG_REG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1880,410)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="STORE_INTERNAL_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2050,360)" name="Tunnel">
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(1920,540)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(1920,260)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="4" loc="(1940,350)" name="D Flip-Flop"/>
+    <comp lib="1" loc="(2030,360)" name="Controlled Buffer"/>
+    <comp lib="0" loc="(1880,390)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2010,240)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(2010,100)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="4" loc="(1940,70)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(1880,530)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(2030,500)" name="Controlled Buffer"/>
+    <comp lib="0" loc="(1920,500)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1920,220)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1970,170)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="LOAD_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1970,450)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="LOAD_INTERNAL_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(1920,120)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(1880,550)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="STORE_INTERNAL_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1920,80)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2010,520)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1960,270)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="RESET"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2050,80)" name="Tunnel">
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(1920,400)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(1880,130)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="STORE_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1970,590)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="LOAD_INTERNAL_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="4" loc="(1940,490)" name="D Flip-Flop"/>
+    <comp lib="4" loc="(1940,210)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(2050,500)" name="Tunnel">
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(2030,80)" name="Controlled Buffer"/>
+    <comp lib="0" loc="(1960,410)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="RESET"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1920,360)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="FLAG_BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2010,380)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1960,130)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="RESET"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1970,310)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="LOAD_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2010,340)" name="Tunnel">
+      <a name="label" val="INTERNAL_FLAG_REG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1960,550)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="RESET"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(2010,60)" name="Tunnel">
+      <a name="label" val="FLAG_REG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1880,250)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1120,800)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1240,760)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1120,780)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="STORE_INTERNAL_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="1" loc="(1230,760)" name="Controlled Buffer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(1120,860)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="LOAD_INTERNAL_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1210,820)" name="Pull Resistor"/>
+    <comp lib="4" loc="(1130,730)" name="Register">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(1120,760)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1160,820)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="RESET"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1210,740)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="INTERNAL_REG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(1210,580)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="INTERNAL_REG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(470,1550)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="PROG_ADDR"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(230,1550)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="BUS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
   </circuit>
   <circuit name="ALU">
@@ -1965,6 +2265,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     </comp>
     <comp lib="3" loc="(590,1020)" name="Shifter">
       <a name="width" val="16"/>
+      <a name="shift" val="lr"/>
     </comp>
     <comp lib="1" loc="(670,1230)" name="Controlled Buffer">
       <a name="width" val="16"/>
@@ -2004,7 +2305,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     </comp>
     <comp lib="3" loc="(590,940)" name="Shifter">
       <a name="width" val="16"/>
-      <a name="shift" val="lr"/>
     </comp>
     <comp lib="1" loc="(590,2170)" name="OR Gate">
       <a name="size" val="30"/>

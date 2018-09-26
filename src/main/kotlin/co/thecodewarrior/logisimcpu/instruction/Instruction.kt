@@ -19,11 +19,17 @@ class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit
     }
 
     private var skipEnd = false
+    var amendEnd = false
 
     init {
         words.addAll(name.split(" ").map { mapOf(it to ushortArrayOf()) })
         this.conf()
-        if(!skipEnd) step(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
+        if(!skipEnd) {
+            if(amendEnd)
+                amend(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
+            else
+                step(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
+        }
 
         words[0].let { map ->
             val mutable = map.toMutableMap()
@@ -62,11 +68,11 @@ class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit
         this.words.add(payload)
     }
 
-    fun toROM(): List<UInt> {
+    fun microcode(): List<ULong> {
         return steps.map { step ->
-            var v = 0u
+            var v = 0uL
             step.wires.forEach {
-                v = v or (1u shl it.ordinal)
+                v = v or (1uL shl it.ordinal)
             }
             v
         }

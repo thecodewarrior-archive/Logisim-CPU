@@ -17,6 +17,16 @@ object Instructions {
         insn(OP_NOP) {
         }
 
+        insn(OP_SWAP) {
+            step(SWAP_INT)
+            amendEnd = true
+        }
+
+        insn(OP_SWAP_FLAGS) {
+            step(SWAP_FLAGS)
+            amendEnd = true
+        }
+
         memSource(OP_SLEEP) { source  ->
             word(source.name)
             source(this)
@@ -32,7 +42,7 @@ object Instructions {
         memSource(OP_JMP_IF) { source  ->
             word(source.name)
             source(this)
-            amend(LOAD_FLAG_A, JMP_IFN)
+            amend(LOAD_FLAG_A, JMP_IF)
         }
 
         memSource(OP_JMP_IFN) { source  ->
@@ -194,15 +204,17 @@ object Instructions {
         return insn
     }
 
-    fun controlUnitROM(): HexFile {
-        val file = HexFile()
+    fun microcodeROM(): Pair<HexFile, HexFile> {
+        val page1 = HexFile()
+        val page2 = HexFile()
         instructions.forEach { insn ->
             val offset = insn.opcode.toUInt().toLong() shl 8
-            insn.toROM().forEachIndexed { i, step ->
-                file[offset + i] = step.toLong()
+            insn.microcode().forEachIndexed { i, step ->
+                page1[offset + i] = (step and 0xFFFFFFFFuL).toLong()
+                page2[offset + i] = (step shr 32 and 0xFFFFFFFFuL).toLong()
             }
         }
-        return file
+        return page1 to page2
     }
 
 }

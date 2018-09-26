@@ -24,6 +24,14 @@ enum class Opcode(opcode: String) {
      */
     OP_NOP          (".... .... .... ...1"),
     /**
+     * Swaps the values in the A and B registers.
+     */
+    OP_SWAP         (".... .... .... ..10"),
+    /**
+     * Swaps the values in the A and B flag registers.
+     */
+    OP_SWAP_FLAGS   (".... .... .... ..11"),
+    /**
      * Sleeps the computer (disables the clock) for the *S* clock cycles
      *
      * Syntax: **SLEEP <INT_SRC>**
@@ -127,6 +135,16 @@ enum class ControlUnitWire {
 
     I2B,
     B2I,
+
+    SWAP_INT,
+    SWAP_FLAGS,
+    SWAP_INTERNAL_INT,
+    SWAP_INTERNAL_FLAGS,
+    ALU_INPUT_SWAP,
+
+    STORE_RAM_ADDR,
+    STORE_RAM,
+    LOAD_RAM,
 }
 
 enum class ALUType {
@@ -206,6 +224,23 @@ enum class DataSource {
         }
     },
     /**
+     * Selects an operation for the ALU and reads the result when A and B are swapped
+     *
+     * Syntax: **ALU_SWAP <OP>**
+     *
+     * @see ALUOp
+     */
+    ALU_SWAP {
+        override fun invoke(insn: Instruction) {
+            insn.payload(ALUOp.values()
+                .filter { INT in it.outputs }
+                .associate { it.name to ushortArrayOf(it.ordinal.toUShort()) }
+            )
+            insn.step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
+            insn.step(ALU_INPUT_SWAP, LOAD_ALU)
+        }
+    },
+    /**
      * Reads a value directly from the program ROM
      *
      * Syntax: **CONST <NUM>** (num supports the standard prefixes for binary, octal, hex, or decimal literals)
@@ -237,7 +272,21 @@ enum class DataSource {
         override fun invoke(insn: Instruction) {
             insn.step(LOAD_FLAG_B, B2I)
         }
-    };
+    },
+    /**
+     * Reads an address from the program (assembler needs to be able to support non-constant addresses as well later)
+     * and returns the specified value from RAM.
+     *
+     * Syntax: **RAM <NUM>**
+     */
+    RAM {
+        override fun invoke(insn: Instruction) {
+            insn.arg()
+            insn.step(LOAD_PROG, STORE_RAM_ADDR, PROG_NEXT)
+            insn.step(LOAD_RAM)
+        }
+    },
+    ;
 
     /**
      * Adds one or more steps to the passed instruction such that the value in the source has been loaded
@@ -266,7 +315,22 @@ enum class DataDest {
         override fun invoke(insn: Instruction) {
             insn.amend(STORE_B)
         }
-    };
+    },
+    /**
+     * Reads an address from the program (assembler needs to be able to support non-constant addresses as well later)
+     * and writes to the specified address in RAM.
+     *
+     * Syntax: **RAM <NUM>**
+     */
+    RAM {
+        override fun invoke(insn: Instruction) {
+            insn.amend(STORE_INTERNAL_A)
+            insn.arg()
+            insn.step(LOAD_PROG, STORE_RAM_ADDR, PROG_NEXT)
+            insn.step(LOAD_INTERNAL_A, STORE_RAM)
+        }
+    },
+    ;
 
     /**
      * Amends the last step so the value on the bus is written to the destination. This method may or may not add
@@ -311,6 +375,23 @@ enum class BoolDataSource {
             )
             insn.step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
             insn.step(LOAD_ALU_FLAG)
+        }
+    },
+    /**
+     * Selects an operation for the ALU and reads the result when A and B are swapped
+     *
+     * Syntax: **ALU_SWAP <OP>**
+     *
+     * @see ALUOp
+     */
+    ALU_SWAP {
+        override fun invoke(insn: Instruction) {
+            insn.payload(ALUOp.values()
+                .filter { BOOL in it.outputs }
+                .associate { it.name to ushortArrayOf(it.ordinal.toUShort()) }
+            )
+            insn.step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
+            insn.step(ALU_INPUT_SWAP, LOAD_ALU_FLAG)
         }
     },
     /**

@@ -81,4 +81,40 @@ class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit
             v
         }
     }
+
+    //
+    fun microcodeText(): String {
+        val lines = steps.mapIndexed { index, step ->
+            "    $index: ${step.wires.joinToString(" ")}"
+        }.joinToString("\n")
+
+        val name = words.joinToString(" ") {
+            if(it.size > 1) {
+                "..."
+            } else {
+                it.keys.first()
+            }
+        } + " (0x${opcode.toString(16)})"
+
+        return "# $name\n$lines"
+
+//        var combos = words.first().entries.map { it.key to it.value.toList() }
+//        words.drop(1).forEach { map ->
+//            val mutable = mutableListOf<Pair<String, List<UShort>>>()
+//            val comboMaxWidth = combos.maxBy { it.first.length }?.first?.length ?: 0
+//            map.forEach { (word, payload) ->
+//                combos.forEach { combo ->
+//                    mutable.add((combo.first.padEnd(comboMaxWidth) + " " + word) to (combo.second + payload))
+//                }
+//            }
+//            combos = mutable
+//        }
+//        val nameWidth = combos.maxBy { it.first.length }!!.first.length
+//        val hexWidth = combos.map { it.second.map { it.toString(16).length }.max() ?: 0 }.max()!!
+//        var str = ""
+//        combos.forEach { combo ->
+//            str += combo.first.padEnd(nameWidth) + " > " + combo.second.map { it.toString(16).padStart(hexWidth) }.joinToString(" ") + "\n"
+//        }
+//        return str
+    }
 }

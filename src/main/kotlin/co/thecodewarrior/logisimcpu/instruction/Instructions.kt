@@ -246,7 +246,7 @@ object Instructions {
         return insn
     }
 
-    fun microcodeROM(): Pair<HexFile, HexFile> {
+    fun microcodeROM(): List<HexFile> {
         val page1 = HexFile()
         val page2 = HexFile()
         instructions.forEach { insn ->
@@ -256,7 +256,10 @@ object Instructions {
                 page2[offset + i] = (step shr 32 and 0xFFFFFFFFuL).toLong()
             }
         }
-        return page1 to page2
+        return listOf(page1, page2)
     }
 
+    fun microcodeText(): String {
+        return instructions.joinToString("\n\n") { it.microcodeText() }
+    }
 }

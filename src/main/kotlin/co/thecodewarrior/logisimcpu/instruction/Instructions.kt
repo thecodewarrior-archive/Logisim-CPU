@@ -19,12 +19,12 @@ object Instructions {
 
         insn(OP_SWAP) {
             step(SWAP_INT)
-            amendEnd = true
+            amendEnd()
         }
 
         insn(OP_SWAP_FLAGS) {
             step(SWAP_FLAGS)
-            amendEnd = true
+            amendEnd()
         }
 
         memSource(OP_SLEEP) { source  ->
@@ -34,30 +34,71 @@ object Instructions {
         }
 
         memSource(OP_JMP) { source  ->
+            amendEnd()
             word(source.name)
             source(this)
             amend(JMP)
         }
 
         memSource(OP_JMP_IF) { source  ->
+            amendEnd()
             word(source.name)
             source(this)
             amend(LOAD_FLAG_A, JMP_IF)
         }
 
         memSource(OP_JMP_IFN) { source  ->
+            amendEnd()
             word(source.name)
             source(this)
             amend(LOAD_FLAG_A, JMP_IFN)
         }
 
+        memSource(OP_JMP_IF__ALU_EQZ) { source  ->
+            amendEnd()
+            payload(ALUOp.values()
+                .filter { ALUType.INT in it.outputs }
+                .associate { it.name to ushortArrayOf(it.ordinal.toUShort()) }
+            )
+            step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
+            word(source.name)
+            source(this)
+            amend(ALU_EQZERO, JMP_IF)
+        }
+
+        memSource(OP_JMP_IF__ALU_NEQZ) { source  ->
+            amendEnd()
+            payload(ALUOp.values()
+                .filter { ALUType.INT in it.outputs }
+                .associate { it.name to ushortArrayOf(it.ordinal.toUShort()) }
+            )
+            step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
+            word(source.name)
+            source(this)
+            amend(ALU_EQZERO, JMP_IFN)
+        }
+
+        memSource(OP_JMP_IF__ALU) { source  ->
+            amendEnd()
+            payload(ALUOp.values()
+                .filter { ALUType.BOOL in it.outputs }
+                .associate { it.name to ushortArrayOf(it.ordinal.toUShort()) }
+            )
+            step(LOAD_PROG, STORE_ALU_OP, PROG_NEXT)
+            word(source.name)
+            source(this)
+            amend(LOAD_ALU_FLAG, JMP_IF)
+        }
+
         memSource(OP_DISPLAY) { source  ->
+            amendEnd()
             word(source.name)
             source(this)
             amend(STORE_DISPLAY)
         }
 
         boolMemSourceDest(OP_STORE__FLAG) { source, dest ->
+            amendEnd()
             word(source.name)
             source(this)
             word(dest.name)
@@ -65,6 +106,7 @@ object Instructions {
         }
 
         memSourceDest(OP_STORE) { source, dest ->
+            amendEnd()
             word(source.name)
             source(this)
             word(dest.name)

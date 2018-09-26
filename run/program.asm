@@ -1,20 +1,13 @@
-
 STORE CONST 1 REG_A
 check_next:
 STORE ALU INC REG_A
 STORE CONST 1 REG_B
 test:
     STORE ALU_SWAP INC REG_B
-    STORE REG_B RAM 0x1
-    STORE FLAG ALU CMP_EQ REG_A
-    JMP_IF >display
-    STORE ALU REM REG_B
-    STORE FLAG ALU_SWAP CMP_EQZ REG_A
-    STORE RAM 0x1 REG_B
-    JMP_IF >check_next
+    JMP_IF ALU CMP_EQ >display
+    JMP_IF ALU_EQZ REM >check_next
 JMP >test
 display:
 DISPLAY REG_A
-SLEEP CONST 32
 JMP >check_next
 HALT

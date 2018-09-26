@@ -12,39 +12,39 @@ import co.thecodewarrior.logisimcpu.instruction.ControlUnitWire.*
  */
 enum class Opcode(opcode: String) {
     /**
-     * Halts the computer (disables the clock)
+     * Halts the computer                   (disables the clock)
      *
      * Syntax: **HALT**
      */
-    OP_HALT         ("0000 0000 0000 0000"),
+    OP_HALT                           ("0000 0000 0000 0000"),
     /**
      * Jumps immediately to the next instruction
      *
      * Syntax: **NOP**
      */
-    OP_NOP          (".... .... .... ...1"),
+    OP_NOP                            (".... .... .... ...1"),
     /**
      * Swaps the values in the A and B registers.
      */
-    OP_SWAP         (".... .... .... ..10"),
+    OP_SWAP                           (".... .... .... ..10"),
     /**
      * Swaps the values in the A and B flag registers.
      */
-    OP_SWAP_FLAGS   (".... .... .... ..11"),
+    OP_SWAP_FLAGS                     (".... .... .... ..11"),
     /**
-     * Sleeps the computer (disables the clock) for the *S* clock cycles
+     * Sleeps the computer                   (disables the clock) for the *S* clock cycles
      *
      * Syntax: **SLEEP <INT_SRC>**
      * @see DataSource
      */
-    OP_SLEEP        (".... .... ...1 ssss"),
+    OP_SLEEP                          (".... .... ...1 ssss"),
     /**
      * Moves the program counter to the address specified in *S* and continues execution from there
      *
      * Syntax: **JMP <INT_SRC>**
      * @see DataSource
      */
-    OP_JMP          (".... .... ..10 ssss"),
+    OP_JMP                            (".... .... ..10 ssss"),
     /**
      * If the A flags register contains a 1 this instruction moves the program counter to the address specified
      * in *S* and continues execution from there, otherwise it is a noop.
@@ -52,7 +52,7 @@ enum class Opcode(opcode: String) {
      * Syntax: **JMP_IF <INT_SRC>**
      * @see DataSource
      */
-    OP_JMP_IF       (".... .... ..11 ssss"),
+    OP_JMP_IF                         (".... .... ..11 ssss"),
     /**
      * If the A flags register contains a 0 this instruction moves the program counter to the address specified
      * in *S* and continues execution from there, otherwise it is a noop.
@@ -60,14 +60,38 @@ enum class Opcode(opcode: String) {
      * Syntax: **JMP_IFN <INT_SRC>**
      * @see DataSource
      */
-    OP_JMP_IFN      (".... .... .100 ssss"),
+    OP_JMP_IFN                        (".... .... .100 ssss"),
+    /**
+     * If the current ALU output is zero this instruction moves the program counter to the address specified
+     * in *S* and continues execution from there, otherwise it is a noop.
+     *
+     * Syntax: **JMP_IF ALU_EQZ <INT_ALU_OP> <INT_SRC>**
+     * @see DataSource
+     */
+    OP_JMP_IF__ALU_EQZ                (".... .... .101 ssss"),
+    /**
+     * If the current ALU output is not zero this instruction moves the program counter to the address specified
+     * in *S* and continues execution from there, otherwise it is a noop.
+     *
+     * Syntax: **JMP_IF ALU_NEQZ <INT_ALU_OP> <INT_SRC>**
+     * @see DataSource
+     */
+    OP_JMP_IF__ALU_NEQZ               (".... .... .110 ssss"),
+    /**
+     * If the current ALU output flag on this instruction moves the program counter to the address specified
+     * in *S* and continues execution from there, otherwise it is a noop.
+     *
+     * Syntax: **JMP_IF ALU <BOOL_ALU_OP> <INT_SRC>**
+     * @see DataSource
+     */
+    OP_JMP_IF__ALU                    (".... .... .111 ssss"),
     /**
      * Loads the value from *S* into the display register
      *
      * Syntax: **DISPLAY <INT_SRC>**
      * @see DataSource
      */
-    OP_DISPLAY      (".... .... .101 ssss"),
+    OP_DISPLAY                        (".... .... 1000 ssss"),
     /**
      * Reads the value from *S* and writes it into *D*
      *
@@ -75,7 +99,7 @@ enum class Opcode(opcode: String) {
      * @see DataSource
      * @see DataDest
      */
-    OP_STORE        (".... ...1 ssss dddd"),
+    OP_STORE                          (".... ...1 ssss dddd"),
     /**
      * Reads the flag from *S* and writes it into *D*
      *
@@ -83,14 +107,14 @@ enum class Opcode(opcode: String) {
      * @see BoolDataSource
      * @see BoolDataDest
      */
-    OP_STORE__FLAG  (".... ..10 ssss dddd"),
+    OP_STORE__FLAG                    (".... ..10 ssss dddd"),
     /**
      * Identical to NOP. This is the first instruction run by the computer, and its purpose is to load the first
      * program instruction from ROM so it can be executed.
      *
      * Syntax: N/A
      */
-    OP_BOOTSTRAP    ("1111 1111 1111 1111");
+    OP_BOOTSTRAP                      ("1111 1111 1111 1111");
 
     val opcode = opcode.replace(" ", "").replace(".", "0")
     val opname: String
@@ -145,6 +169,8 @@ enum class ControlUnitWire {
     STORE_RAM_ADDR,
     STORE_RAM,
     LOAD_RAM,
+    NEXT_INSN,
+    ALU_EQZERO,
 }
 
 enum class ALUType {
@@ -247,6 +273,7 @@ enum class DataSource {
      */
     CONST {
         override fun invoke(insn: Instruction) {
+            insn.amendEnd = false
             insn.arg()
             insn.step(LOAD_PROG, PROG_NEXT)
         }
@@ -401,6 +428,7 @@ enum class BoolDataSource {
      */
     CONST {
         override fun invoke(insn: Instruction) {
+            insn.amendEnd = false
             insn.payload(mapOf(
                 "true" to ushortArrayOf(1u),
                 "false" to ushortArrayOf(0u)

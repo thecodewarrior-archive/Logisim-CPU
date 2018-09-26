@@ -26,9 +26,9 @@ class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit
         this.conf()
         if(!skipEnd) {
             if(amendEnd)
-                amend(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
+                amend(NEXT_INSN)
             else
-                step(LOAD_PROG, STORE_INSN, PROG_NEXT, INSN_END)
+                step(NEXT_INSN)
         }
 
         words[0].let { map ->
@@ -54,6 +54,10 @@ class Instruction(name: String, val opcode: UShort, conf: Instruction.() -> Unit
     fun end(vararg wires: ControlUnitWire) {
         steps.add(InstructionStep(*wires))
         skipEnd = true
+    }
+
+    fun amendEnd() {
+        this.amendEnd = true
     }
 
     fun word(word: String) {

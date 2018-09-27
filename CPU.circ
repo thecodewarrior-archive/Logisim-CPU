@@ -104,129 +104,82 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="circuitnamedbox" val="false"/>
     <a name="circuitvhdlpath" val=""/>
-    <wire from="(3150,2370)" to="(3230,2370)"/>
     <wire from="(1710,1320)" to="(1750,1320)"/>
-    <wire from="(2610,2320)" to="(2610,3450)"/>
     <wire from="(1350,1220)" to="(1350,1300)"/>
-    <wire from="(2550,2320)" to="(2550,3570)"/>
-    <wire from="(2640,2320)" to="(2640,3390)"/>
     <wire from="(1200,80)" to="(1200,110)"/>
     <wire from="(350,1950)" to="(350,1960)"/>
     <wire from="(240,1520)" to="(240,1530)"/>
     <wire from="(970,3210)" to="(970,3240)"/>
-    <wire from="(2580,2320)" to="(2580,3510)"/>
-    <wire from="(2730,2320)" to="(2730,3210)"/>
     <wire from="(660,110)" to="(700,110)"/>
-    <wire from="(2760,2320)" to="(2760,3150)"/>
-    <wire from="(2650,3370)" to="(3230,3370)"/>
     <wire from="(430,2190)" to="(430,2220)"/>
     <wire from="(240,2480)" to="(240,2510)"/>
     <wire from="(250,2970)" to="(250,3000)"/>
-    <wire from="(2900,2870)" to="(3230,2870)"/>
-    <wire from="(2670,2320)" to="(2670,3330)"/>
-    <wire from="(2700,2320)" to="(2700,3270)"/>
     <wire from="(190,2210)" to="(220,2210)"/>
     <wire from="(1340,1300)" to="(1350,1300)"/>
-    <wire from="(2860,2950)" to="(3230,2950)"/>
-    <wire from="(2340,2320)" to="(2340,3990)"/>
     <wire from="(1200,360)" to="(1210,360)"/>
-    <wire from="(2310,2320)" to="(2310,4050)"/>
     <wire from="(1120,600)" to="(1130,600)"/>
     <wire from="(1120,760)" to="(1130,760)"/>
     <wire from="(220,2570)" to="(240,2570)"/>
     <wire from="(1040,270)" to="(1040,370)"/>
     <wire from="(490,1080)" to="(510,1080)"/>
-    <wire from="(2400,2320)" to="(2400,3870)"/>
     <wire from="(1570,2330)" to="(1580,2330)"/>
-    <wire from="(2370,2320)" to="(2370,3930)"/>
-    <wire from="(2460,2320)" to="(2460,3750)"/>
     <wire from="(230,3070)" to="(240,3070)"/>
     <wire from="(520,1030)" to="(590,1030)"/>
     <wire from="(170,2530)" to="(180,2530)"/>
-    <wire from="(2430,2320)" to="(2430,3810)"/>
     <wire from="(1340,1130)" to="(1360,1130)"/>
-    <wire from="(3110,2450)" to="(3230,2450)"/>
     <wire from="(960,1240)" to="(970,1240)"/>
-    <wire from="(2520,2320)" to="(2520,3630)"/>
     <wire from="(1220,420)" to="(1220,460)"/>
     <wire from="(950,3300)" to="(970,3300)"/>
-    <wire from="(2490,2320)" to="(2490,3690)"/>
-    <wire from="(2360,3950)" to="(3230,3950)"/>
-    <wire from="(2610,3450)" to="(3230,3450)"/>
     <wire from="(1200,1150)" to="(1220,1150)"/>
     <wire from="(1920,260)" to="(1950,260)"/>
-    <wire from="(3150,2320)" to="(3150,2370)"/>
-    <wire from="(3090,2320)" to="(3090,2490)"/>
     <wire from="(2350,70)" to="(3650,70)"/>
     <wire from="(2350,1030)" to="(3650,1030)"/>
-    <wire from="(3060,2320)" to="(3060,2550)"/>
-    <wire from="(3030,2320)" to="(3030,2610)"/>
-    <wire from="(2440,3790)" to="(3230,3790)"/>
-    <wire from="(2690,3290)" to="(3230,3290)"/>
     <wire from="(310,760)" to="(310,770)"/>
     <wire from="(240,3090)" to="(240,3110)"/>
     <wire from="(340,2390)" to="(340,2410)"/>
     <wire from="(2020,100)" to="(2020,170)"/>
     <wire from="(570,380)" to="(570,400)"/>
     <wire from="(1200,110)" to="(1200,250)"/>
-    <wire from="(3120,2320)" to="(3120,2430)"/>
     <wire from="(1270,1680)" to="(1280,1680)"/>
-    <wire from="(2880,2320)" to="(2880,2910)"/>
     <wire from="(1210,660)" to="(1220,660)"/>
     <wire from="(450,3090)" to="(470,3090)"/>
     <wire from="(1210,820)" to="(1220,820)"/>
     <wire from="(1200,330)" to="(1210,330)"/>
     <wire from="(1230,360)" to="(1240,360)"/>
-    <wire from="(2400,3870)" to="(3230,3870)"/>
     <wire from="(210,2520)" to="(240,2520)"/>
     <wire from="(960,3290)" to="(970,3290)"/>
-    <wire from="(2850,2320)" to="(2850,2970)"/>
     <wire from="(1990,640)" to="(2000,640)"/>
     <wire from="(2010,660)" to="(2020,660)"/>
     <wire from="(1060,1220)" to="(1060,1340)"/>
     <wire from="(1080,1240)" to="(1080,1360)"/>
-    <wire from="(1920,2330)" to="(1930,2330)"/>
-    <wire from="(2790,2320)" to="(2790,3090)"/>
     <wire from="(1880,690)" to="(1890,690)"/>
     <wire from="(440,1960)" to="(460,1960)"/>
     <wire from="(490,1050)" to="(510,1050)"/>
     <wire from="(950,1180)" to="(980,1180)"/>
-    <wire from="(2820,2320)" to="(2820,3030)"/>
     <wire from="(1190,460)" to="(1220,460)"/>
-    <wire from="(2940,2790)" to="(3230,2790)"/>
-    <wire from="(3000,2320)" to="(3000,2670)"/>
     <wire from="(230,2560)" to="(240,2560)"/>
     <wire from="(280,1970)" to="(290,1970)"/>
     <wire from="(290,1980)" to="(300,1980)"/>
     <wire from="(320,410)" to="(330,410)"/>
-    <wire from="(2970,2320)" to="(2970,2730)"/>
     <wire from="(3650,70)" to="(3650,1030)"/>
     <wire from="(1710,1300)" to="(1740,1300)"/>
-    <wire from="(2940,2320)" to="(2940,2790)"/>
     <wire from="(460,3110)" to="(470,3110)"/>
-    <wire from="(2910,2320)" to="(2910,2850)"/>
-    <wire from="(3020,2630)" to="(3230,2630)"/>
     <wire from="(1300,1560)" to="(1300,1590)"/>
     <wire from="(240,3060)" to="(240,3070)"/>
     <wire from="(1970,870)" to="(2020,870)"/>
     <wire from="(2000,80)" to="(2000,220)"/>
-    <wire from="(2520,3630)" to="(3230,3630)"/>
     <wire from="(410,2270)" to="(410,2290)"/>
     <wire from="(1890,230)" to="(1890,240)"/>
     <wire from="(220,2170)" to="(260,2170)"/>
     <wire from="(1340,1280)" to="(1340,1290)"/>
-    <wire from="(490,360)" to="(530,360)"/>
     <wire from="(1830,240)" to="(1890,240)"/>
-    <wire from="(2770,3130)" to="(3230,3130)"/>
     <wire from="(1430,2130)" to="(1440,2130)"/>
     <wire from="(1540,960)" to="(1550,960)"/>
     <wire from="(1020,270)" to="(1040,270)"/>
     <wire from="(1010,1220)" to="(1030,1220)"/>
     <wire from="(1010,1380)" to="(1030,1380)"/>
-    <wire from="(2730,3210)" to="(3230,3210)"/>
     <wire from="(2000,780)" to="(2010,780)"/>
     <wire from="(2000,620)" to="(2010,620)"/>
-    <wire from="(2980,2710)" to="(3230,2710)"/>
     <wire from="(490,380)" to="(510,380)"/>
     <wire from="(940,2260)" to="(970,2260)"/>
     <wire from="(970,1170)" to="(1000,1170)"/>
@@ -238,21 +191,16 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1170,250)" to="(1200,250)"/>
     <wire from="(2030,640)" to="(2050,640)"/>
     <wire from="(190,2170)" to="(200,2170)"/>
-    <wire from="(2480,3710)" to="(3230,3710)"/>
     <wire from="(1010,270)" to="(1020,270)"/>
     <wire from="(980,1200)" to="(990,1200)"/>
     <wire from="(980,1360)" to="(990,1360)"/>
     <wire from="(1840,350)" to="(1930,350)"/>
     <wire from="(1420,2110)" to="(1440,2110)"/>
     <wire from="(1110,360)" to="(1130,360)"/>
-    <wire from="(2230,4210)" to="(3230,4210)"/>
     <wire from="(1200,3330)" to="(1220,3330)"/>
     <wire from="(960,3270)" to="(960,3290)"/>
     <wire from="(1000,1230)" to="(1000,1240)"/>
     <wire from="(1000,1390)" to="(1000,1400)"/>
-    <wire from="(2560,3550)" to="(3230,3550)"/>
-    <wire from="(2310,4050)" to="(3230,4050)"/>
-    <wire from="(3100,2470)" to="(3230,2470)"/>
     <wire from="(290,1960)" to="(290,1970)"/>
     <wire from="(230,2540)" to="(230,2560)"/>
     <wire from="(1740,1330)" to="(1740,1340)"/>
@@ -262,33 +210,25 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1160,270)" to="(1160,280)"/>
     <wire from="(1200,110)" to="(1210,110)"/>
     <wire from="(1190,1060)" to="(1200,1060)"/>
-    <wire from="(2270,4130)" to="(3230,4130)"/>
     <wire from="(1080,1240)" to="(1220,1240)"/>
     <wire from="(970,1300)" to="(1000,1300)"/>
     <wire from="(350,1980)" to="(360,1980)"/>
-    <wire from="(2810,3050)" to="(3230,3050)"/>
     <wire from="(320,510)" to="(330,510)"/>
     <wire from="(1380,1230)" to="(1410,1230)"/>
     <wire from="(1010,1200)" to="(1020,1200)"/>
     <wire from="(1010,1360)" to="(1020,1360)"/>
-    <wire from="(3060,2550)" to="(3230,2550)"/>
     <wire from="(1220,170)" to="(1220,210)"/>
     <wire from="(1110,250)" to="(1110,360)"/>
     <wire from="(510,3100)" to="(520,3100)"/>
     <wire from="(1970,220)" to="(2000,220)"/>
-    <wire from="(2890,2890)" to="(3230,2890)"/>
     <wire from="(1020,260)" to="(1020,270)"/>
     <wire from="(2000,760)" to="(2000,780)"/>
     <wire from="(1740,1300)" to="(1740,1310)"/>
     <wire from="(420,140)" to="(420,160)"/>
     <wire from="(250,190)" to="(420,190)"/>
-    <wire from="(3140,2390)" to="(3230,2390)"/>
     <wire from="(1960,240)" to="(1960,250)"/>
     <wire from="(2020,330)" to="(2020,400)"/>
-    <wire from="(2640,3390)" to="(3230,3390)"/>
-    <wire from="(2390,3890)" to="(3230,3890)"/>
     <wire from="(1280,1600)" to="(1290,1600)"/>
-    <wire from="(2600,3470)" to="(3230,3470)"/>
     <wire from="(1200,80)" to="(1210,80)"/>
     <wire from="(1230,110)" to="(1240,110)"/>
     <wire from="(1210,2330)" to="(1220,2330)"/>
@@ -297,7 +237,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(970,1170)" to="(970,1210)"/>
     <wire from="(970,1330)" to="(970,1370)"/>
     <wire from="(2000,80)" to="(2010,80)"/>
-    <wire from="(2850,2970)" to="(3230,2970)"/>
     <wire from="(1920,640)" to="(1930,640)"/>
     <wire from="(1800,360)" to="(1810,360)"/>
     <wire from="(1190,210)" to="(1220,210)"/>
@@ -306,90 +245,51 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(230,3110)" to="(240,3110)"/>
     <wire from="(1610,960)" to="(1630,960)"/>
     <wire from="(250,410)" to="(260,410)"/>
-    <wire from="(2350,3970)" to="(3230,3970)"/>
-    <wire from="(1310,2260)" to="(1660,2260)"/>
     <wire from="(1000,360)" to="(1010,360)"/>
+    <wire from="(560,400)" to="(570,400)"/>
     <wire from="(540,3100)" to="(550,3100)"/>
-    <wire from="(2420,2320)" to="(2420,3830)"/>
-    <wire from="(2430,3810)" to="(3230,3810)"/>
-    <wire from="(2390,2320)" to="(2390,3890)"/>
     <wire from="(1110,250)" to="(1150,250)"/>
-    <wire from="(2480,2320)" to="(2480,3710)"/>
-    <wire from="(2450,2320)" to="(2450,3770)"/>
     <wire from="(300,150)" to="(300,160)"/>
-    <wire from="(2540,2320)" to="(2540,3590)"/>
-    <wire from="(2970,2730)" to="(3230,2730)"/>
-    <wire from="(2570,2320)" to="(2570,3530)"/>
-    <wire from="(2510,2320)" to="(2510,3650)"/>
     <wire from="(940,1360)" to="(980,1360)"/>
-    <wire from="(2600,2320)" to="(2600,3470)"/>
     <wire from="(970,2260)" to="(970,2280)"/>
     <wire from="(1310,1600)" to="(1320,1600)"/>
     <wire from="(1190,360)" to="(1200,360)"/>
     <wire from="(460,1050)" to="(490,1050)"/>
     <wire from="(500,460)" to="(520,460)"/>
     <wire from="(970,1240)" to="(1000,1240)"/>
-    <wire from="(2240,2320)" to="(2240,4190)"/>
     <wire from="(1560,2330)" to="(1570,2330)"/>
     <wire from="(190,2230)" to="(210,2230)"/>
-    <wire from="(2680,3310)" to="(3230,3310)"/>
     <wire from="(400,2290)" to="(410,2290)"/>
-    <wire from="(2270,2320)" to="(2270,4130)"/>
     <wire from="(230,2600)" to="(240,2600)"/>
     <wire from="(240,1490)" to="(250,1490)"/>
     <wire from="(300,750)" to="(310,750)"/>
     <wire from="(240,3090)" to="(250,3090)"/>
     <wire from="(320,610)" to="(330,610)"/>
     <wire from="(210,500)" to="(220,500)"/>
-    <wire from="(2300,2320)" to="(2300,4070)"/>
     <wire from="(1710,1340)" to="(1740,1340)"/>
     <wire from="(1040,370)" to="(1050,370)"/>
-    <wire from="(2930,2810)" to="(3230,2810)"/>
-    <wire from="(2360,2320)" to="(2360,3950)"/>
-    <wire from="(2330,2320)" to="(2330,4010)"/>
-    <wire from="(2760,3150)" to="(3230,3150)"/>
     <wire from="(1890,270)" to="(1890,300)"/>
-    <wire from="(2960,2320)" to="(2960,2750)"/>
     <wire from="(1840,310)" to="(1880,310)"/>
     <wire from="(1000,1140)" to="(1000,1150)"/>
     <wire from="(1000,1300)" to="(1000,1310)"/>
-    <wire from="(2930,2320)" to="(2930,2810)"/>
     <wire from="(1420,1080)" to="(1420,1110)"/>
     <wire from="(2000,60)" to="(2000,80)"/>
-    <wire from="(3010,2650)" to="(3230,2650)"/>
     <wire from="(1340,1640)" to="(1340,1670)"/>
-    <wire from="(2900,2320)" to="(2900,2870)"/>
-    <wire from="(2870,2320)" to="(2870,2930)"/>
     <wire from="(970,1270)" to="(970,1300)"/>
-    <wire from="(3080,2320)" to="(3080,2510)"/>
-    <wire from="(2260,4150)" to="(3230,4150)"/>
-    <wire from="(3050,2320)" to="(3050,2570)"/>
-    <wire from="(3020,2320)" to="(3020,2630)"/>
-    <wire from="(2510,3650)" to="(3230,3650)"/>
     <wire from="(1040,120)" to="(1040,270)"/>
-    <wire from="(2990,2320)" to="(2990,2690)"/>
+    <wire from="(550,370)" to="(550,390)"/>
     <wire from="(1540,1000)" to="(1550,1000)"/>
-    <wire from="(2690,2320)" to="(2690,3290)"/>
-    <wire from="(2720,2320)" to="(2720,3230)"/>
-    <wire from="(1910,2330)" to="(1920,2330)"/>
-    <wire from="(2720,3230)" to="(3230,3230)"/>
     <wire from="(370,2380)" to="(390,2380)"/>
-    <wire from="(2630,2320)" to="(2630,3410)"/>
-    <wire from="(2220,4230)" to="(3230,4230)"/>
     <wire from="(430,2600)" to="(450,2600)"/>
     <wire from="(1790,130)" to="(1800,130)"/>
     <wire from="(970,1210)" to="(1000,1210)"/>
     <wire from="(970,1370)" to="(1000,1370)"/>
-    <wire from="(2660,2320)" to="(2660,3350)"/>
-    <wire from="(2470,3730)" to="(3230,3730)"/>
     <wire from="(390,1930)" to="(400,1930)"/>
     <wire from="(410,2270)" to="(420,2270)"/>
     <wire from="(510,450)" to="(520,450)"/>
     <wire from="(500,440)" to="(510,440)"/>
-    <wire from="(2810,2320)" to="(2810,3050)"/>
     <wire from="(210,2230)" to="(220,2230)"/>
     <wire from="(250,510)" to="(260,510)"/>
-    <wire from="(2840,2320)" to="(2840,2990)"/>
     <wire from="(300,2000)" to="(310,2000)"/>
     <wire from="(240,3060)" to="(250,3060)"/>
     <wire from="(1170,290)" to="(1200,290)"/>
@@ -398,13 +298,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(220,290)" to="(360,290)"/>
     <wire from="(1020,1160)" to="(1020,1200)"/>
     <wire from="(1020,1320)" to="(1020,1360)"/>
-    <wire from="(2750,2320)" to="(2750,3170)"/>
     <wire from="(1420,2150)" to="(1440,2150)"/>
     <wire from="(1110,400)" to="(1130,400)"/>
-    <wire from="(2780,2320)" to="(2780,3110)"/>
     <wire from="(1000,390)" to="(1050,390)"/>
     <wire from="(1490,2080)" to="(1490,2100)"/>
-    <wire from="(3090,2490)" to="(3230,2490)"/>
     <wire from="(260,2210)" to="(310,2210)"/>
     <wire from="(1840,400)" to="(2020,400)"/>
     <wire from="(1280,1300)" to="(1340,1300)"/>
@@ -412,9 +309,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1030,1180)" to="(1220,1180)"/>
     <wire from="(1020,1360)" to="(1080,1360)"/>
     <wire from="(1890,240)" to="(1890,250)"/>
-    <wire from="(2840,2990)" to="(3230,2990)"/>
     <wire from="(1220,370)" to="(1220,420)"/>
-    <wire from="(3050,2570)" to="(3230,2570)"/>
     <wire from="(960,3270)" to="(970,3270)"/>
     <wire from="(1150,1060)" to="(1160,1060)"/>
     <wire from="(1990,780)" to="(2000,780)"/>
@@ -424,45 +319,31 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1880,670)" to="(1890,670)"/>
     <wire from="(1880,830)" to="(1890,830)"/>
     <wire from="(1740,1330)" to="(1750,1330)"/>
-    <wire from="(2550,3570)" to="(3230,3570)"/>
-    <wire from="(490,400)" to="(500,400)"/>
     <wire from="(230,2540)" to="(240,2540)"/>
     <wire from="(210,2200)" to="(220,2200)"/>
-    <wire from="(3110,2320)" to="(3110,2450)"/>
     <wire from="(240,3030)" to="(250,3030)"/>
-    <wire from="(3140,2320)" to="(3140,2390)"/>
     <wire from="(220,260)" to="(360,260)"/>
     <wire from="(910,2260)" to="(920,2260)"/>
     <wire from="(1000,110)" to="(1010,110)"/>
-    <wire from="(3170,2320)" to="(3170,2330)"/>
-    <wire from="(2300,4070)" to="(3230,4070)"/>
     <wire from="(560,470)" to="(570,470)"/>
-    <wire from="(2800,3070)" to="(3230,3070)"/>
     <wire from="(1970,260)" to="(2000,260)"/>
     <wire from="(1030,360)" to="(1110,360)"/>
-    <wire from="(2630,3410)" to="(3230,3410)"/>
     <wire from="(970,1210)" to="(970,1220)"/>
-    <wire from="(2380,3910)" to="(3230,3910)"/>
     <wire from="(290,1970)" to="(290,1980)"/>
-    <wire from="(2880,2910)" to="(3230,2910)"/>
     <wire from="(490,1050)" to="(490,1080)"/>
     <wire from="(590,990)" to="(590,1030)"/>
     <wire from="(1320,1680)" to="(1330,1680)"/>
     <wire from="(1400,1120)" to="(1410,1120)"/>
-    <wire from="(2340,3990)" to="(3230,3990)"/>
     <wire from="(1190,110)" to="(1200,110)"/>
     <wire from="(1200,760)" to="(1210,760)"/>
     <wire from="(1200,600)" to="(1210,600)"/>
     <wire from="(1230,1590)" to="(1240,1590)"/>
     <wire from="(1890,240)" to="(1960,240)"/>
     <wire from="(2850,2290)" to="(2850,2300)"/>
+    <wire from="(2850,2610)" to="(2850,2620)"/>
     <wire from="(2000,760)" to="(2010,760)"/>
-    <wire from="(2210,2290)" to="(2210,2300)"/>
-    <wire from="(2590,3490)" to="(3230,3490)"/>
-    <wire from="(540,400)" to="(570,400)"/>
     <wire from="(1920,680)" to="(1930,680)"/>
-    <wire from="(3130,2410)" to="(3230,2410)"/>
-    <wire from="(2530,2290)" to="(2530,2300)"/>
+    <wire from="(490,360)" to="(510,360)"/>
     <wire from="(1630,1190)" to="(1640,1190)"/>
     <wire from="(250,450)" to="(260,450)"/>
     <wire from="(250,610)" to="(260,610)"/>
@@ -486,13 +367,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1750,1190)" to="(1750,1270)"/>
     <wire from="(430,2240)" to="(430,2250)"/>
     <wire from="(210,2180)" to="(210,2200)"/>
-    <wire from="(2710,3250)" to="(3230,3250)"/>
     <wire from="(2020,790)" to="(2020,800)"/>
     <wire from="(1700,1190)" to="(1750,1190)"/>
     <wire from="(1180,1070)" to="(1180,1080)"/>
     <wire from="(2020,660)" to="(2020,730)"/>
-    <wire from="(2460,3750)" to="(3230,3750)"/>
-    <wire from="(2960,2750)" to="(3230,2750)"/>
     <wire from="(450,1550)" to="(490,1550)"/>
     <wire from="(1310,2280)" to="(1320,2280)"/>
     <wire from="(950,1270)" to="(970,1270)"/>
@@ -502,40 +380,25 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1230,760)" to="(1240,760)"/>
     <wire from="(1210,420)" to="(1220,420)"/>
     <wire from="(1120,110)" to="(1120,290)"/>
-    <wire from="(2920,2830)" to="(3230,2830)"/>
     <wire from="(1990,80)" to="(2000,80)"/>
     <wire from="(2010,100)" to="(2020,100)"/>
     <wire from="(200,1000)" to="(220,1000)"/>
     <wire from="(340,1950)" to="(350,1950)"/>
     <wire from="(350,1960)" to="(360,1960)"/>
-    <wire from="(2420,3830)" to="(3230,3830)"/>
     <wire from="(1030,1340)" to="(1060,1340)"/>
     <wire from="(300,2230)" to="(310,2230)"/>
-    <wire from="(3170,2330)" to="(3230,2330)"/>
     <wire from="(1400,1080)" to="(1420,1080)"/>
     <wire from="(1200,290)" to="(1200,330)"/>
-    <wire from="(2670,3330)" to="(3230,3330)"/>
     <wire from="(1110,150)" to="(1130,150)"/>
     <wire from="(870,2250)" to="(920,2250)"/>
     <wire from="(2000,260)" to="(2000,290)"/>
-    <wire from="(2230,2320)" to="(2230,4210)"/>
     <wire from="(1000,140)" to="(1050,140)"/>
-    <wire from="(2500,3670)" to="(3230,3670)"/>
-    <wire from="(2260,2320)" to="(2260,4150)"/>
     <wire from="(1200,740)" to="(1200,760)"/>
     <wire from="(1200,580)" to="(1200,600)"/>
-    <wire from="(2250,4170)" to="(3230,4170)"/>
-    <wire from="(2290,2320)" to="(2290,4090)"/>
-    <wire from="(2320,2320)" to="(2320,4030)"/>
-    <wire from="(2750,3170)" to="(3230,3170)"/>
     <wire from="(1920,80)" to="(1920,220)"/>
-    <wire from="(2380,2320)" to="(2380,3910)"/>
-    <wire from="(2350,2320)" to="(2350,3970)"/>
-    <wire from="(2440,2320)" to="(2440,3790)"/>
     <wire from="(980,1160)" to="(980,1180)"/>
     <wire from="(980,1320)" to="(980,1340)"/>
     <wire from="(1080,380)" to="(1130,380)"/>
-    <wire from="(2410,2320)" to="(2410,3850)"/>
     <wire from="(1220,120)" to="(1220,170)"/>
     <wire from="(1480,2100)" to="(1490,2100)"/>
     <wire from="(870,2280)" to="(890,2280)"/>
@@ -546,97 +409,55 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(290,2340)" to="(310,2340)"/>
     <wire from="(310,760)" to="(330,760)"/>
     <wire from="(1920,780)" to="(1930,780)"/>
-    <wire from="(1660,2280)" to="(1670,2280)"/>
     <wire from="(1800,340)" to="(1810,340)"/>
     <wire from="(2030,80)" to="(2050,80)"/>
     <wire from="(250,550)" to="(260,550)"/>
-    <wire from="(3000,2670)" to="(3230,2670)"/>
     <wire from="(180,1510)" to="(250,1510)"/>
     <wire from="(1430,2090)" to="(1430,2130)"/>
     <wire from="(1310,2260)" to="(1310,2280)"/>
-    <wire from="(2770,2320)" to="(2770,3130)"/>
     <wire from="(370,2190)" to="(430,2190)"/>
-    <wire from="(530,360)" to="(530,370)"/>
     <wire from="(1340,1200)" to="(1340,1280)"/>
-    <wire from="(3080,2510)" to="(3230,2510)"/>
-    <wire from="(2800,2320)" to="(2800,3070)"/>
     <wire from="(1200,1060)" to="(1200,1150)"/>
-    <wire from="(2710,2320)" to="(2710,3250)"/>
-    <wire from="(2740,2320)" to="(2740,3190)"/>
+    <wire from="(490,400)" to="(540,400)"/>
     <wire from="(260,2170)" to="(260,2190)"/>
-    <wire from="(2920,2320)" to="(2920,2830)"/>
     <wire from="(2020,90)" to="(2020,100)"/>
     <wire from="(940,1340)" to="(980,1340)"/>
-    <wire from="(2890,2320)" to="(2890,2890)"/>
-    <wire from="(2830,2320)" to="(2830,3010)"/>
-    <wire from="(2330,4010)" to="(3230,4010)"/>
-    <wire from="(2860,2320)" to="(2860,2950)"/>
     <wire from="(190,2190)" to="(230,2190)"/>
-    <wire from="(2830,3010)" to="(3230,3010)"/>
-    <wire from="(2580,3510)" to="(3230,3510)"/>
-    <wire from="(2500,2320)" to="(2500,3670)"/>
     <wire from="(1290,1560)" to="(1300,1560)"/>
     <wire from="(2350,70)" to="(2350,1030)"/>
-    <wire from="(2790,3090)" to="(3230,3090)"/>
-    <wire from="(2470,2320)" to="(2470,3730)"/>
     <wire from="(570,990)" to="(590,990)"/>
-    <wire from="(2540,3590)" to="(3230,3590)"/>
     <wire from="(1120,110)" to="(1130,110)"/>
     <wire from="(230,3050)" to="(250,3050)"/>
-    <wire from="(2560,2320)" to="(2560,3550)"/>
     <wire from="(960,1140)" to="(960,1240)"/>
     <wire from="(960,1300)" to="(960,1400)"/>
     <wire from="(950,1200)" to="(980,1200)"/>
-    <wire from="(3040,2590)" to="(3230,2590)"/>
-    <wire from="(2530,2320)" to="(2530,3610)"/>
     <wire from="(1900,80)" to="(1920,80)"/>
     <wire from="(400,1950)" to="(410,1950)"/>
-    <wire from="(2290,4090)" to="(3230,4090)"/>
     <wire from="(240,1470)" to="(250,1470)"/>
     <wire from="(330,760)" to="(340,760)"/>
-    <wire from="(2650,2320)" to="(2650,3370)"/>
-    <wire from="(2680,2320)" to="(2680,3310)"/>
     <wire from="(1030,1180)" to="(1030,1220)"/>
     <wire from="(1030,1340)" to="(1030,1380)"/>
-    <wire from="(2590,2320)" to="(2590,3490)"/>
     <wire from="(300,160)" to="(370,160)"/>
-    <wire from="(2620,2320)" to="(2620,3430)"/>
-    <wire from="(2370,3930)" to="(3230,3930)"/>
-    <wire from="(3160,2350)" to="(3230,2350)"/>
-    <wire from="(1660,2260)" to="(1660,2280)"/>
     <wire from="(310,750)" to="(310,760)"/>
     <wire from="(1970,730)" to="(2020,730)"/>
     <wire from="(1340,1300)" to="(1340,1310)"/>
     <wire from="(1540,980)" to="(1550,980)"/>
-    <wire from="(3040,2320)" to="(3040,2590)"/>
     <wire from="(1350,1110)" to="(1360,1110)"/>
-    <wire from="(3120,2430)" to="(3230,2430)"/>
     <wire from="(1210,170)" to="(1220,170)"/>
-    <wire from="(3010,2320)" to="(3010,2650)"/>
-    <wire from="(3100,2320)" to="(3100,2470)"/>
     <wire from="(2000,640)" to="(2010,640)"/>
     <wire from="(1990,310)" to="(2000,310)"/>
     <wire from="(2010,330)" to="(2020,330)"/>
-    <wire from="(2980,2320)" to="(2980,2710)"/>
     <wire from="(290,1960)" to="(310,1960)"/>
-    <wire from="(3130,2320)" to="(3130,2410)"/>
     <wire from="(1920,80)" to="(1930,80)"/>
     <wire from="(1790,110)" to="(1800,110)"/>
-    <wire from="(3160,2320)" to="(3160,2350)"/>
     <wire from="(1630,1230)" to="(1640,1230)"/>
-    <wire from="(2950,2320)" to="(2950,2770)"/>
     <wire from="(250,650)" to="(260,650)"/>
     <wire from="(140,1500)" to="(150,1500)"/>
-    <wire from="(2870,2930)" to="(3230,2930)"/>
     <wire from="(1330,1230)" to="(1360,1230)"/>
-    <wire from="(2620,3430)" to="(3230,3430)"/>
     <wire from="(910,2270)" to="(920,2270)"/>
     <wire from="(980,1220)" to="(990,1220)"/>
     <wire from="(980,1380)" to="(990,1380)"/>
-    <wire from="(3070,2320)" to="(3070,2530)"/>
     <wire from="(1920,220)" to="(1950,220)"/>
-    <wire from="(2700,3270)" to="(3230,3270)"/>
-    <wire from="(2950,2770)" to="(3230,2770)"/>
     <wire from="(260,2190)" to="(310,2190)"/>
     <wire from="(1200,330)" to="(1200,360)"/>
     <wire from="(410,2260)" to="(410,2270)"/>
@@ -645,7 +466,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(370,140)" to="(370,160)"/>
     <wire from="(400,1930)" to="(400,1950)"/>
     <wire from="(430,2280)" to="(430,2300)"/>
-    <wire from="(2450,3770)" to="(3230,3770)"/>
     <wire from="(1830,80)" to="(1880,80)"/>
     <wire from="(960,1140)" to="(1000,1140)"/>
     <wire from="(1080,130)" to="(1130,130)"/>
@@ -657,25 +477,19 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(2000,290)" to="(2010,290)"/>
     <wire from="(250,100)" to="(400,100)"/>
     <wire from="(1880,810)" to="(1890,810)"/>
-    <wire from="(2410,3850)" to="(3230,3850)"/>
     <wire from="(1510,2080)" to="(1510,2140)"/>
     <wire from="(1740,1310)" to="(1750,1310)"/>
-    <wire from="(2660,3350)" to="(3230,3350)"/>
-    <wire from="(2910,2850)" to="(3230,2850)"/>
     <wire from="(340,1990)" to="(350,1990)"/>
     <wire from="(1060,1220)" to="(1220,1220)"/>
     <wire from="(2030,310)" to="(2050,310)"/>
     <wire from="(250,2220)" to="(260,2220)"/>
     <wire from="(240,3010)" to="(250,3010)"/>
-    <wire from="(2240,4190)" to="(3230,4190)"/>
     <wire from="(2000,620)" to="(2000,640)"/>
     <wire from="(1120,700)" to="(1220,700)"/>
     <wire from="(410,2230)" to="(410,2240)"/>
     <wire from="(430,2250)" to="(430,2260)"/>
     <wire from="(1120,860)" to="(1220,860)"/>
     <wire from="(2020,320)" to="(2020,330)"/>
-    <wire from="(2780,3110)" to="(3230,3110)"/>
-    <wire from="(3030,2610)" to="(3230,2610)"/>
     <wire from="(1830,170)" to="(2020,170)"/>
     <wire from="(250,1430)" to="(250,1460)"/>
     <wire from="(1160,260)" to="(1160,270)"/>
@@ -698,25 +512,14 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(980,1320)" to="(990,1320)"/>
     <wire from="(960,1300)" to="(970,1300)"/>
     <wire from="(1430,1120)" to="(1450,1120)"/>
-    <wire from="(2490,3690)" to="(3230,3690)"/>
-    <wire from="(2740,3190)" to="(3230,3190)"/>
-    <wire from="(2990,2690)" to="(3230,2690)"/>
     <wire from="(520,1030)" to="(520,1040)"/>
-    <wire from="(2570,3530)" to="(3230,3530)"/>
     <wire from="(970,1320)" to="(970,1330)"/>
-    <wire from="(2820,3030)" to="(3230,3030)"/>
     <wire from="(370,160)" to="(420,160)"/>
     <wire from="(350,1980)" to="(350,1990)"/>
-    <wire from="(510,380)" to="(510,390)"/>
     <wire from="(260,2210)" to="(260,2220)"/>
-    <wire from="(3070,2530)" to="(3230,2530)"/>
-    <wire from="(2220,2320)" to="(2220,4230)"/>
     <wire from="(1960,230)" to="(1960,240)"/>
     <wire from="(960,1400)" to="(1000,1400)"/>
-    <wire from="(2320,4030)" to="(3230,4030)"/>
     <wire from="(2020,800)" to="(2020,870)"/>
-    <wire from="(2250,2320)" to="(2250,4170)"/>
-    <wire from="(2280,2320)" to="(2280,4110)"/>
     <wire from="(1220,610)" to="(1220,660)"/>
     <wire from="(1220,770)" to="(1220,820)"/>
     <wire from="(1330,1640)" to="(1340,1640)"/>
@@ -726,8 +529,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(390,1970)" to="(410,1970)"/>
     <wire from="(1920,310)" to="(1930,310)"/>
     <wire from="(500,480)" to="(520,480)"/>
-    <wire from="(2530,3610)" to="(3230,3610)"/>
-    <wire from="(2280,4110)" to="(3230,4110)"/>
     <wire from="(300,770)" to="(310,770)"/>
     <wire from="(1120,290)" to="(1150,290)"/>
     <wire from="(210,520)" to="(220,520)"/>
@@ -736,6 +537,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1010,1160)" to="(1020,1160)"/>
     <wire from="(1010,1320)" to="(1020,1320)"/>
     <wire from="(570,400)" to="(580,400)"/>
+    <wire from="(540,370)" to="(550,370)"/>
     <comp lib="5" loc="(250,100)" name="Button">
       <a name="color" val="#ff0000"/>
     </comp>
@@ -793,9 +595,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="facing" val="east"/>
       <a name="label" val="CLK_RAW"/>
       <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(520,400)" name="Controlled Buffer">
-      <a name="control" val="left"/>
     </comp>
     <comp lib="0" loc="(490,380)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -1022,12 +821,6 @@ c0100 253*0 10000030 80130 254*0 10000030 80084100 254*0
       <a name="text" val="DISPLAY"/>
       <a name="font" val="SansSerif bolditalic 16"/>
     </comp>
-    <comp lib="0" loc="(1080,2200)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="CLK"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(1080,2200)" name="LED"/>
     <comp lib="0" loc="(890,2280)" name="Splitter">
       <a name="incoming" val="16"/>
       <a name="bit1" val="0"/>
@@ -1188,13 +981,6 @@ c0100 253*0 10000030 80130 254*0 10000030 80084100 254*0
     <comp lib="0" loc="(580,400)" name="Tunnel">
       <a name="label" val="CLK"/>
       <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="1" loc="(540,400)" name="Controlled Buffer">
-      <a name="control" val="left"/>
-    </comp>
-    <comp lib="1" loc="(530,390)" name="NOT Gate">
-      <a name="facing" val="south"/>
-      <a name="size" val="20"/>
     </comp>
     <comp lib="0" loc="(490,360)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -2211,966 +1997,206 @@ c0100 253*0 10000030 80130 254*0 10000030 80084100 254*0
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
     <comp lib="0" loc="(1430,2090)" name="Pull Resistor"/>
-    <comp lib="0" loc="(1930,2330)" name="Tunnel">
-      <a name="width" val="32"/>
-      <a name="label" val="MICROCODE_2"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1920,2330)" name="Pull Resistor">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="4" loc="(1670,2270)" name="ROM">
-      <a name="addrWidth" val="24"/>
-      <a name="dataWidth" val="32"/>
-      <a name="contents">addr/data: 24 32
-0
-</a>
-    </comp>
-    <comp lib="0" loc="(3230,2690)" name="Tunnel">
-      <a name="label" val="LOAD_ALU"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2450)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2370)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3110)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2850)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,3010)" name="Tunnel">
-      <a name="label" val="SWAP_INTERNAL_INT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2570)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2330)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2970)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2670)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2870)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2550)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2950)" name="Tunnel">
-      <a name="label" val="B2I"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2470)" name="Tunnel">
-      <a name="label" val="JMP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,3070)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2210,2290)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="32"/>
-      <a name="label" val="MICROCODE_2"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2990)" name="Tunnel">
-      <a name="label" val="SWAP_FLAGS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,3150)" name="Tunnel">
-      <a name="label" val="ALU_EQZERO"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2710)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2930)" name="Tunnel">
-      <a name="label" val="I2B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2630)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
     <comp lib="0" loc="(2850,2300)" name="Splitter">
-      <a name="facing" val="south"/>
       <a name="fanout" val="32"/>
       <a name="incoming" val="32"/>
-    </comp>
-    <comp lib="0" loc="(3230,2430)" name="Tunnel">
-      <a name="label" val="LOAD_PROG"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2390)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2830)" name="Tunnel">
-      <a name="label" val="STORE_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2650)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2570)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2690)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,3050)" name="Tunnel">
-      <a name="label" val="ALU_INPUT_SWAP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2610)" name="Tunnel">
-      <a name="label" val="LOAD_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2350)" name="Tunnel">
-      <a name="label" val="FAULT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2530,2300)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="32"/>
-      <a name="incoming" val="32"/>
-    </comp>
-    <comp lib="5" loc="(3230,2510)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2330)" name="Tunnel">
-      <a name="label" val="HALT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,3130)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2970)" name="Tunnel">
-      <a name="label" val="SWAP_INT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2890)" name="Tunnel">
-      <a name="label" val="STORE_ALU_OP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2810)" name="Tunnel">
-      <a name="label" val="STORE_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2470)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2990)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2870)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2510)" name="Tunnel">
-      <a name="label" val="JMP_IFN"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2530,2290)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="32"/>
-      <a name="label" val="MICROCODE_1"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2530)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2410)" name="Tunnel">
-      <a name="label" val="PROG_NEXT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2610)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2490)" name="Tunnel">
-      <a name="label" val="JMP_IF"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2210,2300)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="32"/>
-      <a name="incoming" val="32"/>
-    </comp>
-    <comp lib="5" loc="(3230,2770)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,3090)" name="Tunnel">
-      <a name="label" val="STORE_RAM"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2910)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,3130)" name="Tunnel">
-      <a name="label" val="NEXT_INSN"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2490)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3050)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2850)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2590)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2930)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2550)" name="Tunnel">
-      <a name="label" val="LOAD_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2890)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2350)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,3110)" name="Tunnel">
-      <a name="label" val="LOAD_RAM"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2750)" name="Tunnel">
-      <a name="label" val="STORE_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2410)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2790)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2450)" name="Tunnel">
-      <a name="label" val="STORE_INSN"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2830)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2370)" name="Tunnel">
-      <a name="label" val="SLEEP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2750)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3090)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2430)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2590)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2730)" name="Tunnel">
-      <a name="label" val="STORE_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2790)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2650)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2670)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2910)" name="Tunnel">
-      <a name="label" val="STORE_DISPLAY"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2810)" name="LED">
-      <a name="facing" val="east"/>
     </comp>
     <comp lib="0" loc="(2850,2290)" name="Tunnel">
-      <a name="facing" val="south"/>
+      <a name="facing" val="east"/>
       <a name="width" val="32"/>
       <a name="label" val="MICROCODE_0"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3230,3030)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="1" loc="(540,370)" name="AND Gate">
+      <a name="size" val="30"/>
     </comp>
-    <comp lib="0" loc="(3230,2710)" name="Tunnel">
-      <a name="label" val="LOAD_ALU_FLAG"/>
+    <comp lib="1" loc="(560,400)" name="Controlled Buffer">
+      <a name="control" val="left"/>
+    </comp>
+    <comp lib="0" loc="(2850,2610)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="MICROCODE_1"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="0" loc="(3230,2630)" name="Tunnel">
-      <a name="label" val="LOAD_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2770)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,3150)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3010)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,3030)" name="Tunnel">
-      <a name="label" val="SWAP_INTERNAL_FLAGS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,2950)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,2730)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(3230,2390)" name="Tunnel">
-      <a name="label" val="INSN_END"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,2530)" name="Tunnel">
-      <a name="label" val="LOAD_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(3230,3070)" name="Tunnel">
-      <a name="label" val="STORE_RAM_ADDR"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(3230,3430)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3710)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3650)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3750)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3790)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3290)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3590)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3230)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3690)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3870)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3630)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3390)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3190)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3410)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3670)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3930)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3550)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3330)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3250)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3210)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3850)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3470)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3450)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3890)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3270)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3310)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3570)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3350)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3730)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3810)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3490)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3610)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3770)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3970)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3530)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3510)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3990)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3170)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3830)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3370)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3950)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,3910)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4110)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4050)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4210)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4170)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4010)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4090)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4130)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4030)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4190)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4070)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4150)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3230,4230)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1350)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1510)" name="Tunnel">
-      <a name="label" val="JMP_IF"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2610,1490)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1650)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1610)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1650)" name="Tunnel">
-      <a name="label" val="LOAD_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2810,1510)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1570)" name="Tunnel">
-      <a name="label" val="LOAD_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2460,1350)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1410)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1590)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2610,1610)" name="Tunnel">
-      <a name="label" val="STORE_DISPLAY"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2810,1490)" name="Tunnel">
-      <a name="label" val="LOAD_RAM"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2460,1510)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1470)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1430)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1630)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2460,1630)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2610,1370)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2460,1410)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1470)" name="Tunnel">
-      <a name="label" val="STORE_INSN"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2810,1490)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2810,1470)" name="Tunnel">
-      <a name="label" val="STORE_RAM"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2810,1430)" name="Tunnel">
-      <a name="label" val="ALU_INPUT_SWAP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2460,1430)" name="Tunnel">
-      <a name="label" val="PROG_NEXT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1470)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1510)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2610,1550)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1630)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1570)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1610)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1390)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2610,1470)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2610,1570)" name="Tunnel">
-      <a name="label" val="STORE_INTERNAL_FLAG_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2460,1390)" name="Tunnel">
-      <a name="label" val="SLEEP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2610,1450)" name="Tunnel">
-      <a name="label" val="STORE_B"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2610,1650)" name="Tunnel">
-      <a name="label" val="B2I"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2610,1510)" name="Tunnel">
-      <a name="label" val="STORE_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2460,1570)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2610,1410)" name="Tunnel">
-      <a name="label" val="LOAD_ALU_FLAG"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2810,1430)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1650)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1590)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2460,1650)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1390)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1490)" name="Tunnel">
-      <a name="label" val="JMP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1530)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2460,1590)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2460,1470)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1370)" name="Tunnel">
-      <a name="label" val="FAULT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2810,1370)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2460,1530)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1550)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1490)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2810,1390)" name="Tunnel">
-      <a name="label" val="SWAP_INTERNAL_INT"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1550)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1410)" name="Tunnel">
-      <a name="label" val="INSN_END"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2460,1350)" name="Tunnel">
+    <comp lib="0" loc="(2850,2620)" name="Splitter">
+      <a name="fanout" val="32"/>
+      <a name="incoming" val="32"/>
+    </comp>
+    <comp lib="0" loc="(2870,1980)" name="Tunnel">
       <a name="label" val="HALT"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(2460,1610)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2810,1450)" name="Tunnel">
-      <a name="label" val="STORE_RAM_ADDR"/>
+    <comp lib="0" loc="(2870,1990)" name="Tunnel">
+      <a name="label" val="FAULT"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="0" loc="(2610,1630)" name="Tunnel">
-      <a name="label" val="I2B"/>
+    <comp lib="0" loc="(2870,2000)" name="Tunnel">
+      <a name="label" val="SLEEP"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(2810,1590)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2460,1450)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1630)" name="Tunnel">
-      <a name="label" val="LOAD_FLAG_A"/>
+    <comp lib="0" loc="(2870,2010)" name="Tunnel">
+      <a name="label" val="INSN_END"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="0" loc="(2610,1530)" name="Tunnel">
-      <a name="label" val="STORE_FLAG_B"/>
+    <comp lib="0" loc="(2870,2020)" name="Tunnel">
+      <a name="label" val="PROG_NEXT"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(2460,1390)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2810,1410)" name="Tunnel">
-      <a name="label" val="SWAP_INTERNAL_FLAGS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2810,1450)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2460,1550)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2810,1370)" name="Tunnel">
-      <a name="label" val="SWAP_FLAGS"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1570)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2610,1390)" name="Tunnel">
-      <a name="label" val="LOAD_ALU"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2460,1430)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2610,1430)" name="Tunnel">
-      <a name="label" val="STORE_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="5" loc="(2610,1370)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1350)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1610)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1530)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1450)" name="Tunnel">
+    <comp lib="0" loc="(2870,2030)" name="Tunnel">
       <a name="label" val="LOAD_PROG"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(2460,1370)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2810,1410)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(2610,1450)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2810,1350)" name="Tunnel">
-      <a name="label" val="SWAP_INT"/>
+    <comp lib="0" loc="(2870,2040)" name="Tunnel">
+      <a name="label" val="STORE_INSN"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="0" loc="(2810,1530)" name="Tunnel">
-      <a name="label" val="ALU_EQZERO"/>
+    <comp lib="0" loc="(2870,2050)" name="Tunnel">
+      <a name="label" val="JMP"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="0" loc="(2810,1510)" name="Tunnel">
-      <a name="label" val="NEXT_INSN"/>
+    <comp lib="0" loc="(2870,2060)" name="Tunnel">
+      <a name="label" val="JMP_IF"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(2460,1490)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(2460,1550)" name="Tunnel">
-      <a name="label" val="LOAD_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2610,1350)" name="Tunnel">
-      <a name="label" val="LOAD_INTERNAL_FLAG_A"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2610,1590)" name="Tunnel">
-      <a name="label" val="STORE_ALU_OP"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(2460,1530)" name="Tunnel">
+    <comp lib="0" loc="(2870,2070)" name="Tunnel">
       <a name="label" val="JMP_IFN"/>
       <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1390)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2080)" name="Tunnel">
+      <a name="label" val="LOAD_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1590)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2090)" name="Tunnel">
+      <a name="label" val="LOAD_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1570)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2100)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1470)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2110)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1630)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2120)" name="Tunnel">
+      <a name="label" val="LOAD_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1350)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2130)" name="Tunnel">
+      <a name="label" val="LOAD_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1530)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2140)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1610)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2150)" name="Tunnel">
+      <a name="label" val="LOAD_INTERNAL_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1430)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2160)" name="Tunnel">
+      <a name="label" val="LOAD_ALU"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1410)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2170)" name="Tunnel">
+      <a name="label" val="LOAD_ALU_FLAG"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1490)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2180)" name="Tunnel">
+      <a name="label" val="STORE_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1650)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2190)" name="Tunnel">
+      <a name="label" val="STORE_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1550)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2200)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1370)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2210)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1510)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2220)" name="Tunnel">
+      <a name="label" val="STORE_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3010,1450)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2230)" name="Tunnel">
+      <a name="label" val="STORE_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1390)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2240)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_FLAG_A"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1490)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2250)" name="Tunnel">
+      <a name="label" val="STORE_INTERNAL_FLAG_B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1650)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2260)" name="Tunnel">
+      <a name="label" val="STORE_ALU_OP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1430)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2270)" name="Tunnel">
+      <a name="label" val="STORE_DISPLAY"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1370)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2280)" name="Tunnel">
+      <a name="label" val="I2B"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1550)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2290)" name="Tunnel">
+      <a name="label" val="B2I"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1590)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2300)" name="Tunnel">
+      <a name="label" val="SWAP_INT"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1630)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2310)" name="Tunnel">
+      <a name="label" val="SWAP_FLAGS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1350)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2320)" name="Tunnel">
+      <a name="label" val="SWAP_INTERNAL_INT"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1570)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2330)" name="Tunnel">
+      <a name="label" val="SWAP_INTERNAL_FLAGS"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1450)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2340)" name="Tunnel">
+      <a name="label" val="ALU_INPUT_SWAP"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1610)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2350)" name="Tunnel">
+      <a name="label" val="STORE_RAM_ADDR"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1410)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2360)" name="Tunnel">
+      <a name="label" val="STORE_RAM"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1470)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2370)" name="Tunnel">
+      <a name="label" val="LOAD_RAM"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1530)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2380)" name="Tunnel">
+      <a name="label" val="NEXT_INSN"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3150,1510)" name="LED">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(2870,2390)" name="Tunnel">
+      <a name="label" val="ALU_EQZERO"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3280,1550)" name="LED">
+    <comp lib="0" loc="(1080,2200)" name="Tunnel">
       <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="5" loc="(3280,1370)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1470)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1350)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1450)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1510)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1650)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1390)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1490)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1410)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1530)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1590)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1570)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1630)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1430)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
-    <comp lib="5" loc="(3280,1610)" name="LED">
-      <a name="facing" val="east"/>
-    </comp>
+    <comp lib="5" loc="(1080,2200)" name="LED"/>
   </circuit>
   <circuit name="ALU">
     <a name="circuit" val="ALU"/>

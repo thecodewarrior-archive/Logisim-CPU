@@ -1,12 +1,12 @@
 package co.thecodewarrior.logisimcpu
 
-import co.thecodewarrior.logisimcpu.instruction.Instructions
+import co.thecodewarrior.logisimcpu.microcode.ControlLine
+import co.thecodewarrior.logisimcpu.microcode.Instruction
 import java.io.File
 
 fun main(args: Array<String>) {
-    Instructions.microcodeROM().forEachIndexed { i, hex ->
-        File("microcode$i.hex").writeText(hex.toString())
-    }
-    File("microcode.txt").writeText(Instructions.microcodeText())
-    File("program.hex").writeText(Assembler(File("program.asm").readText()).assemble().toString())
+    val controlLines = ControlLine.controlLines(File("definitions/v2/controls.txt"))
+    println(controlLines)
+    val instructions = Instruction.parse(File("definitions/v2/instructions.txt"), controlLines)
+    println(instructions.joinToString("\n"))
 }

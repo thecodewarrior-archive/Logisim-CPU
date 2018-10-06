@@ -3,7 +3,7 @@ package co.thecodewarrior.logisimcpu.microcode
 import java.io.File
 import java.math.BigInteger
 
-class Microcode(val file: File) {
+class Microcode(val file: File, val stepWidth: Int) {
     val controlLines = ControlLine.controlLines(file.resolve("controls.txt"))
     val instructions = Instruction.parse(file.resolve("instructions.txt"), controlLines)
 
@@ -11,7 +11,7 @@ class Microcode(val file: File) {
         val lines = mutableListOf("v2.0 big")
         instructions.forEach {
             microcodes(it).forEach {
-                lines += "${it.binary.toString(16)}: ${it.steps.joinToString(" ") { it.binary.toString(16) }}"
+                lines += "${(it.binary shl stepWidth).toString(16)}: ${it.steps.joinToString(" ") { it.binary.toString(16) }}"
             }
         }
         return lines.joinToString("\n")

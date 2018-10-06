@@ -7,6 +7,6 @@ fun main(args: Array<String>) {
     val cpu = "v2"
     File("out/$cpu").mkdirs()
 
-    val microcode = Microcode(File("definitions/$cpu/"))
+    val microcode = Microcode(File("definitions/$cpu/"), 8)
     File("out/$cpu/microcode.hex").writeText(microcode.microcode())
 }

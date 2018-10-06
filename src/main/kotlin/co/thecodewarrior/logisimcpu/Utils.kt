@@ -25,3 +25,23 @@ val UInt.bitCount: Int
         }
         return count
     }
+
+fun String.parseIntLike(): Int {
+    if(this.endsWith("u"))
+        return this.removeSuffix("u").parseUIntLike().toInt()
+    return when {
+        this.startsWith("0x") -> this.removePrefix("0x").toInt(16)
+        this.startsWith("0o") -> this.removePrefix("0o").toInt(8)
+        this.startsWith("0b") -> this.removePrefix("0b").toInt(2)
+        else -> this.toInt()
+    }
+}
+
+fun String.parseUIntLike(): UInt {
+    return when {
+        this.startsWith("0x") -> this.removePrefix("0x").toUInt(16)
+        this.startsWith("0o") -> this.removePrefix("0o").toUInt(8)
+        this.startsWith("0b") -> this.removePrefix("0b").toUInt(2)
+        else -> this.toUInt()
+    }
+}

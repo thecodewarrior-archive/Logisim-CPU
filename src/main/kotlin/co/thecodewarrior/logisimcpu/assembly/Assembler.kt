@@ -6,6 +6,7 @@ import co.thecodewarrior.logisimcpu.microcode.FixedInstructionPayload
 import co.thecodewarrior.logisimcpu.microcode.Instruction
 import co.thecodewarrior.logisimcpu.microcode.VariableAssemblyWord
 import co.thecodewarrior.logisimcpu.microcode.VariableInstructionPayload
+import co.thecodewarrior.logisimcpu.parseIntLike
 import java.io.File
 
 class Assembler(val file: File, val cpu: CPU) {
@@ -25,8 +26,8 @@ class Assembler(val file: File, val cpu: CPU) {
 
     fun parse(line: String) {
         if(line.isBlank()) return
-        val referenceRegex = """>(\w+)(?:([+-])(0[xob])?(\d+))?""".toRegex()
-        val numberRegex = """(-)?(0[xob])?(\d+)""".toRegex()
+        val referenceRegex = """>(\w+)(?:([+-])((?:0[xob])?\d+))?""".toRegex()
+        val numberRegex = """(-)?((?:0[xob])?\d+)""".toRegex()
         val labelRegex = """^(?:(\w+):)?(.*)""".toRegex()
 
         val (label, insn) = labelRegex.matchEntire(line)!!.destructured
@@ -40,29 +41,18 @@ class Assembler(val file: File, val cpu: CPU) {
 
             val numberMatch = numberRegex.matchEntire(it)
             if(numberMatch != null) {
-                val (sign, prefix, digits) = numberMatch.destructured
-                var value =
-                    when(prefix) {
-                        "0x" -> digits.toInt(16)
-                        "0o" -> digits.toInt(8)
-                        "0b" -> digits.toInt(2)
-                        else -> digits.toInt()
-                    }
+                val (sign, number) = numberMatch.destructured
+                var value = number.parseIntLike()
                 if(sign.isNotEmpty()) value *= -1
                 return@map ASMWordConstant(value.toUInt())
             }
 
             val referenceMatch = referenceRegex.matchEntire(it)
             if(referenceMatch != null) {
-                val (label, sign, prefix, digits) = referenceMatch.destructured
+                val (label, sign, number) = referenceMatch.destructured
                 var value =
-                    if(digits.isNotEmpty())
-                        when(prefix) {
-                            "0x" -> digits.toInt(16)
-                            "0o" -> digits.toInt(8)
-                            "0b" -> digits.toInt(2)
-                            else -> digits.toInt()
-                        }
+                    if(number.isNotEmpty())
+                        number.parseIntLike()
                     else
                         0
                 if(sign == "-") value *= -1
@@ -111,6 +101,13 @@ class Assembler(val file: File, val cpu: CPU) {
                 if(insnWord.text != asmWord.text) return null
             } else if(insnWord is VariableAssemblyWord && asmWord is ASMWordValue) {
                 match[insnWord.name] = asmWord
+            } else if(insnWord is VariableAssemblyWord && insnWord.enum != null && asmWord is ASMWordText) {
+                val enumConstant = insnWord.enum[asmWord.text]
+                if(enumConstant != null) {
+                    match[insnWord.name] = ASMWordConstant(enumConstant)
+                } else {
+                    return null
+                }
             } else {
                 return null
             }

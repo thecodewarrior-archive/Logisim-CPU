@@ -2,6 +2,7 @@ package co.thecodewarrior.logisimcpu.microcode
 
 import co.thecodewarrior.logisimcpu.bitCount
 import co.thecodewarrior.logisimcpu.lowestSetBit
+import co.thecodewarrior.logisimcpu.parseIntLike
 import java.io.File
 import java.util.LinkedList
 
@@ -25,6 +26,7 @@ data class Instruction(val assembly: List<AssemblyWord>, val variables: Map<Char
     companion object {
         fun parse(file: File, controlLinesList: List<ControlLine>): List<Instruction> {
             val controlLines = controlLinesList.associateBy { it.name }
+            val enums = mutableMapOf<String, Map<String, UInt>>()
             return file.readLines().asSequence()
                 .map { it.split("#").first().trim() }
                 .filter { it.isNotBlank() }
@@ -32,14 +34,25 @@ data class Instruction(val assembly: List<AssemblyWord>, val variables: Map<Char
                 .let { lines ->
                     val instructions = mutableListOf<Instruction>()
                     while(lines.peek() != null) {
-                        val wordsBits = lines.pop().removePrefix(":").split("=")
-                        val words = AssemblyWord.parse(wordsBits[0])
-                        val variables = InstructionVariable.from(words)
-                        val bits = InstructionBits.parse(wordsBits[1], variables)
-                        val steps = lines.takeWhile { it.startsWith("-") }
-                            .map { InstructionStep.parse(it.removePrefix("-"), controlLines, variables) }
-                        steps.forEach { lines.pop() }
-                        instructions.add(Instruction(words, variables, bits, steps))
+                        if(lines.peek().startsWith(":")) {
+                            val wordsBits = lines.pop().removePrefix(":").split("=")
+                            val words = AssemblyWord.parse(wordsBits[0], enums)
+                            val variables = InstructionVariable.from(words)
+                            val bits = InstructionBits.parse(wordsBits[1], variables)
+                            val steps = lines.takeWhile { it.startsWith("-") }
+                                .map { InstructionStep.parse(it.removePrefix("-"), controlLines, variables) }
+                            steps.forEach { lines.pop() }
+                            instructions.add(Instruction(words, variables, bits, steps))
+                        } else if(lines.peek().startsWith("enum") && lines.peek().endsWith("{")) {
+                            val name = lines.pop().removePrefix("enum").removeSuffix("{").trim()
+                            val enum = lines.takeWhile { !it.startsWith("}") }
+                                .associate { it.split("=").let { it[0] to it[1].parseIntLike().toUInt() } }
+                            enum.forEach { lines.pop() }
+                            lines.pop() // pop the trailing }
+                            enums[name] = enum
+                        } else {
+                            throw RuntimeException("illegal line ${lines.pop()}")
+                        }
                     }
                     instructions
                 }
@@ -74,13 +87,16 @@ sealed class AssemblyWord {
     abstract fun matches(value: String): Boolean
 
     companion object {
-        fun parse(text: String): List<AssemblyWord> {
+        fun parse(text: String, enums: Map<String, Map<String, UInt>>): List<AssemblyWord> {
             return text.trim().split("\\s+".toRegex())
                 .map {
-                    if(it.startsWith("<") && it.endsWith(">"))
-                        VariableAssemblyWord(it[1])
-                    else
+                    if(it.startsWith("<") && it.endsWith(">")) {
+                        val (name, enumName) = "(.)(?::(\\w+))?".toRegex()
+                            .matchEntire(it.removePrefix("<").removeSuffix(">"))!!.destructured
+                        VariableAssemblyWord(name[0], if(enumName.isEmpty()) null else enums[enumName]!!)
+                    } else {
                         FixedAssemblyWord(it)
+                    }
                 }
         }
     }
@@ -90,8 +106,8 @@ data class FixedAssemblyWord(val text: String): AssemblyWord() {
     override fun matches(value: String) = value == text
 }
 
-data class VariableAssemblyWord(val name: Char): AssemblyWord() {
-    override fun matches(value: String) = value[0].isDigit() || value[0] == '>'
+data class VariableAssemblyWord(val name: Char, val enum: Map<String, UInt>?): AssemblyWord() {
+    override fun matches(value: String) = value[0].isDigit() || value[0] == '>' || (enum?.let { value in it } ?: false)
 }
 
 data class InstructionBits(val bits: UInt, val variables: Map<Char, UInt>, val payload: List<InstructionPayload>) {
@@ -130,12 +146,12 @@ sealed class InstructionPayload {
 data class FixedInstructionPayload(val value: UInt): InstructionPayload()
 data class VariableInstructionPayload(val name: Char): InstructionPayload()
 
-data class InstructionVariable(val name: Char, var width: Int) {
+data class InstructionVariable(val name: Char, var width: Int, var enum: Map<String, UInt>?) {
     val isInline: Boolean
         get() = width != 0
     companion object {
         fun from(words: List<AssemblyWord>): Map<Char, InstructionVariable> {
-            return words.filterIsInstance<VariableAssemblyWord>().associate { it.name to InstructionVariable(it.name, 0) }
+            return words.filterIsInstance<VariableAssemblyWord>().associate { it.name to InstructionVariable(it.name, 0, it.enum) }
         }
     }
 }

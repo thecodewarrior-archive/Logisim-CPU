@@ -3,6 +3,7 @@ package co.thecodewarrior.logisimcpu.microcode
 import co.thecodewarrior.logisimcpu.CPU
 import java.io.File
 import java.math.BigInteger
+import kotlin.math.min
 
 class Microcode(val cpu: CPU, val stepWidth: Int) {
 
@@ -27,7 +28,11 @@ class Microcode(val cpu: CPU, val stepWidth: Int) {
     fun variableValues(insn: Instruction): List<Map<Char, UInt>> {
         var variableCombinations = listOf(mapOf<Char, UInt>())
         insn.variables.filter { it.value.isInline }.forEach { variable ->
-            val possibleValues = 0u until (1u shl variable.value.width)
+            val possibleValues =
+                if(variable.value.enum != null)
+                    0u until min(variable.value.enum!!.size.toLong(), (1L shl variable.value.width)).toUInt()
+                else
+                    0u until (1u shl variable.value.width)
             variableCombinations = variableCombinations.flatMap { combo ->
                 possibleValues.map { value ->
                     val newMap = combo.toMutableMap()

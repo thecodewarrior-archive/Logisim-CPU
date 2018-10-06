@@ -7,31 +7,19 @@ import java.util.LinkedList
 
 data class Instruction(val assembly: List<AssemblyWord>, val variables: Map<Char, InstructionVariable>, val bits: InstructionBits, val steps: List<InstructionStep>) {
 
-    fun opcode(variableValues: Map<Char, Int>): UInt {
+    fun opcode(variableValues: Map<Char, UInt>): UInt {
         var binary = this.bits.bits
         this.bits.variables.forEach { variable ->
-            var value = variableValues[variable.key] ?: 0
+            var value = variableValues[variable.key] ?: 0u
             var mask = variable.value
             while(mask.lowestSetBit >= 0) {
-                val bit = (value and 1).toUInt()
+                val bit = value and 1u
                 binary = binary or (bit shl mask.lowestSetBit)
                 mask = mask xor (1u shl mask.lowestSetBit)
-                value = value ushr 1
+                value = value shr 1
             }
         }
         return binary
-    }
-
-    fun words(variableValues: Map<Char, Int>): List<UInt> {
-        val words = mutableListOf<UInt>()
-        words.add(opcode(variableValues))
-        bits.payload.forEach {
-            when(it) {
-                is FixedInstructionPayload -> words.add(it.value)
-                is VariableInstructionPayload -> words.add(variableValues[it.name]?.toUInt() ?: 0u)
-            }
-        }
-        return words
     }
 
     companion object {
@@ -82,12 +70,12 @@ data class ParameterizedControlLine(val line: ControlLine, val variable: Instruc
     }
 }
 
-abstract class AssemblyWord {
+sealed class AssemblyWord {
     abstract fun matches(value: String): Boolean
 
     companion object {
         fun parse(text: String): List<AssemblyWord> {
-            return text.split("\\s+".toRegex())
+            return text.trim().split("\\s+".toRegex())
                 .map {
                     if(it.startsWith("<") && it.endsWith(">"))
                         VariableAssemblyWord(it[1])
@@ -126,7 +114,7 @@ data class InstructionBits(val bits: UInt, val variables: Map<Char, UInt>, val p
     }
 }
 
-abstract class InstructionPayload {
+sealed class InstructionPayload {
     companion object {
         fun parse(text: String): InstructionPayload {
             return text.trim().let {

@@ -7,13 +7,14 @@ class Microcode(val file: File) {
     val controlLines = ControlLine.controlLines(file.resolve("controls.txt"))
     val instructions = Instruction.parse(file.resolve("instructions.txt"), controlLines)
 
-    fun microcodes() {
+    fun microcode(): String {
+        val lines = mutableListOf("v2.0 big")
         instructions.forEach {
             microcodes(it).forEach {
-                println(it.pretty())
-                println()
+                lines += "${it.binary.toString(16)}: ${it.steps.joinToString(" ") { it.binary.toString(16) }}"
             }
         }
+        return lines.joinToString("\n")
     }
 
     fun microcodes(insn: Instruction): List<MicrocodeInstruction> {

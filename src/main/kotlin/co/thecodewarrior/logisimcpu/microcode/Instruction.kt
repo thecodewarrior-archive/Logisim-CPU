@@ -1,10 +1,39 @@
 package co.thecodewarrior.logisimcpu.microcode
 
+import co.thecodewarrior.logisimcpu.bitCount
+import co.thecodewarrior.logisimcpu.lowestSetBit
 import java.io.File
-import java.math.BigInteger
 import java.util.LinkedList
 
 data class Instruction(val assembly: List<AssemblyWord>, val variables: Map<Char, InstructionVariable>, val bits: InstructionBits, val steps: List<InstructionStep>) {
+
+    fun opcode(variableValues: Map<Char, Int>): UInt {
+        var binary = this.bits.bits
+        this.bits.variables.forEach { variable ->
+            var value = variableValues[variable.key] ?: 0
+            var mask = variable.value
+            while(mask.lowestSetBit >= 0) {
+                val bit = (value and 1).toUInt()
+                binary = binary or (bit shl mask.lowestSetBit)
+                mask = mask xor (1u shl mask.lowestSetBit)
+                value = value ushr 1
+            }
+        }
+        return binary
+    }
+
+    fun words(variableValues: Map<Char, Int>): List<UInt> {
+        val words = mutableListOf<UInt>()
+        words.add(opcode(variableValues))
+        bits.payload.forEach {
+            when(it) {
+                is FixedInstructionPayload -> words.add(it.value)
+                is VariableInstructionPayload -> words.add(variableValues[it.name]?.toUInt() ?: 0u)
+            }
+        }
+        return words
+    }
+
     companion object {
         fun parse(file: File, controlLinesList: List<ControlLine>): List<Instruction> {
             val controlLines = controlLinesList.associateBy { it.name }
@@ -21,7 +50,7 @@ data class Instruction(val assembly: List<AssemblyWord>, val variables: Map<Char
                         val bits = InstructionBits.parse(wordsBits[1], variables)
                         val steps = lines.takeWhile { it.startsWith("-") }
                             .map { InstructionStep.parse(it.removePrefix("-"), controlLines, variables) }
-                        steps.forEach { _ -> lines.pop() }
+                        steps.forEach { lines.pop() }
                         instructions.add(Instruction(words, variables, bits, steps))
                     }
                     instructions
@@ -68,37 +97,57 @@ abstract class AssemblyWord {
         }
     }
 }
+
 data class FixedAssemblyWord(val text: String): AssemblyWord() {
     override fun matches(value: String) = value == text
 }
+
 data class VariableAssemblyWord(val name: Char): AssemblyWord() {
     override fun matches(value: String) = value[0].isDigit() || value[0] == '>'
 }
 
-data class InstructionBits(val bits: BigInteger, val variables: Map<Char, BigInteger>) {
-
+data class InstructionBits(val bits: UInt, val variables: Map<Char, UInt>, val payload: List<InstructionPayload>) {
     companion object {
         fun parse(text: String, variableReferences: Map<Char, InstructionVariable>): InstructionBits {
-            val variables = mutableMapOf<Char, BigInteger>()
-            var bits = BigInteger.ZERO
-            text.replace("\\s+".toRegex(), "")
+            val variables = mutableMapOf<Char, UInt>()
+            var bits = 0u
+            val words = text.split(";")
+            words[0].replace("\\s+".toRegex(), "")
                 .reversed().forEachIndexed { i, chr ->
                     when(chr) {
                         '0' -> {}
-                        '1' -> bits = bits or (BigInteger.ONE shl i)
-                        else -> variables[chr] = variables.getOrDefault(chr, BigInteger.ZERO) or (BigInteger.ONE shl i)
+                        '1' -> bits = bits or (1u shl i)
+                        else -> variables[chr] = variables.getOrDefault(chr, 0u) or (1u shl i)
                     }
                 }
-            variables.forEach { variableReferences[it.key]?.width = it.value.bitCount() }
-            return InstructionBits(bits, variables)
+            variables.forEach { variableReferences[it.key]?.width = it.value.bitCount }
+            return InstructionBits(bits, variables, words.drop(1).map { InstructionPayload.parse(it) })
         }
     }
 }
 
-class InstructionVariable(val name: Char, var width: Int) {
+abstract class InstructionPayload {
+    companion object {
+        fun parse(text: String): InstructionPayload {
+            return text.trim().let {
+                if(it.startsWith("<") && it.endsWith(">"))
+                    VariableInstructionPayload(it[1])
+                else
+                    FixedInstructionPayload(it.toUInt(2))
+            }
+        }
+    }
+}
+
+data class FixedInstructionPayload(val value: UInt): InstructionPayload()
+data class VariableInstructionPayload(val name: Char): InstructionPayload()
+
+data class InstructionVariable(val name: Char, var width: Int) {
+    val isInline: Boolean
+        get() = width != 0
     companion object {
         fun from(words: List<AssemblyWord>): Map<Char, InstructionVariable> {
-             return words.filterIsInstance<VariableAssemblyWord>().associate { it.name to InstructionVariable(it.name, 0) }
+            return words.filterIsInstance<VariableAssemblyWord>().associate { it.name to InstructionVariable(it.name, 0) }
         }
     }
 }

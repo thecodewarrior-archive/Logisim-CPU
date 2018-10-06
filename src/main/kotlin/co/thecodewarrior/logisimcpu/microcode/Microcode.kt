@@ -19,7 +19,7 @@ class Microcode(val file: File, val stepWidth: Int) {
 
     fun microcodes(insn: Instruction): List<MicrocodeInstruction> {
         return variableValues(insn).map { variableValues ->
-            var binary = instructionBinary(insn, variableValues)
+            var binary = BigInteger.valueOf(insn.opcode(variableValues).toLong())
             var steps = insn.steps.map { stepBinary(it, variableValues) }
              MicrocodeInstruction(insn, variableValues, binary, steps)
         }
@@ -27,7 +27,7 @@ class Microcode(val file: File, val stepWidth: Int) {
 
     fun variableValues(insn: Instruction): List<Map<Char, Int>> {
         var variableCombinations = listOf(mapOf<Char, Int>())
-        insn.variables.forEach { variable ->
+        insn.variables.filter { it.value.isInline }.forEach { variable ->
             val possibleValues = 0 until (1 shl variable.value.width)
             variableCombinations = variableCombinations.flatMap { combo ->
                 possibleValues.map { value ->
@@ -38,21 +38,6 @@ class Microcode(val file: File, val stepWidth: Int) {
             }
         }
         return variableCombinations
-    }
-
-    fun instructionBinary(insn: Instruction, variableValues: Map<Char, Int>): BigInteger {
-        var binary = insn.bits.bits
-        insn.bits.variables.forEach { variable ->
-            var value = variableValues[variable.key] ?: 0
-            var mask = variable.value
-            while(mask.lowestSetBit >= 0) {
-                val bit = if(value and 1 == 0) BigInteger.ZERO else BigInteger.ONE
-                binary = binary or (bit shl mask.lowestSetBit)
-                mask = mask xor (BigInteger.ONE shl mask.lowestSetBit)
-                value = value ushr 1
-            }
-        }
-        return binary
     }
 
     fun stepBinary(step: InstructionStep, variableValues: Map<Char, Int>): MicrocodeStep {

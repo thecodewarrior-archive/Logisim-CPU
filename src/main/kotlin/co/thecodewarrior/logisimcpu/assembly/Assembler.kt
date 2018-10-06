@@ -35,7 +35,7 @@ class Assembler(val file: File, val cpu: CPU) {
         }
 
         if(insn.isBlank()) return
-        val wordStrings = insn.split("\\s+".toRegex())
+        val wordStrings = insn.trim().split("\\s+".toRegex())
         statements.add(currentLabel to wordStrings.map {
 
             val numberMatch = numberRegex.matchEntire(it)
@@ -56,12 +56,15 @@ class Assembler(val file: File, val cpu: CPU) {
             if(referenceMatch != null) {
                 val (label, sign, prefix, digits) = referenceMatch.destructured
                 var value =
-                    when(prefix) {
-                        "0x" -> digits.toInt(16)
-                        "0o" -> digits.toInt(8)
-                        "0b" -> digits.toInt(2)
-                        else -> digits.toInt()
-                    }
+                    if(digits.isNotEmpty())
+                        when(prefix) {
+                            "0x" -> digits.toInt(16)
+                            "0o" -> digits.toInt(8)
+                            "0b" -> digits.toInt(2)
+                            else -> digits.toInt()
+                        }
+                    else
+                        0
                 if(sign == "-") value *= -1
                 return@map ASMWordReference(labels.getOrPut(label) { ASMLabel(label) }, value)
             }
@@ -80,8 +83,8 @@ class Assembler(val file: File, val cpu: CPU) {
             statement.forEach { word ->
                 if(word is MachineWordInsn) {
                     word.statement.label?.also { it.location = i }
-                    i++
                 }
+                i++
             }
         }
         return words.flatMap { it }.map { it.word }
@@ -135,7 +138,8 @@ abstract class ASMWordValue: ASMWord() {
 }
 data class ASMWordConstant(override val value: UInt): ASMWordValue()
 data class ASMWordReference(val label: ASMLabel, val offset: Int): ASMWordValue() {
-    override var value: UInt = label.location
+    override val value: UInt
+        get() = (label.location.toLong() + offset).toUInt()
 }
 
 data class ASMLabel(val name: String) {

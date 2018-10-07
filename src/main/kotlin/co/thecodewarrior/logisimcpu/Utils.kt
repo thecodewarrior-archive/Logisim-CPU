@@ -45,3 +45,23 @@ fun String.parseUIntLike(): UInt {
         else -> this.toUInt()
     }
 }
+
+fun String.parseIntLikeOrNull(): Int? {
+    if(this.endsWith("u"))
+        return this.removeSuffix("u").parseUIntLikeOrNull()?.toInt()
+    return when {
+        this.startsWith("0x") -> this.removePrefix("0x").toIntOrNull(16)
+        this.startsWith("0o") -> this.removePrefix("0o").toIntOrNull(8)
+        this.startsWith("0b") -> this.removePrefix("0b").toIntOrNull(2)
+        else -> this.toIntOrNull()
+    }
+}
+
+fun String.parseUIntLikeOrNull(): UInt? {
+    return when {
+        this.startsWith("0x") -> this.removePrefix("0x").toUIntOrNull(16)
+        this.startsWith("0o") -> this.removePrefix("0o").toUIntOrNull(8)
+        this.startsWith("0b") -> this.removePrefix("0b").toUIntOrNull(2)
+        else -> this.toUIntOrNull()
+    }
+}

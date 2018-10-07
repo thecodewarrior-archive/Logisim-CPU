@@ -1,9 +1,15 @@
 : BOOTSTRAP = 0000 0000 0000 0000 0000 0000 0000 0000
 - SAVE_IR PROG_NEXT
 
-: MOV CONST <c> REG <a> = 0000 0000 0001 0000 0000 0000 0000 0aaa; <c>
-- PROG_REG_ADDR<a> PROG_REG_MOV PROG_NEXT
+: MOV WORD <c> <a> = @ | 00000 00000 00000 aaaaa; <c>
+- PROG_REG_ADDR<0> PROG_REG_WRITE PROG_NEXT
 - SAVE_IR PROG_NEXT
+
+: MOV BYTE <c> <a> = @ | aaaaa 00000 00ccc ccccc
+- PAYLOAD_BYTE_WRITE SAVE_IR PROG_NEXT
+
+: MOV TINY <x> <a> TINY <y> <b> = @ | aaaaa bbbbb xxxxx yyyyy
+- PAYLOAD_TINY_WRITE SAVE_IR PROG_NEXT
 
 enum ALU_2OP {
     ADD=0
@@ -29,20 +35,30 @@ enum ALU_2OP {
     CMP_LEQ=23
 }
 
-: <o:ALU_2OP> <l> <r> <d> = 0000 0000 0010 0000 00oo oool llrr rddd
-- ALU_A_LEFT_ADDR<l> ALU_A_RIGHT_ADDR<r> ALU_A_OUTPUT_ADDR<d> ALU_A_OP<o> ALU_A_WRITE
-- SAVE_IR PROG_NEXT
+: <o:ALU_2OP> <l> <r> <d> = @ | ooooo lllll rrrrr ddddd
+- ALU_A_LEFT_ADDR<2> ALU_A_RIGHT_ADDR<1> ALU_A_OUTPUT_ADDR<0> ALU_A_OP<3> ALU_A_WRITE SAVE_IR PROG_NEXT
 
 enum ALU_1OP {
     NEG=5
     BIT_NOT=10
     BOOL_NOT=14
 }
-enum ALU_CMPZ {
-    CMP_EQZ=18
-    CMP_NEZ=19
-    CMP_GTZ=20
-    CMP_LTZ=21
-    CMP_GEQZ=22
-    CMP_LEQZ=23
+: <o:ALU_1OP> <i> <d> = @ | ooooo iiiii 00000 ddddd
+- ALU_A_LEFT_ADDR<2> ALU_A_OUTPUT_ADDR<0> ALU_A_OP<3> ALU_A_WRITE SAVE_IR PROG_NEXT
+
+: JMP <a> = @ | 00000 00000 00000 00000; <a>
+- PROG_JUMP JMP
+- SAVE_IR PROG_NEXT
+
+enum ALU_CMP {
+    EQ=18
+    NE=19
+    GT=20
+    LT=21
+    GEQ=22
+    LEQ=23
 }
+
+: JMP <a> IF <l> <o:ALU_CMP> <r> = @ | ooooo lllll rrrrr 00000; <a>
+- ALU_A_LEFT_ADDR<2> ALU_A_RIGHT_ADDR<1> ALU_A_OP<3> PROG_JUMP JMPIF
+- SAVE_IR PROG_NEXT

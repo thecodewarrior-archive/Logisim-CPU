@@ -1,7 +1,6 @@
 package co.thecodewarrior.logisimcpu.microcode
 
 import co.thecodewarrior.logisimcpu.CPU
-import java.io.File
 import java.math.BigInteger
 import kotlin.math.min
 
@@ -11,7 +10,7 @@ class Microcode(val cpu: CPU, val stepWidth: Int) {
         val lines = mutableListOf("v2.0 big")
         cpu.instructions.forEach {
             microcodes(it).forEach {
-                lines += "${(it.binary shl stepWidth).toString(16)}: ${it.steps.joinToString(" ") { it.binary.toString(16) }}"
+                lines += "${(it.binary shr (it.insn.bits.paramWidth - stepWidth)).toString(16)}: ${it.steps.joinToString(" ") { it.binary.toString(16) }}"
             }
         }
         return lines.joinToString("\n")
@@ -47,7 +46,11 @@ class Microcode(val cpu: CPU, val stepWidth: Int) {
     fun stepBinary(step: InstructionStep, variableValues: Map<Char, UInt>): MicrocodeStep {
         var binary = BigInteger.ZERO
         step.lines.forEach { line ->
-            var value = line.variable?.let { variableValues[it.name] } ?: 1u
+            var value = when(line) {
+                is VariableStepControlBundle -> variableValues[line.variable.name] ?: 1u
+                is ConstantStepControlBundle -> line.const
+                else -> 1u
+            }
             value = value and ((1u shl line.line.width)-1u)
             binary = binary or (BigInteger.valueOf(value.toLong()) shl line.line.firstBit)
         }
@@ -83,7 +86,12 @@ ${
 data class MicrocodeStep(val step: InstructionStep, val binary: BigInteger) {
     fun pretty(variableValues: Map<Char, UInt>): String {
         return step.lines.joinToString(" ") {
-            it.line.name + (it.variable?.let { "<${variableValues[it.name]}>" } ?: "")
+            var value = when(it) {
+                is VariableStepControlBundle -> variableValues[it.variable.name] ?: 1u
+                is ConstantStepControlBundle -> it.const
+                else -> null
+            }
+            it.line.name + (value?.let { "<$it>" } ?: "")
         }
     }
 }

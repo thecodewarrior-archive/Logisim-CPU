@@ -147,7 +147,7 @@
     ; - Jumps
     jmp {addr} -> {
         assert(addr >= 0)
-        0x008 @ 20'0 @ addr[31:0]
+        0x007 @ 20'0 @ addr[31:0]
     }
 
     jmpif {addr}, {cmp: jmp_cmp} calc {op: alu_2op}, ~{lhs}, ~{rhs} -> {

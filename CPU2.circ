@@ -234,7 +234,7 @@ end TCL_Generic;
     <wire from="(2330,1870)" to="(2340,1870)"/>
     <wire from="(300,1450)" to="(340,1450)"/>
     <wire from="(740,1270)" to="(1040,1270)"/>
-    <wire from="(3080,2260)" to="(3130,2260)"/>
+    <wire from="(3080,2180)" to="(3130,2180)"/>
     <wire from="(740,1270)" to="(740,1630)"/>
     <wire from="(710,1630)" to="(740,1630)"/>
     <wire from="(380,70)" to="(400,70)"/>
@@ -1238,12 +1238,6 @@ end TCL_Generic;
       <a name="facing" val="east"/>
       <a name="label" val="CLK"/>
     </comp>
-    <comp lib="0" loc="(3130,2260)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="radix" val="10unsigned"/>
-    </comp>
     <comp lib="0" loc="(3090,1560)" name="Tunnel">
       <a name="label" val="MovRam_Addr_UseReg"/>
     </comp>
@@ -1600,6 +1594,12 @@ end TCL_Generic;
     </comp>
     <comp lib="1" loc="(1410,990)" name="OR Gate">
       <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(3130,2180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="radix" val="10unsigned"/>
     </comp>
   </circuit>
   <circuit name="viewer">

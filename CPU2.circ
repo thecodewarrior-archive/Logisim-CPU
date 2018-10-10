@@ -190,11 +190,11 @@ end TCL_Generic;
     <wire from="(1870,1220)" to="(1890,1220)"/>
     <wire from="(1870,1300)" to="(1890,1300)"/>
     <wire from="(1870,1620)" to="(1890,1620)"/>
-    <wire from="(480,320)" to="(490,320)"/>
     <wire from="(850,370)" to="(850,430)"/>
     <wire from="(1870,1540)" to="(1890,1540)"/>
     <wire from="(1870,1700)" to="(1890,1700)"/>
     <wire from="(1870,1460)" to="(1890,1460)"/>
+    <wire from="(480,320)" to="(490,320)"/>
     <wire from="(1820,940)" to="(1820,980)"/>
     <wire from="(1550,810)" to="(1580,810)"/>
     <wire from="(200,1320)" to="(210,1320)"/>
@@ -286,7 +286,9 @@ end TCL_Generic;
       <a name="addrWidth" val="16"/>
       <a name="dataWidth" val="32"/>
       <a name="contents">addr/data: 16 32
-400422 d00008 e08000 f28008 1030000
+408840 e08800 308001 310000 b00441 1018800 900c02 d
+820462 3 b00822 700000 5 e08800 b00400 700000
+3
 </a>
       <a name="label" val="PROG"/>
       <a name="labelvisible" val="true"/>
@@ -299,9 +301,6 @@ end TCL_Generic;
     <comp lib="0" loc="(520,1570)" name="Pull Resistor">
       <a name="facing" val="east"/>
       <a name="pull" val="1"/>
-    </comp>
-    <comp lib="0" loc="(1080,1480)" name="Tunnel">
-      <a name="label" val="LoadInsn_FromRom"/>
     </comp>
     <comp lib="0" loc="(1080,1460)" name="Tunnel">
       <a name="label" val="HALT"/>
@@ -1285,7 +1284,7 @@ end TCL_Generic;
     <comp lib="4" loc="(1050,1300)" name="Big ROM">
       <a name="addressWidth" val="20"/>
       <a name="valueWidth" val="64"/>
-      <a name="contents" val="300:200006|0:6|100:1|200:24|400:400006|500:b186|600:b086|700:30000|800:823180|900:9000823080|a00:4800823100|b00:900000b086|c00:480000b106|d00:d4000006|e00:2e4000006|f00:d8000006|1000:2e8000006|201:6|701:6|801:6|901:6|a01:6"/>
+      <a name="contents" val="300:200006|0:6|100:1|200:24|400:400006|500:b186|600:b086|700:30000|800:823180|900:9000823080|a00:4800823100|b00:900000b086|c00:480000b106|d00:10000000|e00:220000000|f00:10000000|1000:220000000|901:6|201:6|701:6|801:6|a01:6|d01:d4000006|e01:2e4000006|f01:d8000006|1001:2e8000006"/>
       <a name="sourcepath" val="run/out/v2/microcode.hex"/>
     </comp>
     <comp lib="0" loc="(1550,810)" name="Tunnel">
@@ -1594,6 +1593,9 @@ end TCL_Generic;
     </comp>
     <comp lib="1" loc="(1410,990)" name="OR Gate">
       <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(1080,1480)" name="Tunnel">
+      <a name="label" val="LoadInsn_FromRom"/>
     </comp>
     <comp lib="0" loc="(3130,2180)" name="Pin">
       <a name="facing" val="west"/>

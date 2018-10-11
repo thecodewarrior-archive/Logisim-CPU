@@ -5,8 +5,7 @@
 - HALT
 
 : move word = 0x002
-- MoveRom_Reg<0> MoveRom_Write ProgramCounter_Advance
-- LoadInsn_FromRom ProgramCounter_Advance
+- MoveRom_Reg<0> MoveRom_Write ProgramCounter_Advance Prefetch_Source<2> LoadInsn_FromPrefetch ProgramCounter_Advance_By<1>
 
 : move byte = 0x003
 - MovByte_Write LoadInsn_FromRom ProgramCounter_Advance
@@ -21,20 +20,16 @@
 - AluA_LeftReg<2> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn_FromRom ProgramCounter_Advance
 
 : unconditional jump = 0x007
-- JumpDest_UseRom DoJump
-- LoadInsn_FromRom ProgramCounter_Advance
+- JumpDest_UseRom DoJump Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
 
 : jump to addr in rom if reg/reg alu op compares to zero = 0x008
-- AluA_LeftReg<2> AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA
-- LoadInsn_FromRom ProgramCounter_Advance
+- AluA_LeftReg<2> AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
 
 : jump to addr in rom if reg/const alu op compares to zero = 0x009
-- AluA_LeftReg<2> AluA_RightConst<1> AluA_Right_UseConst AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA
-- LoadInsn_FromRom ProgramCounter_Advance
+- AluA_LeftReg<2> AluA_RightConst<1> AluA_Right_UseConst AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
 
 : jump to addr in rom if const/reg alu op compares to zero = 0x00a
-- AluA_LeftConst<2> AluA_Left_UseConst AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA
-- LoadInsn_FromRom ProgramCounter_Advance
+- AluA_LeftConst<2> AluA_Left_UseConst AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
 
 : binary alu reg/const -> reg = 0x00b
 - AluA_LeftReg<2> AluA_RightConst<1> AluA_Right_UseConst AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn_FromRom ProgramCounter_Advance

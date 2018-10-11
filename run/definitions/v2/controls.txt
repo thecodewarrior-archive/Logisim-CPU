@@ -29,3 +29,7 @@ AluA_Left_UseConst
 AluA_Right_UseConst
 MovRegisters_A
 MovRegisters_B
+Prefetch_Source[3]
+LoadInsn_FromPrefetch
+JumpDest_PlusOne
+ProgramCounter_Advance_By[2]

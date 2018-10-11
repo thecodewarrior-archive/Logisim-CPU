@@ -228,7 +228,7 @@
         assert(dstReg < 32)
         assert(srcReg >= 0)
         assert(srcReg < 32)
-        0x010 @ srcReg[4:0] @ dstReg[4:0] @ 10'0
+        0x011 @ srcReg[4:0] @ dstReg[4:0] @ 10'0
     }
 
     ld [ ~{dstRegA}, ~{srcRegA} ] [ ~{dstRegB}, ~{srcRegB} ] -> {
@@ -240,7 +240,7 @@
         assert(dstRegB < 32)
         assert(srcRegB >= 0)
         assert(srcRegB < 32)
-        0x010 @ srcRegA[4:0] @ dstRegA[4:0] @ srcRegB[4:0] @ dstRegB[4:0]
+        0x012 @ srcRegA[4:0] @ dstRegA[4:0] @ srcRegB[4:0] @ dstRegB[4:0]
     }
 }
 

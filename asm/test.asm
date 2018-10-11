@@ -14,10 +14,9 @@ checkNextPrime:
     calc ~halfPossiblePrime, shr ( ~possiblePrime, 1 )
     test:
         ld ~checkAgainst, *~i
-        jmpif foundPrime, nez calc cmp_geq ( ~checkAgainst, ~halfPossiblePrime )
-        jmpif checkNextPrime, eqz calc mod ( ~possiblePrime, ~checkAgainst )
         calc ~i, add ( ~i, 1 )
-        jmp test
+        jmpif checkNextPrime, eqz calc mod ( ~possiblePrime, ~checkAgainst )
+        jmpif test, eqz calc cmp_geq ( ~checkAgainst, ~halfPossiblePrime )
     foundPrime:
         ld *~primeCount, ~possiblePrime
         calc ~primeCount, add ( ~primeCount, 1 )

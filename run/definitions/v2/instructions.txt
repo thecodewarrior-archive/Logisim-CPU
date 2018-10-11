@@ -1,56 +1,59 @@
 : nop = 0x000
-- LoadInsn_FromRom ProgramCounter_Advance
+- LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : halt = 0x001
 - HALT
 
 : move word = 0x002
-- MoveRom_Reg<0> MoveRom_Write ProgramCounter_Advance Prefetch_Source<2> LoadInsn_FromPrefetch ProgramCounter_Advance_By<1>
+- MoveRom_Reg<0> MoveRom_Write ProgramCounter_Advance Prefetch_Source<2> LoadInsn_Source<1> ProgramCounter_Advance_By<1>
 
 : move byte = 0x003
-- MovByte_Write LoadInsn_FromRom ProgramCounter_Advance
+- MovByte_Write LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : move tiny = 0x004
-- MoveTiny_Write LoadInsn_FromRom ProgramCounter_Advance
+- MoveTiny_Write LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : binary alu reg/reg -> reg = 0x005
-- AluA_LeftReg<2> AluA_RightReg<1> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn_FromRom ProgramCounter_Advance
+- AluA_LeftReg<2> AluA_RightReg<1> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : unary alu reg -> reg = 0x006
-- AluA_LeftReg<2> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn_FromRom ProgramCounter_Advance
+- AluA_LeftReg<2> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : unconditional jump = 0x007
-- JumpDest_UseRom DoJump Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
+- JumpDest_UseRom DoJump Prefetch_Source<1> LoadInsn_Source<1> LoadInsn ProgramCounter_Advance JumpDest_PlusOne
 
 : jump to addr in rom if reg/reg alu op compares to zero = 0x008
-- AluA_LeftReg<2> AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
+- AluA_LeftReg<2> AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_Source<1> LoadInsn_IfJump ProgramCounter_Advance JumpDest_PlusOne
+- LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : jump to addr in rom if reg/const alu op compares to zero = 0x009
-- AluA_LeftReg<2> AluA_RightConst<1> AluA_Right_UseConst AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
+- AluA_LeftReg<2> AluA_RightConst<1> AluA_Right_UseConst AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_Source<1> LoadInsn_IfJump ProgramCounter_Advance JumpDest_PlusOne
+- LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : jump to addr in rom if const/reg alu op compares to zero = 0x00a
-- AluA_LeftConst<2> AluA_Left_UseConst AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_FromPrefetch ProgramCounter_Advance JumpDest_PlusOne
+- AluA_LeftConst<2> AluA_Left_UseConst AluA_RightReg<1> AluA_Op<3> JumpDest_UseRom JumpCompare_AluAOp<0> DoJump_IfCompare_AluA Prefetch_Source<1> LoadInsn_Source<1> LoadInsn_IfJump ProgramCounter_Advance JumpDest_PlusOne
+- LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : binary alu reg/const -> reg = 0x00b
-- AluA_LeftReg<2> AluA_RightConst<1> AluA_Right_UseConst AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn_FromRom ProgramCounter_Advance
+- AluA_LeftReg<2> AluA_RightConst<1> AluA_Right_UseConst AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : binary alu const/reg -> reg = 0x00c
-- AluA_LeftConst<2> AluA_Left_UseConst AluA_RightReg<1> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn_FromRom ProgramCounter_Advance
+- AluA_LeftConst<2> AluA_Left_UseConst AluA_RightReg<1> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : mov reg to ram w/ payload addr = 0x00d
-- MovRam_UsePayloadAddr MovRam_WriteToRam MovRam_DataReg<3> LoadInsn_FromRom ProgramCounter_Advance
+- MovRam_UsePayloadAddr MovRam_WriteToRam MovRam_DataReg<3> LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : mov reg to ram w/ reg addr = 0x00e
-- MovRam_UseRegAddr MovRam_WriteToRam MovRam_DataReg<3> MovRam_AddrReg<2> LoadInsn_FromRom ProgramCounter_Advance
+- MovRam_UseRegAddr MovRam_WriteToRam MovRam_DataReg<3> MovRam_AddrReg<2> LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : mov ram to reg w/ payload addr = 0x00f
-- MovRam_WriteFromRam MovRam_UsePayloadAddr MovRam_DataReg<3> LoadInsn_FromRom ProgramCounter_Advance
+- MovRam_WriteFromRam MovRam_UsePayloadAddr MovRam_DataReg<3> LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : mov ram to reg w/ reg addr = 0x010
-- MovRam_WriteFromRam MovRam_UseRegAddr MovRam_DataReg<3> MovRam_AddrReg<2> LoadInsn_FromRom ProgramCounter_Advance
+- MovRam_WriteFromRam MovRam_UseRegAddr MovRam_DataReg<3> MovRam_AddrReg<2> LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : mov reg to reg = 0x011
-- MovRegisters_A LoadInsn_FromRom ProgramCounter_Advance
+- MovRegisters_A LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
 
 : mov two registers to two other registers = 0x012
-- MovRegisters_A MovRegisters_B LoadInsn_FromRom ProgramCounter_Advance
+- MovRegisters_A MovRegisters_B LoadInsn LoadInsn_Source<0> ProgramCounter_Advance

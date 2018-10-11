@@ -1,5 +1,5 @@
 HALT
-LoadInsn_FromRom
+LoadInsn
 ProgramCounter_Advance
 MoveRom_Reg[2]
 MoveRom_Write
@@ -30,6 +30,7 @@ AluA_Right_UseConst
 MovRegisters_A
 MovRegisters_B
 Prefetch_Source[3]
-LoadInsn_FromPrefetch
 JumpDest_PlusOne
 ProgramCounter_Advance_By[2]
+LoadInsn_Source[3]
+LoadInsn_IfJump

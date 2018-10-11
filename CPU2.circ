@@ -162,6 +162,8 @@ end TCL_Generic;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitvhdlpath" val=""/>
     <wire from="(520,1600)" to="(520,1610)"/>
+    <wire from="(3080,1390)" to="(3100,1390)"/>
+    <wire from="(3080,1510)" to="(3100,1510)"/>
     <wire from="(900,2260)" to="(900,2270)"/>
     <wire from="(1880,2080)" to="(1880,2100)"/>
     <wire from="(1880,2160)" to="(1880,2180)"/>
@@ -182,7 +184,9 @@ end TCL_Generic;
     <wire from="(710,1170)" to="(740,1170)"/>
     <wire from="(370,160)" to="(390,160)"/>
     <wire from="(320,1470)" to="(340,1470)"/>
+    <wire from="(1860,1820)" to="(1870,1820)"/>
     <wire from="(460,1170)" to="(480,1170)"/>
+    <wire from="(1860,1860)" to="(1870,1860)"/>
     <wire from="(2340,1860)" to="(2340,1870)"/>
     <wire from="(190,1340)" to="(210,1340)"/>
     <wire from="(1870,1380)" to="(1890,1380)"/>
@@ -216,6 +220,8 @@ end TCL_Generic;
     <wire from="(1060,1270)" to="(1070,1270)"/>
     <wire from="(310,60)" to="(340,60)"/>
     <wire from="(250,1130)" to="(270,1130)"/>
+    <wire from="(3040,1360)" to="(3100,1360)"/>
+    <wire from="(3040,1480)" to="(3100,1480)"/>
     <wire from="(1880,1930)" to="(1890,1930)"/>
     <wire from="(370,1460)" to="(380,1460)"/>
     <wire from="(1860,2180)" to="(1880,2180)"/>
@@ -239,11 +245,17 @@ end TCL_Generic;
     <wire from="(710,1630)" to="(740,1630)"/>
     <wire from="(380,70)" to="(400,70)"/>
     <wire from="(1870,1730)" to="(1880,1730)"/>
+    <wire from="(1860,1840)" to="(1870,1840)"/>
+    <wire from="(1860,1800)" to="(1870,1800)"/>
+    <wire from="(3100,1360)" to="(3100,1390)"/>
+    <wire from="(3100,1480)" to="(3100,1510)"/>
     <wire from="(250,1150)" to="(260,1150)"/>
     <wire from="(390,90)" to="(400,90)"/>
     <wire from="(200,1300)" to="(210,1300)"/>
     <wire from="(890,2270)" to="(900,2270)"/>
     <wire from="(890,2230)" to="(900,2230)"/>
+    <wire from="(3040,1460)" to="(3040,1480)"/>
+    <wire from="(3040,1340)" to="(3040,1360)"/>
     <wire from="(300,1140)" to="(430,1140)"/>
     <wire from="(510,1610)" to="(520,1610)"/>
     <wire from="(480,320)" to="(480,1030)"/>
@@ -275,6 +287,8 @@ end TCL_Generic;
     <wire from="(200,1290)" to="(230,1290)"/>
     <wire from="(200,1330)" to="(230,1330)"/>
     <wire from="(1120,1350)" to="(1120,1400)"/>
+    <wire from="(2990,1460)" to="(3040,1460)"/>
+    <wire from="(2990,1340)" to="(3040,1340)"/>
     <wire from="(270,1330)" to="(290,1330)"/>
     <wire from="(1910,1100)" to="(1920,1100)"/>
     <wire from="(2340,1770)" to="(2340,1780)"/>
@@ -286,9 +300,9 @@ end TCL_Generic;
       <a name="addrWidth" val="16"/>
       <a name="dataWidth" val="32"/>
       <a name="contents">addr/data: 16 32
-408840 e08800 308001 310000 b00441 1018800 900c02 d
-820462 3 b00822 700000 5 e08800 b00400 700000
-3
+408840 e08800 308001 310000 b00441 b30424 1018800 8b0c85
+e 820462 3 b00822 700000 6 b01425 e09400
+b00400 700000 3
 </a>
       <a name="label" val="PROG"/>
       <a name="labelvisible" val="true"/>
@@ -872,11 +886,6 @@ end TCL_Generic;
       <a name="width" val="2"/>
       <a name="label" val="AluA_RightReg_PayloadField"/>
     </comp>
-    <comp lib="0" loc="(1850,1840)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="20"/>
-      <a name="label" val="InsnPayload"/>
-    </comp>
     <comp lib="0" loc="(1910,1180)" name="Tunnel">
       <a name="width" val="5"/>
       <a name="label" val="AluA_LeftReg"/>
@@ -1061,31 +1070,6 @@ end TCL_Generic;
       <a name="facing" val="east"/>
       <a name="width" val="2"/>
       <a name="label" val="MovRam_DataReg_PayloadField"/>
-    </comp>
-    <comp lib="0" loc="(1850,1840)" name="Splitter">
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="20"/>
-      <a name="appear" val="center"/>
-      <a name="spacing" val="double"/>
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="0"/>
-      <a name="bit5" val="1"/>
-      <a name="bit6" val="1"/>
-      <a name="bit7" val="1"/>
-      <a name="bit8" val="1"/>
-      <a name="bit9" val="1"/>
-      <a name="bit10" val="2"/>
-      <a name="bit11" val="2"/>
-      <a name="bit12" val="2"/>
-      <a name="bit13" val="2"/>
-      <a name="bit14" val="2"/>
-      <a name="bit15" val="3"/>
-      <a name="bit16" val="3"/>
-      <a name="bit17" val="3"/>
-      <a name="bit18" val="3"/>
-      <a name="bit19" val="3"/>
     </comp>
     <comp lib="0" loc="(1850,1260)" name="Splitter">
       <a name="fanout" val="4"/>
@@ -1602,6 +1586,116 @@ end TCL_Generic;
       <a name="output" val="true"/>
       <a name="width" val="32"/>
       <a name="radix" val="10unsigned"/>
+    </comp>
+    <comp lib="0" loc="(1840,1840)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="20"/>
+      <a name="appear" val="center"/>
+      <a name="spacing" val="double"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="2"/>
+      <a name="bit13" val="2"/>
+      <a name="bit14" val="2"/>
+      <a name="bit15" val="3"/>
+      <a name="bit16" val="3"/>
+      <a name="bit17" val="3"/>
+      <a name="bit18" val="3"/>
+      <a name="bit19" val="3"/>
+    </comp>
+    <comp lib="0" loc="(1840,1840)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="20"/>
+      <a name="label" val="InsnPayload"/>
+    </comp>
+    <comp lib="0" loc="(1840,2380)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="20"/>
+      <a name="appear" val="center"/>
+      <a name="spacing" val="double"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="2"/>
+      <a name="bit13" val="2"/>
+      <a name="bit14" val="2"/>
+      <a name="bit15" val="3"/>
+      <a name="bit16" val="3"/>
+      <a name="bit17" val="3"/>
+      <a name="bit18" val="3"/>
+      <a name="bit19" val="3"/>
+    </comp>
+    <comp lib="0" loc="(1840,2380)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="20"/>
+      <a name="label" val="InsnPayload"/>
+    </comp>
+    <comp lib="0" loc="(1370,1620)" name="Tunnel">
+      <a name="label" val="MovRegisters_A"/>
+    </comp>
+    <comp lib="0" loc="(2980,1480)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_SrcA"/>
+    </comp>
+    <comp lib="0" loc="(2980,1360)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_SrcB"/>
+    </comp>
+    <comp lib="0" loc="(2980,1420)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_DstA"/>
+    </comp>
+    <comp lib="0" loc="(2980,1300)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_DstB"/>
+    </comp>
+    <comp lib="0" loc="(2990,1440)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="MovRegisters_A"/>
+    </comp>
+    <comp lib="0" loc="(2990,1320)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="MovRegisters_B"/>
+    </comp>
+    <comp lib="0" loc="(1370,1640)" name="Tunnel">
+      <a name="label" val="MovRegisters_B"/>
+    </comp>
+    <comp lib="0" loc="(1860,2400)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_SrcA"/>
+    </comp>
+    <comp lib="0" loc="(1860,2380)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_DstA"/>
+    </comp>
+    <comp lib="0" loc="(1860,2360)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_SrcB"/>
+    </comp>
+    <comp lib="0" loc="(1860,2340)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="MovReg_DstB"/>
     </comp>
   </circuit>
   <circuit name="viewer">

@@ -43,17 +43,19 @@
 - AluA_LeftConst<2> AluA_Left_UseConst AluA_RightReg<1> AluA_OutReg<0> AluA_Op<3> AluA_WriteOutput LoadInsn_FromRom ProgramCounter_Advance
 
 : mov reg to ram w/ payload addr = 0x00d
-- MovRam_UsePayloadAddr
 - MovRam_UsePayloadAddr MovRam_WriteToRam MovRam_DataReg<3> LoadInsn_FromRom ProgramCounter_Advance
 
 : mov reg to ram w/ reg addr = 0x00e
-- MovRam_UseRegAddr MovRam_AddrReg<2>
 - MovRam_UseRegAddr MovRam_WriteToRam MovRam_DataReg<3> MovRam_AddrReg<2> LoadInsn_FromRom ProgramCounter_Advance
 
 : mov ram to reg w/ payload addr = 0x00f
-- MovRam_UsePayloadAddr
 - MovRam_WriteFromRam MovRam_UsePayloadAddr MovRam_DataReg<3> LoadInsn_FromRom ProgramCounter_Advance
 
 : mov ram to reg w/ reg addr = 0x010
-- MovRam_UseRegAddr MovRam_AddrReg<2>
 - MovRam_WriteFromRam MovRam_UseRegAddr MovRam_DataReg<3> MovRam_AddrReg<2> LoadInsn_FromRom ProgramCounter_Advance
+
+: mov reg to reg = 0x011
+- MovRegisters_A LoadInsn_FromRom ProgramCounter_Advance
+
+: mov two registers to two other registers = 0x012
+- MovRegisters_A MovRegisters_B LoadInsn_FromRom ProgramCounter_Advance

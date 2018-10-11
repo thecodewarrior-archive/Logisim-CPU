@@ -27,3 +27,5 @@ AluA_LeftConst[2]
 AluA_RightConst[2]
 AluA_Left_UseConst
 AluA_Right_UseConst
+MovRegisters_A
+MovRegisters_B

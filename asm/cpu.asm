@@ -74,7 +74,7 @@
         assert(value <= 0xff)
         0x003 @ reg[4:0] @ 7'0 @ value[7:0]
     }
-    ld.t ~{reg1}, ~{reg2}, {value1}, {value2} -> {
+    ld.t [ ~{reg1}, {value1} ] [ ~{reg2}, {value2} ] -> {
         assert(reg1 >= 0)
         assert(reg1 < 32)
         assert(reg2 >= 0)
@@ -84,7 +84,7 @@
         0x004 @ reg1[4:0] @ reg2[4:0] @ value1[4:0] @ value2[4:0]
     }
 
-    ld ~{reg1}, ~{reg2}, {value1}, {value2} -> {
+    ld [ ~{reg1}, {value1} ] [ ~{reg2}, {value2} ] -> {
         assert(reg1 >= 0)
         assert(reg1 < 32)
         assert(reg2 >= 0)
@@ -109,14 +109,14 @@
     }
 
     ; - Arithmetic
-    calc ~{out}, {op: alu_1op}, ~{lhs} -> {
+    calc ~{out}, {op: alu_1op} ( ~{lhs} ) -> {
         assert(out >= 0)
         assert(out < 32)
         assert(lhs >= 0)
         assert(lhs < 32)
         0x006 @ op[4:0] @ lhs[4:0] @ 5'0 @ out[4:0] 
     }
-    calc ~{out}, {op: alu_2op}, ~{lhs}, ~{rhs} -> {
+    calc ~{out}, {op: alu_2op} ( ~{lhs}, ~{rhs} ) -> {
         assert(out >= 0)
         assert(out < 32)
         assert(lhs >= 0)
@@ -125,7 +125,7 @@
         assert(rhs < 32)
         0x005 @ op[4:0] @ lhs[4:0] @ rhs[4:0] @ out[4:0]
     }
-    calc ~{out}, {op: alu_2op}, ~{lhs}, {rhs} -> {
+    calc ~{out}, {op: alu_2op} ( ~{lhs}, {rhs} ) -> {
         assert(out >= 0)
         assert(out < 32)
         assert(lhs >= 0)
@@ -134,7 +134,7 @@
         assert(rhs >= -0b10000)
         0x00b @ op[4:0] @ lhs[4:0] @ rhs[4:0] @ out[4:0]
     }
-    calc ~{out}, {op: alu_2op}, {lhs}, ~{rhs} -> {
+    calc ~{out}, {op: alu_2op} ( {lhs}, ~{rhs} ) -> {
         assert(out >= 0)
         assert(out < 32)
         assert(rhs >= 0)
@@ -150,7 +150,7 @@
         0x007 @ 20'0 @ addr[31:0]
     }
 
-    jmpif {addr}, {cmp: jmp_cmp} calc {op: alu_2op}, ~{lhs}, ~{rhs} -> {
+    jmpif {addr}, {cmp: jmp_cmp} calc {op: alu_2op} ( ~{lhs}, ~{rhs} ) -> {
         assert(addr >= 0)
         assert(lhs >= 0)
         assert(lhs < 32)
@@ -158,7 +158,7 @@
         assert(rhs < 32)
         0x008 @ op[4:0] @ lhs[4:0] @ rhs[4:0] @ cmp[4:0] @ addr[31:0]
     }
-    jmpif {addr}, {op: alu_cmpop}, ~{lhs}, ~{rhs} -> {
+    jmpif {addr}, {op: alu_cmpop} ( ~{lhs}, ~{rhs} ) -> {
         assert(addr >= 0)
         assert(lhs >= 0)
         assert(lhs < 32)
@@ -166,7 +166,7 @@
         assert(rhs < 32)
         0x008 @ op[4:0] @ lhs[4:0] @ rhs[4:0] @ 5'5 @ addr[31:0]
     }
-    jmpifn {addr}, {op: alu_cmpop}, ~{lhs}, ~{rhs} -> {
+    jmpifn {addr}, {op: alu_cmpop} ( ~{lhs}, ~{rhs} ) -> {
         assert(addr >= 0)
         assert(lhs >= 0)
         assert(lhs < 32)
@@ -174,7 +174,7 @@
         assert(rhs < 32)
         0x008 @ op[4:0] @ lhs[4:0] @ rhs[4:0] @ 5'2 @ addr[31:0]
     }
-    jmpif {addr}, {cmp: jmp_cmp} calc {op: alu_2op}, ~{lhs}, {rhs} -> {
+    jmpif {addr}, {cmp: jmp_cmp} calc {op: alu_2op} ( ~{lhs}, {rhs} ) -> {
         assert(addr >= 0)
         assert(lhs >= 0)
         assert(lhs < 32)
@@ -182,7 +182,7 @@
         assert(rhs >= -0b10000)
         0x009 @ op[4:0] @ lhs[4:0] @ rhs[4:0] @ cmp[4:0] @ addr[31:0]
     }
-    jmpif {addr}, {cmp: jmp_cmp} calc {op: alu_2op}, {lhs}, ~{rhs} -> {
+    jmpif {addr}, {cmp: jmp_cmp} calc {op: alu_2op} ( {lhs}, ~{rhs} ) -> {
         assert(addr >= 0)
         assert(rhs >= 0)
         assert(rhs < 32)
@@ -221,6 +221,26 @@
         assert(ramReg >= 0)
         assert(ramReg < 32)
         0x010 @ reg[4:0] @ ramReg[4:0] @ 10'0
+    }
+
+    ld ~{dstReg}, ~{srcReg} -> {
+        assert(dstReg >= 0)
+        assert(dstReg < 32)
+        assert(srcReg >= 0)
+        assert(srcReg < 32)
+        0x010 @ srcReg[4:0] @ dstReg[4:0] @ 10'0
+    }
+
+    ld [ ~{dstRegA}, ~{srcRegA} ] [ ~{dstRegB}, ~{srcRegB} ] -> {
+        assert(dstRegA >= 0)
+        assert(dstRegA < 32)
+        assert(srcRegA >= 0)
+        assert(srcRegA < 32)
+        assert(dstRegB >= 0)
+        assert(dstRegB < 32)
+        assert(srcRegB >= 0)
+        assert(srcRegB < 32)
+        0x010 @ srcRegA[4:0] @ dstRegA[4:0] @ srcRegB[4:0] @ dstRegB[4:0]
     }
 }
 

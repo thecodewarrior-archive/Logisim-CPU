@@ -57,3 +57,22 @@
 
 : mov two registers to two other registers = 0x012
 - MovRegisters_A MovRegisters_B LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
+
+: write a value to the serial bus = 0x013
+- SerialWrite_Reg<3> SerialWrite LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
+
+: simultaneous division + modulo with const divisor = 0x014
+- DivMod_Write DivMod_UseConst LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
+
+: simultaneous division + modulo with reg divisor = 0x015
+- DivMod_Write LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
+
+: print digit to serial = 0x016
+- MovRegisters_A Payload_Override_Fields<0b0100> Payload_Override<0b111110000000000>
+- DivMod_SerialWriteASCII_Assembling DivMod_Write Payload_Override_Fields<0b1110> Payload_Override<0b11111111111111000000> DivMod_UseConst
+- AluA_LeftReg<0> AluA_RightConst<1> Payload_Override_Fields<0b0111> Payload_Override<0b100100000011111> AluA_Right_UseConst AluA_Op<2> MicroJump_Dest<1> MicroJumpCompare_AluAOp<2> DoMicroJump_IfCompare_AluA
+- DivMod_SerialWriteASCII_Writing DoMicroJump MicroJump_Dest<3>
+- LoadInsn LoadInsn_Source<0> ProgramCounter_Advance
+
+: write a constant to the serial bus = 0x017
+- SerialWrite_Const_Field<3> SerialWrite_Const LoadInsn LoadInsn_Source<0> ProgramCounter_Advance

@@ -242,6 +242,50 @@
         assert(srcRegB < 32)
         0x012 @ srcRegA[4:0] @ dstRegA[4:0] @ srcRegB[4:0] @ dstRegB[4:0]
     }
+
+    sout ~{reg} -> {
+        assert(reg >= 0)
+        assert(reg < 32)
+        0x013 @ reg[4:0] @ 15'0
+    }
+
+    divmod ~{src}, ~{factor}, ~{dstDiv}, ~{dstMod} -> {
+        assert(src >= 0)
+        assert(src < 32)
+        assert(dstDiv >= 0)
+        assert(dstDiv < 32)
+        assert(dstMod >= 0)
+        assert(dstMod < 32)
+        assert(factor >= 0)
+        assert(factor < 32)
+        0x014 @ src[4:0] @ dstDiv[4:0] @ dstMod[4:0] @ factor[4:0]
+    }
+
+    ;divmod ~{src}, {factor} [ / ~{dstDiv}, % ~{dstMod} ] -> {
+        ;assert(src >= 0)
+        ;assert(src < 32)
+        ;assert(dstDiv >= 0)
+        ;assert(dstDiv < 32)
+        ;assert(dstMod >= 0)
+        ;assert(dstMod < 32)
+        ;assert(factor <=  0b01111)
+        ;assert(factor >= -0b10000)
+        ;0x015 @ src[4:0] @ dstDiv[4:0] @ dstMod[4:0] @ factor[4:0]
+    ;}
+
+    sformat ~{src}, {base} -> {
+        assert(src >= 0)
+        assert(src < 32)
+        assert(base <=  0b11111)
+        assert(base >= 0)
+        0x016 @ src[4:0] @ 10'0 @ base[4:0]
+    }
+
+    sout {value} -> {
+        assert(value >= 0)
+        assert(value <= 0b11111)
+        0x017 @ value[4:0] @ 15'0
+    }
 }
 
 #include "constants.asm"

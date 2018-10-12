@@ -37,4 +37,14 @@ LoadInsn_IfJump
 DoMicroJump
 MicroJump_Dest[5]
 MicroJumpCompare_AluAOp[3]
-DoJump_IfCompare_AluA
+DoMicroJump_IfCompare_AluA
+SerialWrite_Reg[2]
+SerialWrite
+DivMod_Write
+DivMod_UseConst
+DivMod_SerialWriteASCII_Assembling
+Payload_Override_Fields[4]
+Payload_Override[20]
+SerialWrite_Const_Field[2]
+SerialWrite_Const
+DivMod_SerialWriteASCII_Writing

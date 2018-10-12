@@ -34,3 +34,7 @@ JumpDest_PlusOne
 ProgramCounter_Advance_By[2]
 LoadInsn_Source[3]
 LoadInsn_IfJump
+DoMicroJump
+MicroJump_Dest[5]
+MicroJumpCompare_AluAOp[3]
+DoJump_IfCompare_AluA
